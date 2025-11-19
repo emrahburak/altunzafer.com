@@ -19,7 +19,11 @@ export default function App() {
       ></div>
 
       {/* CONTENT */}
-      <div className="relative z-10 flex flex-col items-center justify-center">
+      <div className="relative z-10 flex flex-col items-center justify-center gap-5">
+        <h1 className="mt-8 text-3xl font-semibold text-white text-center">
+          Zafer Altun
+        </h1>
+
         <img
           src={altunLogo}
           alt="altunzafer logo"
