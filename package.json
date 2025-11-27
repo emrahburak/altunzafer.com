@@ -11,9 +11,11 @@
     "optimizer": "tsx src/scripts/optimizer.ts"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.17",
     "fast-glob": "^3.3.3",
     "fs": "^0.0.1-security",
+    "gsap": "^3.13.0",
     "path": "^0.12.7",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
