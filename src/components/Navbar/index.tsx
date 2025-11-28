@@ -1,28 +1,35 @@
 
-export default function Navbar() {
+import React from "react";
+
+export default function Navbar(): React.JSX.Element {
+
+  // TypeScript: Parametre tipini belirtiyoruz
+  const scrollToSection = (id: string): void => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    // 'absolute' ve 'z-50' ile Hero'nun üzerine yapışır.
-    // 'w-full' ile genişliği kaplar.
-    <nav className="absolute top-0 left-0 z-50 w-full px-6 py-6 md:px-12">
+    <nav className="fixed top-0 left-0 z-50 w-full px-6 py-6 md:px-12 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-[2px]">
       <div className="flex items-center justify-between">
-        {/* LOGO / İSİM (Sol Üst) */}
-        <div className="text-xl font-bold tracking-widest text-white uppercase mix-blend-difference">
+        <div
+          onClick={() => scrollToSection('hero')}
+          className="text-xl font-bold tracking-widest text-gold-500 uppercase cursor-pointer select-none font-royal-1"
+        >
           ZAFER ALTUN
         </div>
 
-        {/* MENU (Sağ Üst) - Masaüstü */}
-        <ul className="hidden space-x-8 text-sm font-medium tracking-wide text-white/80 md:flex">
-          <li className="cursor-pointer transition-colors hover:text-white">Biyografi</li>
-          <li className="cursor-pointer transition-colors hover:text-white">Showreel</li>
-          <li className="cursor-pointer transition-colors hover:text-white">Galeri</li>
-          <li className="cursor-pointer transition-colors hover:text-white">İletişim</li>
+        <ul className="hidden space-x-8 text-sm font-semibold tracking-wide text-white/80 md:flex font-fluid-1">
+          <li onClick={() => scrollToSection('biography')} className="cursor-pointer hover:text-white transition-colors">Biyografi</li>
+          <li onClick={() => scrollToSection('career')} className="cursor-pointer hover:text-white transition-colors">Kariyer</li>
+          <li onClick={() => scrollToSection('awards')} className="cursor-pointer hover:text-white transition-colors">Ödüller</li>
+          <li onClick={() => scrollToSection('contact')} className="cursor-pointer hover:text-white transition-colors">İletişim</li>
         </ul>
 
-        {/* MOBİL MENU İKONU (Hamburger - Basit Çizim) */}
-        <div className="flex flex-col gap-1.5 cursor-pointer md:hidden">
-          <span className="block h-0.5 w-6 bg-white"></span>
-          <span className="block h-0.5 w-4 ml-auto bg-white"></span>
-        </div>
+        {/* Mobil ikon */}
+        <div className="md:hidden text-white cursor-pointer">MENU</div>
       </div>
     </nav>
   );

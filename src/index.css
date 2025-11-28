@@ -1,1 +1,32 @@
+/* TÜM FONTLAR TEK IMPORT (Senin verdiğin link) */
+
+@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Prata&family=Sorts+Mill+Goudy:ital@0;1&display=swap");
 @import "tailwindcss";
+
+@theme {
+  /* --- ANA METİN (Sabit) --- */
+  --font-fluid-1: "Lato", sans-serif;
+  --font-fluid-2: "Inter", sans-serif;
+
+  /* --- ROYAL TEST SEÇENEKLERİ --- */
+
+  /* 1. Baskervville: İngiliz asaleti, çok ciddi ve tok durur. */
+  --font-royal-1: "Baskervville", serif;
+
+  /* 2. Old Standard TT: Eski poster havası, retro ve nostaljik. */
+  --font-royal-2: "Old Standard TT", serif;
+
+  /* 3. Playfair: Yüksek kontrastlı, moda dergisi kapağı gibi şık. */
+  --font-royal-3: "Playfair", serif;
+
+  /* 4. Prata: Çok zarif, dikey çizgileri ince, modern durur. */
+  --font-royal-4: "Prata", serif;
+
+  /* 5. Sorts Mill Goudy: Gönderdiğin görsele en yakın, sinematik. */
+  --font-royal-5: "Sorts Mill Goudy", serif;
+
+  /* --- RENKLER --- */
+  --color-gold-400: #d4af37;
+  --color-gold-500: #c5a028;
+  --color-dark-bg: #0a0a0a;
+}
