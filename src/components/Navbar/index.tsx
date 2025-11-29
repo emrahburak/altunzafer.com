@@ -16,12 +16,12 @@ export default function Navbar(): React.JSX.Element {
       <div className="flex items-center justify-between">
         <div
           onClick={() => scrollToSection('hero')}
-          className="text-xl font-bold tracking-widest text-gold-500 uppercase cursor-pointer select-none font-royal-1"
+          className="text-xl font-bold tracking-widest text-gold-500 uppercase cursor-pointer select-none font-royal-6"
         >
           ZAFER ALTUN
         </div>
 
-        <ul className="hidden space-x-8 text-sm font-semibold tracking-wide text-white/80 md:flex font-fluid-1">
+        <ul className="hidden space-x-8 text-sm font-semibold tracking-wide text-white/80 md:flex font-geometric">
           <li onClick={() => scrollToSection('biography')} className="cursor-pointer hover:text-white transition-colors">Biyografi</li>
           <li onClick={() => scrollToSection('career')} className="cursor-pointer hover:text-white transition-colors">Kariyer</li>
           <li onClick={() => scrollToSection('awards')} className="cursor-pointer hover:text-white transition-colors">Ödüller</li>

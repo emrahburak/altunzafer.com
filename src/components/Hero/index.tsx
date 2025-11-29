@@ -7,10 +7,10 @@ export default function Hero(): React.JSX.Element {
 
       {/* SOL: Metin */}
       <div className="z-10 flex h-full w-full flex-col justify-center px-6 md:w-1/2 md:pl-24">
-        <h2 className="mb-4 text-sm font-light tracking-[0.5em] text-gray-400">
+        <h2 className="mb-4  font-light tracking-[0.5em] text-gray-400 font-geometric">
           OYUNCU & YÖNETMEN
         </h2>
-        <h1 className="text-8xl font-bold leading-none text-white md:text-8xl font-royal-1">
+        <h1 className="text-8xl font-bold leading-none text-white md:text-8xl font-royal-7">
           Zafer <br />
           <span className="text-gray-600">Altun</span>
         </h1>
