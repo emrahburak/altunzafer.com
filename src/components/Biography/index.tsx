@@ -113,7 +113,7 @@ export default function Biography() {
             <h3 className="text-xl text-white mb-4 font-semibold font-royal-7">Özel Beceriler</h3>
             <div className="flex flex-wrap gap-3 font-fluid-2">
               {["Perküsyon", "At Biniciliği", "Kılıç & Pala Kullanımı", "İleri Sürüş Teknikleri"].map((skill, i) => (
-                <span key={i} className="skill-item px-4 py-2 border border-gray-700 rounded-full text-sm text-gray-400 hover:border-gold-500 hover:text-gold-500 transition-colors cursor-default hover:shadow-gold-400 hover:shadow-sm" >
+                <span key={i} className="skill-item px-4 py-2 border border-gray-700 rounded-full text-sm text-gray-400 hover:border-gold-500 hover:text-gold-500 transition-colors cursor-default">
                   {skill}
                 </span>
               ))}
