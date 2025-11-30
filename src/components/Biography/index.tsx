@@ -4,9 +4,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // GÖRSELLER (Sıralama: 12 -> 13 -> 15)
-import baseImage from "@/assets/images/webp/altun-12.webp"; // Taban (Düz)
-import middleImage from "@/assets/images/webp/altun-15.webp";    // En Üst
-import topImage from "@/assets/images/webp/altun-13.webp"; // Orta
+import baseImage from "@/assets/images/biyografy/webp/altun-12.webp"; // Taban (Düz)
+import middleImage from "@/assets/images/biyografy/webp/altun-15.webp";    // En Üst
+import topImage from "@/assets/images/biyografy/webp/altun-13.webp"; // Orta
 
 gsap.registerPlugin(ScrollTrigger);
 
