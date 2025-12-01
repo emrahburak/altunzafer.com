@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "home": "Home",
+    "biography": "Biography",
+    "career": "Career",
+    "awards": "Awards",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "menu": "MENU",
+    "close": "CLOSE"
+  },
+  "biography": {
+    "title": "Biography",
+    "p1": "Born in Bursa in 1980. He graduated from Selçuk University State Conservatory, Department of Acting in 2005.",
+    "p2": "He started his career at Bursa State Theater and was deemed worthy of the Direklerarası Lions Kerem Yılmazer Young Talent Award for his performance in 'A Very Original Play'.",
+    "p3": "He continues his work as a director, actor, and producer in international projects based in Switzerland and the Netherlands. He signs global projects with his own production company, Time Right Production.",
+    "skillsTitle": "Special Skills",
+    "skills": {
+      "percussion": "Percussion",
+      "horse": "Horse Riding",
+      "sword": "Sword & Machete",
+      "driving": "Advanced Driving"
+    }
+  }
+}

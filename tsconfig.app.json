@@ -22,7 +22,11 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+
+    // ✅ BU İKİ SATIRI EKLE/KONTROL ET:
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "include": ["src"]
 }

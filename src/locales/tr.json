@@ -1,0 +1,25 @@
+{
+  "navbar": {
+    "home": "Ana Sayfa",
+    "biography": "Biyografi",
+    "career": "Kariyer",
+    "awards": "Ödüller",
+    "contact": "İletişim",
+    "privacy": "Gizlilik Politikası",
+    "menu": "MENÜ",
+    "close": "KAPAT"
+  },
+  "biography": {
+    "title": "Biyografi",
+    "p1": "1980 yılında Bursa'da doğdu. 2001 yılında girdiği Selçuk Üniversitesi Devlet Konservatuvarı Tiyatro Oyunculuk Bölümü'nden 2005 yılında mezun oldu.",
+    "p2": "Kariyerine Bursa Devlet Tiyatrosu'nda başladı ve 'Çok Orijinal Bir Oyun' adlı performansı ile Direklerarası Lions Kerem Yılmazer Genç Yetenek Ödülü'ne layık görüldü.",
+    "p3": "Uluslararası alanda İsviçre ve Hollanda merkezli projelerde yönetmen, oyuncu ve yapımcı olarak çalışmalarını sürdürmektedir. Kendi yapım şirketi Time Right Production ile global projelere imza atmaktadır.",
+    "skillsTitle": "Özel Beceriler",
+    "skills": {
+      "percussion": "Perküsyon",
+      "horse": "At Biniciliği",
+      "sword": "Kılıç & Pala Kullanımı",
+      "driving": "İleri Sürüş Teknikleri"
+    }
+  }
+}
