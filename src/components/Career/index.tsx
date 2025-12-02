@@ -4,18 +4,18 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // --- SİNEMA GÖRSELLERİ İMPORT (Senin dosya yapına göre) ---
-import c01 from "@/assets/images/sinema/webp/altun-01.webp";
-import c04 from "@/assets/images/sinema/webp/altun-04.webp";
-import c05 from "@/assets/images/sinema/webp/altun-05.webp";
-import c10 from "@/assets/images/sinema/webp/altun-10.webp";
-import c11 from "@/assets/images/sinema/webp/altun-11.webp";
-import c16 from "@/assets/images/sinema/webp/altun-16.webp";
-import c18 from "@/assets/images/sinema/webp/altun-18.webp";
-import c19 from "@/assets/images/sinema/webp/altun-19.webp";
-import c20 from "@/assets/images/sinema/webp/altun-20.webp";
-import c21 from "@/assets/images/sinema/webp/altun-21.webp";
-import c23 from "@/assets/images/sinema/webp/altun-23.webp";
-import c24 from "@/assets/images/sinema/webp/altun-24.webp";
+import c01 from "@/assets/images/sinema/webp/altunx-01.webp";
+import c04 from "@/assets/images/sinema/webp/altunx-04.webp";
+import c05 from "@/assets/images/sinema/webp/altunx-05.webp";
+import c10 from "@/assets/images/sinema/webp/altunx-10.webp";
+import c11 from "@/assets/images/sinema/webp/altunx-11.webp";
+import c16 from "@/assets/images/sinema/webp/altunx-16.webp";
+import c18 from "@/assets/images/sinema/webp/altunx-18.webp";
+import c19 from "@/assets/images/sinema/webp/altunx-19.webp";
+import c20 from "@/assets/images/sinema/webp/altunx-20.webp";
+import c21 from "@/assets/images/sinema/webp/altunx-21.webp";
+import c23 from "@/assets/images/sinema/webp/altunx-23.webp";
+import c24 from "@/assets/images/sinema/webp/altunx-24.webp";
 
 
 
