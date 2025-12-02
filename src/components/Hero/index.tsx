@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "@/assets/images/hero/webp/altun-02.webp"; // Path alias (@) yoksa "../" kullanın
+import heroImage from "@/assets/images/hero/webp/altun-hero-01.webp"; // Path alias (@) yoksa "../" kullanın
 
 export default function Hero(): React.JSX.Element {
   return (

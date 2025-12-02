@@ -17,6 +17,9 @@ import c21 from "@/assets/images/sinema/webp/altun-21.webp";
 import c23 from "@/assets/images/sinema/webp/altun-23.webp";
 import c24 from "@/assets/images/sinema/webp/altun-24.webp";
 
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 // Görselleri iki şerit için grupluyoruz

@@ -6,9 +6,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 
 // GÖRSELLER (Sıralama: 12 -> 13 -> 15)
-import baseImage from "@/assets/images/biyografy/webp/altun-12.webp";
-import middleImage from "@/assets/images/biyografy/webp/altun-15.webp";
-import topImage from "@/assets/images/biyografy/webp/altun-13.webp";
+import baseImage from "@/assets/images/biyografy/webp/altun-bio-01.webp";
+import middleImage from "@/assets/images/biyografy/webp/altun-bio-02.webp";
+import topImage from "@/assets/images/biyografy/webp/altun-bio-03.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
