@@ -72,3 +72,7 @@
   --color-gold-500: #c5a028;
   --color-dark-bg: #0a0a0a;
 }
+
+.writing-mode-vertical-rl {
+  writing-mode: vertical-rl;
+}

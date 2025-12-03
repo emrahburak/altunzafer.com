@@ -21,5 +21,19 @@
       "sword": "Kılıç & Pala Kullanımı",
       "driving": "İleri Sürüş Teknikleri"
     }
+  },
+  "career": {
+    "sectionTitle": {
+      "cinema": "SİNEMA & TV",
+      "theater": "TİYATRO",
+      "production": "EĞİTİM & YAPIM"
+    },
+    "production": {
+      "title": "Eğitim & Yapım",
+      "subtitle": "Time Right Production",
+      "globalExperienceTitle": "Global İş Ortaklıkları ve Eğitim Misyası",
+      "globalExperienceText": "Time Right Production çatısı altında yürütülen eğitim ve yapımcılık faaliyetleri, Türkiye sınırlarını aşarak Avrupa'ya uzanmaktadır. Oyuncu, yönetmen ve uygulayıcı yapımcı kimlikleriyle İsviçre (Zürich), Almanya (Berlin) ve Hollanda başta olmak üzere, 5 farklı ülkede 30 günlük 'Pir Sultan Abdal' turnesi gibi büyük organizasyonlara imza atmıştır. Bu global çalışmalar, 'Eny Finance' Reklam Serisi ve Simtronik Belgesel Filmi gibi uluslararası yapımcılık görevlerini ve Maya Kult Verein (Zürich) çatısı altında verilen oyunculuk atölyelerini kapsamaktadır.",
+      "itemRole": "Yapım & Eğitim"
+    }
   }
 }

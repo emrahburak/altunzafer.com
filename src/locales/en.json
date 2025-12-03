@@ -21,5 +21,20 @@
       "sword": "Sword & Machete",
       "driving": "Advanced Driving"
     }
+  },
+  "career": {
+    "sectionTitle": {
+      "cinema": "CINEMA & TV",
+      "theater": "THEATRE",
+      "production": "EDUCATION & PRODUCTION"
+    },
+
+    "production": {
+      "title": "Education & Production",
+      "subtitle": "Time Right Production",
+      "globalExperienceTitle": "Global Partnerships and Educational Mission",
+      "globalExperienceText": "Educational and production activities carried out under the umbrella of Time Right Production extend beyond Turkey to Europe. As an actor, director, and executive producer, Zafer Altun has signed off on major organizations, including a 30-day 'Pir Sultan Abdal' tour across 5 different countries, primarily Switzerland (Zurich), Germany (Berlin), and the Netherlands. These global works encompass international production duties such as the 'Eny Finance' Commercial Series and the Simtronik Documentary Film, as well as acting workshops provided under the Maya Kult Verein (Zurich).",
+      "itemRole": "Production & Education"
+    }
   }
 }

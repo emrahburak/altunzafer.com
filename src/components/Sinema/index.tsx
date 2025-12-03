@@ -1,6 +1,7 @@
-import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+
+
 
 // --- SİNEMA GÖRSELLERİ (c01 - c17) ---
 import c01 from "@/assets/images/sinema/webp/altun-sinema-01.webp";
@@ -19,6 +20,7 @@ import c13 from "@/assets/images/sinema/webp/altun-sinema-13.webp";
 import c14 from "@/assets/images/sinema/webp/altun-sinema-14.webp";
 import c15 from "@/assets/images/sinema/webp/altun-sinema-15.webp";
 import c16 from "@/assets/images/sinema/webp/altun-sinema-16.webp";
+import { useRef } from "react";
 
 // Görselleri grupluyoruz
 const row1 = [c01, c02, c03, c04, c05, c06, c07, c08,];
@@ -28,6 +30,8 @@ export default function Sinema() {
   const containerRef = useRef<HTMLDivElement>(null);
   const marqueeRef1 = useRef<HTMLDivElement>(null);
   const marqueeRef2 = useRef<HTMLDivElement>(null);
+
+
 
   useGSAP(() => {
     // MARQUEE ANİMASYONU (Bağımsız, sürekli akar)
@@ -111,6 +115,7 @@ export default function Sinema() {
         </div>
 
       </div>
+
     </div>
   );
 }
