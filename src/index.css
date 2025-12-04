@@ -76,3 +76,21 @@
 .writing-mode-vertical-rl {
   writing-mode: vertical-rl;
 }
+
+/* src/index.css dosyasının en altı */
+
+@layer utilities {
+
+  /* Chrome, Safari ve Opera için */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* IE, Edge ve Firefox için */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}

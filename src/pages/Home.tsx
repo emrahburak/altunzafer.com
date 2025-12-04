@@ -7,6 +7,13 @@ import Career from "../components/Career";
 import Awards from "../components/Awards";
 import Contact from "../components/Contact";
 
+// --- GSAP MERKEZİ KAYIT ---
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// 1. Eklentiyi burada, bileşen dışına kaydediyoruz.
+// Böylece Home yüklendiği anda ScrollTrigger tüm uygulama için hazır olur.
+gsap.registerPlugin(ScrollTrigger);
 
 const LazyVideos = lazy(() => import('../components/Videos'));
 

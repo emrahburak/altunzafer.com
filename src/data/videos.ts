@@ -1,74 +1,84 @@
+// --- VİDEO IMPORTLARI ---
 import v1_mp4 from "@/assets/video/altun-video-01_720p.mp4";
 import v1_webm from "@/assets/video/altun-video-01_720p.webm";
-import v2_mp4 from "@/assets/video/altun-video-01_720p.mp4";
-import v2_webm from "@/assets/video/altun-video-01_720p.webm";
+
+import v2_mp4 from "@/assets/video/altun-video-02_720p.mp4";
+import v2_webm from "@/assets/video/altun-video-02_720p.webm";
+
 import v3_mp4 from "@/assets/video/altun-video-03_720p.mp4";
 import v3_webm from "@/assets/video/altun-video-03_720p.webm";
+
 import v4_mp4 from "@/assets/video/altun-video-04_720p.mp4";
 import v4_webm from "@/assets/video/altun-video-04_720p.webm";
+
+// DİKKAT: Video 5, 540p olarak optimize edilmişti
 import v5_mp4 from "@/assets/video/altun-video-05_540p.mp4";
 import v5_webm from "@/assets/video/altun-video-05_540p.webm";
 
-// ... diğer videoları da buraya import etmelisiniz (v2, v3, v4, v5)
+// --- POSTER (KAPAK RESMİ) IMPORTLARI ---
+// Senin optimizer çıktına göre güncellendi: src/assets/images/posters/webp/
+import p1 from "@/assets/images/posters/webp/altun-video-01-poster.webp";
+import p2 from "@/assets/images/posters/webp/altun-video-02-poster.webp";
+import p3 from "@/assets/images/posters/webp/altun-video-03-poster.webp";
+import p4 from "@/assets/images/posters/webp/altun-video-04-poster.webp";
+import p5 from "@/assets/images/posters/webp/altun-video-05-poster.webp";
 
-// Video objesinin yapısını tanımlayalım (TypeScript'in gücü!)
+// --- TİP TANIMLAMASI ---
 export type VideoItem = {
   id: string;
-  titleKey: string; // Çeviri anahtarı veya direkt başlık
+  titleKey: string;
   descriptionKey: string;
-  mp4: string; // Import edilen dosya yolu
+  mp4: string;
   webm: string;
-  poster: string; // Kapak resmi yolu (örneğin WebP)
-  format: "720p" | "540p"; // Sadece bilgi amaçlı
+  poster: string;
+  format: "720p" | "540p";
 };
 
-// Bu yapıya göre tüm videoları listeleyelim.
+// --- ANA VERİ LİSTESİ ---
 export const VIDEO_SHOWCASE: VideoItem[] = [
   {
     id: "v1",
-    titleKey: "Kısa Film: Gölgeler",
-    descriptionKey: "Başarılı bir festival filmi kısa tanıtımı.",
+    titleKey: "Dizi: Mahsusa",
+    descriptionKey: "videos.desc.v1", // Çeviri anahtarı (i18n için)
     mp4: v1_mp4,
     webm: v1_webm,
-    poster: "/assets/images/videos/v1-poster.webp", // Bu yolu kontrol edin
+    poster: p1,
     format: "720p",
   },
   {
     id: "v2",
-    titleKey: "Sinema Kesiti: Sahne 4A",
-    descriptionKey: "Duygusal bir dram filminden çarpıcı bir sahne.",
-    mp4: v2_mp4, // Bu importları da yukarı eklemelisiniz
+    titleKey: "Sinema: Köşk-ü Ammar",
+    descriptionKey: "videos.desc.v2",
+    mp4: v2_mp4,
     webm: v2_webm,
-    poster: "/assets/images/videos/v2-poster.webp",
+    poster: p2,
     format: "720p",
   },
   {
     id: "v3",
-    titleKey: "Sinema Kesiti: Sahne 4A",
-    descriptionKey: "Duygusal bir dram filminden çarpıcı bir sahne.",
-    mp4: v3_mp4, // Bu importları da yukarı eklemelisiniz
+    titleKey: "Eğitim: Oyunculuk Atölyesi",
+    descriptionKey: "videos.desc.v3",
+    mp4: v3_mp4,
     webm: v3_webm,
-    poster: "/assets/images/videos/v3-poster.webp",
+    poster: p3,
     format: "720p",
   },
   {
     id: "v4",
-    titleKey: "Sinema Kesiti: Sahne 4A",
-    descriptionKey: "Duygusal bir dram filminden çarpıcı bir sahne.",
-    mp4: v4_mp4, // Bu importları da yukarı eklemelisiniz
+    titleKey: "Belgesel: Vahyin İzinde",
+    descriptionKey: "videos.desc.v4",
+    mp4: v4_mp4,
     webm: v4_webm,
-    poster: "/assets/images/videos/v4-poster.webp",
+    poster: p4,
     format: "720p",
   },
   {
     id: "v5",
-    titleKey: "Profesyonel Showreel",
-    descriptionKey: "En iyi anlardan oluşan hızlı ve dinamik derleme.",
+    titleKey: "Sinema: Sıfır Bir",
+    descriptionKey: "videos.desc.v5",
     mp4: v5_mp4,
     webm: v5_webm,
-    poster: "/assets/images/videos/v5-poster.webp",
+    poster: p5,
     format: "540p",
   },
 ];
-
-// ÖNEMLİ: Bu dosyadaki tüm importları ve video objelerini tamamlamanız gerekmektedir.

@@ -1,14 +1,12 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Modüler Bileşeni Çağırıyoruz
 import Sinema from "../Sinema";
 import Tiyatro from "../Tiyatro";
 import Production from "../Production";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Career() {
   const containerRef = useRef<HTMLDivElement>(null);

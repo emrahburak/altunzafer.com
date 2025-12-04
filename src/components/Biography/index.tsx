@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 // 1. Çeviri kancasını ekle
 import { useTranslation } from "react-i18next";
 
@@ -10,7 +9,6 @@ import baseImage from "@/assets/images/biyografy/webp/altun-bio-01.webp";
 import middleImage from "@/assets/images/biyografy/webp/altun-bio-02.webp";
 import topImage from "@/assets/images/biyografy/webp/altun-bio-03.webp";
 
-gsap.registerPlugin(ScrollTrigger);
 
 // Beceri anahtarlarını tanımlıyoruz (Çeviri dosyasındaki key'lerle eşleşecek)
 const skillKeys = ["percussion", "horse", "sword", "driving"];

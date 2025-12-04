@@ -1,181 +1,211 @@
 import { useState, useRef, useEffect } from 'react';
+import type { MouseEvent } from 'react'
 import { useTranslation } from 'react-i18next';
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from '@gsap/react';
-
-// Veri yapısını ve listeyi import ediyoruz
-// Videos.tsx dosyanızın başında:
 import { VIDEO_SHOWCASE } from '@/data/videos';
-import type { VideoItem } from '@/data/videos'; // Yalnızca tür import'u
+import type { VideoItem } from '@/data/videos';
 
-gsap.registerPlugin(ScrollTrigger);
-
-// --- BAŞLANGIÇ VİDEOSU ---
-// Varsayılan olarak ilk videoyu seçiyoruz
 const INITIAL_VIDEO = VIDEO_SHOWCASE[0];
 
 export default function Videos() {
   const { t } = useTranslation();
 
-  // Video oynatıcı ve Section referansları
-  const sectionRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const thumbnailRef = useRef(null);
-  const controlLayerRef = useRef(null);
+
+  // 1. LİSTE İÇİN REF
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 
   const [currentVideo, setCurrentVideo] = useState<VideoItem>(INITIAL_VIDEO);
-  const [isPlaying, setIsPlaying] = useState(false); // Opak katmanı kaldırma durumu
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  // --- VİDEO YÖNETİM FONKSİYONLARI ---
+  // --- DRAG TO SCROLL DEĞİŞKENLERİ ---
+  const isDown = useRef(false); // Mouse basılı mı?
+  const startX = useRef(0);     // İlk basılan nokta
+  const scrollLeft = useRef(0); // İlk scroll pozisyonu
+  const isDragging = useRef(false); // Sürükleme işlemi mi yapılıyor? (Tıklamayı engellemek için)
 
-  // Yeni bir video seçildiğinde
+  // --- VİDEO YÖNETİMİ ---
   const handleVideoChange = (video: VideoItem) => {
-    // Eğer oynatılıyorsa önce durdur ve opak katmanı geri getir
+    // Eğer kullanıcı sürükleme yapıyorsa videoyu değiştirme (Tıklamayı iptal et)
+    if (isDragging.current) {
+      // Sürükleme bittiği için flag'i sıfırla ve çık
+      isDragging.current = false;
+      return;
+    }
+
     if (videoRef.current) {
       videoRef.current.pause();
+      videoRef.current.currentTime = 0;
       setIsPlaying(false);
     }
     setCurrentVideo(video);
-    // Yeni video yüklenecek, kullanıcı tekrar "İzle" butonuna basmalı.
   };
 
-  // "Seçili projeleri izle" butonuna tıklandığında
   const handlePlayClick = () => {
     setIsPlaying(true);
     if (videoRef.current) {
-      // Opak katman kalktıktan sonra, video oynatma denemesi yapılır.
-      // Tarayıcı kısıtlamaları nedeniyle hemen oynamayabilir.
-      videoRef.current.play().catch(error => {
-        console.warn("Video otomatik oynatımı engellendi:", error);
-      });
+      videoRef.current.play().catch(console.warn);
     }
   };
 
-  // --- GSAP ANİMASYONLARI (SCROLLTRIGGER) ---
-  useGSAP(() => {
-    if (!sectionRef.current) return;
-
-    // 1. SCROLL PINNING VE ANİMASYON ZAMAN ÇİZELGESİ (TIMELINE)
-    // 200vh (2000px) kaydırma boyunca animasyon gerçekleşecek.
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        pin: true, // Section'ı sabitler
-        start: "top top", // Section, viewport'un tepesine ulaştığında başla
-        end: "+=2000", // 2000 piksel scroll boyunca çalış
-        scrub: 1, // Scroll hareketine yumuşakça bağla
-      }
-    });
-
-    // 2. THUMBNAIL (Başlangıç Görseli) Büyüme ve Kapsama Animasyonu
-    // Not: Bu animasyon, videonun kapak resmi üzerinde gerçekleşecek.
-    tl.to(thumbnailRef.current, {
-      // Section'ı kaplayacak şekilde büyüme (Tahmini değerler)
-      scale: 1.2,
-      opacity: 1,
-      // Thumbnail'in viewport'u tam doldurması için genişletme (isteğe bağlı)
-      width: '100vw',
-      height: '100vh',
-      duration: 1.5,
-      ease: "power2.out"
-    }, 0) // Zaman çizelgesinin başlangıcına yerleştir
-
-    // 3. KONTROL KATMANI OPAKLIĞI
-    tl.to(controlLayerRef.current, {
-      opacity: 0.8, // Opak katman belirginleşir
-      duration: 1,
-    }, 0.5) // 0.5 saniye gecikmeyle başla
-
-  }, { scope: sectionRef });
-
-
-  // --- KONTROL KATMANI VE VİDEO YÜKLEMESİ ---
   useEffect(() => {
-    // Her yeni video seçildiğinde (currentVideo değiştiğinde),
-    // kontrol katmanını tekrar getir ve oynatma durumunu sıfırla.
     setIsPlaying(false);
   }, [currentVideo.id]);
 
 
+  // --- MOUSE EVENT HANDLERS (SÜRÜKLEME İÇİN) ---
+
+  const onMouseDown = (e: MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    isDown.current = true;
+    isDragging.current = false; // Henüz sürüklemiyor, sadece bastı
+    scrollContainerRef.current.classList.add('cursor-grabbing');
+    scrollContainerRef.current.classList.remove('cursor-grab');
+
+    // Başlangıç noktasını kaydet
+    startX.current = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft.current = scrollContainerRef.current.scrollLeft;
+  };
+
+  const onMouseLeave = () => {
+    isDown.current = false;
+    isDragging.current = false;
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.classList.remove('cursor-grabbing');
+      scrollContainerRef.current.classList.add('cursor-grab');
+    }
+  };
+
+  const onMouseUp = () => {
+    isDown.current = false;
+    // Not: isDragging burada sıfırlanmaz, handleVideoChange içinde kontrol edilir.
+    // Sürükleme bittikten hemen sonra tıklama tetiklenirse engellemek için.
+    setTimeout(() => { isDragging.current = false; }, 50);
+
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.classList.remove('cursor-grabbing');
+      scrollContainerRef.current.classList.add('cursor-grab');
+    }
+  };
+
+  const onMouseMove = (e: MouseEvent) => {
+    if (!isDown.current || !scrollContainerRef.current) return;
+    e.preventDefault();
+
+    // Hareket miktarını hesapla
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX.current) * 2; // *2 hızı artırır (daha seri kayar)
+
+    // Eğer hareket 5 pikselden fazlaysa, bunu "Sürükleme" olarak kabul et
+    if (Math.abs(walk) > 5) {
+      isDragging.current = true;
+    }
+
+    scrollContainerRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+
   return (
-    <section ref={sectionRef} id="videos" className="w-full h-screen relative bg-black overflow-hidden">
+    <section id="videos" className="w-full min-h-screen bg-black py-20 flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 space-y-5">
 
-      {/* --- 1. ANA VİDEO OYNATICI VE ARKA PLAN --- */}
-      <div
-        ref={thumbnailRef}
-        className="absolute inset-0 bg-gray-900 transition-all duration-300 ease-out flex items-center justify-center"
-      >
-        <div className="relative w-full h-full">
-          <video
-            ref={videoRef}
-            key={currentVideo.id} // ID değişince video DOM'da yeniden oluşturulur
-            controls={isPlaying} // Opak katman kalkınca kontrolleri göster
-            poster={currentVideo.poster}
-            preload="none"
-            // Lazy loading için opacity: 0 ile başlar, GSAP ile belirginleşir (ya da poster görünür)
-            className="w-full h-full object-cover"
+        {/* ... BAŞLIK ve ANA VİDEO ALANI (Aynı kalacak) ... */}
+        {/* ... Buradaki kodlar değişmedi ... */}
+        <div className="text-left mb-10">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 border-l-4 border-red-800 pl-6 font-royal-7">
+            {t('videos.sectionTitle')}
+          </h2>
+          {/* ... */}
+
+          <div className="space-y-6 text-lg font-light text-gray-300 leading-relaxed font-fluid-2 pl-6">
+            {t('videos.description')}
+          </div>
+
+        </div>
+        <div className="w-full max-w-6xl mx-auto mb-10">
+          {/* ... Video Player Kodları ... */}
+          {/* ... Play Butonu Kodları ... */}
+          <div className="relative w-full aspect-video bg-gray-900 shadow-2xl border border-white/10 rounded-sm overflow-hidden">
+            <video
+              ref={videoRef}
+              key={currentVideo.id}
+              controls={isPlaying}
+              poster={currentVideo.poster}
+              preload="none"
+              className="w-full h-full object-cover"
+            >
+              <source src={currentVideo.webm} type="video/webm" />
+              <source src={currentVideo.mp4} type="video/mp4" />
+            </video>
+            {!isPlaying && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] z-10">
+                <button onClick={handlePlayClick} className="group transition-transform active:scale-95">
+                  {/* Play icon */}
+                  <div className="w-20 h-20 bg-gold-500 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 text-black ml-1">
+                      <path d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.285L7.28 19.991c-1.25.687-2.779-.217-2.779-1.643V5.653z" />
+                    </svg>
+                  </div>
+                </button>
+                <h3 className="mt-6 text-2xl font-bold text-white tracking-wide">{currentVideo.titleKey}</h3>
+              </div>
+            )}
+          </div>
+        </div>
+
+
+        {/* --- VİDEO LİSTESİ (GÜNCELLENDİ) --- */}
+        <div className="w-full max-w-6xl mx-auto">
+          {/* Events Eklendi: onMouseDown, onMouseLeave, onMouseUp, onMouseMove 
+              ref Eklendi: scrollContainerRef
+              Class Eklendi: cursor-grab active:cursor-grabbing select-none
+          */}
+          <div
+            ref={scrollContainerRef}
+            onMouseDown={onMouseDown}
+            onMouseLeave={onMouseLeave}
+            onMouseUp={onMouseUp}
+            onMouseMove={onMouseMove}
+            className="flex space-x-4 overflow-x-auto pb-4 no-scrollbar cursor-grab active:cursor-grabbing select-none"
           >
-            {/* Çapraz Tarayıcı Desteği */}
-            <source src={currentVideo.webm} type="video/webm" />
-            <source src={currentVideo.mp4} type="video/mp4" />
-            Tarayıcınız video etiketini desteklemiyor.
-          </video>
-
-          {/* --- OPAK LAYER (KONTROL KATMANI) --- */}
-          {/* Opak katman sadece video izlenmiyorsa (isPlaying=false) görünür */}
-          {!isPlaying && (
-            <div
-              ref={controlLayerRef}
-              className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-white opacity-0 transition-opacity duration-500"
-            >
-              <h2 className="text-4xl lg:text-7xl font-royal-7 tracking-widest uppercase mb-4 text-gold-500 text-center">
-                {t('Seçme Projeler')}
-              </h2>
-              <h3 className="text-xl lg:text-3xl font-bold mb-6 text-white text-center">
-                {currentVideo.titleKey}
-              </h3>
-
-              <button
-                onClick={handlePlayClick}
-                className="px-8 py-3 bg-gold-500 text-black font-bold uppercase tracking-wider rounded-full shadow-lg hover:bg-gold-600 transition duration-300"
+            {VIDEO_SHOWCASE.map((video) => (
+              <div
+                key={video.id}
+                onClick={() => handleVideoChange(video)}
+                // snap-center KALDIRILDI: Mouse ile sürüklerken snap özelliği takılma yapar. 
+                // Eğer mobilde snap istiyorsan, CSS media query ile sadece touch cihazlara snap eklemek gerekir.
+                className={`flex-shrink-0 w-40 lg:w-60 group transition-all duration-300
+                            ${currentVideo.id === video.id ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}
               >
-                {t('Seçili Projeyi İzle')}
-              </button>
-              <p className="mt-4 text-sm text-gray-400">
-                {currentVideo.descriptionKey}
-              </p>
-            </div>
-          )}
-        </div>
-      </div>
+                <div className={`relative aspect-video mb-3 overflow-hidden border-2 pointer-events-none 
+                                ${currentVideo.id === video.id ? 'border-gold-500' : 'border-transparent'}`}>
+                  {/* pointer-events-none: Resimlerin sürüklenmesini engeller, container'ın sürüklenmesini sağlar */}
+                  <img
+                    src={video.poster}
+                    alt={video.titleKey}
+                    className="w-full h-full object-cover"
+                    draggable="false" // Resmin ghost image olarak gelmesini engeller
+                  />
+                  {currentVideo.id !== video.id && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                      {/* Icon */}
+                    </div>
+                  )}
+                </div>
 
-      {/* --- 2. VİDEO LİSTESİ (ALTTA LİSTELEME) --- */}
-      {/* Sabitlenmiş Section içinde, alt kısımda listeyi göster */}
-      <div className="absolute bottom-0 left-0 right-0 p-8 bg-black/80 z-10 hidden lg:block">
-        <h3 className="text-xl text-white mb-4 border-b border-gold-500/50 pb-2">
-          {t('Diğer Klipler')}
-        </h3>
-        <div className="flex space-x-4 overflow-x-auto pb-2">
-          {VIDEO_SHOWCASE.map((video) => (
-            <div
-              key={video.id}
-              onClick={() => handleVideoChange(video)}
-              className={`w-40 flex-shrink-0 cursor-pointer p-2 transition-all duration-200 
-                                        ${currentVideo.id === video.id ? 'bg-gold-500/30 border-t-2 border-gold-500' : 'bg-gray-800 hover:bg-gray-700'}`}
-            >
-              <img
-                src={video.poster}
-                alt={video.titleKey}
-                className="w-full h-20 object-cover mb-1"
-              />
-              <p className="text-white text-xs truncate">{video.titleKey}</p>
-            </div>
-          ))}
+                <div className="pointer-events-none">
+                  <h4 className={`text-sm lg:text-base font-bold truncate ${currentVideo.id === video.id ? 'text-gold-500' : 'text-white'}`}>
+                    {video.titleKey}
+                  </h4>
+                  <p className="text-xs text-gray-500 truncate">
+                    {t(video.descriptionKey)}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* RESPONSIVE NOTU: Mobil cihazlarda liste alta kayar, pinned scroll kaldırılabilir. */}
+      </div>
     </section>
   );
 }
