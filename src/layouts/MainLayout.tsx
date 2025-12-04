@@ -4,12 +4,12 @@ import Navbar from "../components/Navbar"; // Yolunu projene göre ayarla
 
 export default function MainLayout() {
   return (
-    <main className="w-full bg-[#0a0a0a] text-gray-200 selection:bg-red-900 selection:text-white min-h-screen flex flex-col">
+    <main className="w-full bg-dark-bg  min-h-screen flex flex-col">
       {/* Navbar her sayfada sabit */}
       <Navbar />
 
       {/* Değişen İçerik Buraya Gelecek (Home, Privacy vb.) */}
-      <div className="flex-grow">
+      <div className="grow">
         <Outlet />
       </div>
       {/* Footer her sayfada sabit */}

@@ -1,9 +1,14 @@
+import { lazy, Suspense } from 'react';
+
 import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 import Biography from "../components/Biography";
 import Career from "../components/Career";
 import Awards from "../components/Awards";
 import Contact from "../components/Contact";
+
+
+const LazyVideos = lazy(() => import('../components/Videos'));
 
 export default function Home() {
   return (
@@ -27,6 +32,17 @@ export default function Home() {
       </div>
       <div id="awards">
         <Awards />
+      </div>
+      {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
+      <div id="videos">
+        <Suspense fallback={
+          // Kullanıcı scroll ettiğinde, Videos yüklenirken basit bir yükleme animasyonu göster
+          <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white">
+            Seçme Projeler Yükleniyor...
+          </div>
+        }>
+          <LazyVideos />
+        </Suspense>
       </div>
       <div id="contact">
         <Contact />
