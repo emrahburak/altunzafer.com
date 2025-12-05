@@ -1,60 +1,84 @@
+/// --- GÖRSEL IMPORTLARI (01 - 21) ---
+// Not: Klasör ismin 'ödül' olduğu için path'i ona göre düzenledim.
+// Build hatası alırsan klasör adını 'odul' yapmanı öneririm.
+import img1 from "@/assets/images/ödül/webp/altun-odul-01.webp";
+import img2 from "@/assets/images/ödül/webp/altun-odul-02.webp";
+import img3 from "@/assets/images/ödül/webp/altun-odul-03.webp";
+import img4 from "@/assets/images/ödül/webp/altun-odul-04.webp";
+import img5 from "@/assets/images/ödül/webp/altun-odul-05.webp";
+import img6 from "@/assets/images/ödül/webp/altun-odul-06.webp";
+import img7 from "@/assets/images/ödül/webp/altun-odul-07.webp";
+import img8 from "@/assets/images/ödül/webp/altun-odul-08.webp";
+import img9 from "@/assets/images/ödül/webp/altun-odul-09.webp";
+import img10 from "@/assets/images/ödül/webp/altun-odul-10.webp";
+import img11 from "@/assets/images/ödül/webp/altun-odul-11.webp";
+import img12 from "@/assets/images/ödül/webp/altun-odul-12.webp";
+import img13 from "@/assets/images/ödül/webp/altun-odul-13.webp";
+import img14 from "@/assets/images/ödül/webp/altun-odul-14.webp";
+import img15 from "@/assets/images/ödül/webp/altun-odul-15.webp";
+import img16 from "@/assets/images/ödül/webp/altun-odul-16.webp";
+import img17 from "@/assets/images/ödül/webp/altun-odul-17.webp";
+import img18 from "@/assets/images/ödül/webp/altun-odul-18.webp";
+import img19 from "@/assets/images/ödül/webp/altun-odul-19.webp";
+import img20 from "@/assets/images/ödül/webp/altun-odul-20.webp";
+import img21 from "@/assets/images/ödül/webp/altun-odul-21.webp";
+
 export type AwardItem = {
   id: string;
   year: string;
-  project: string;
-  category: "SİNEMA" | "TİYATRO";
-  role?: string; // Opsiyonel: Hangi kurum/rol (Örn: Bursa Devlet Tiyatrosu)
-  awards: string[]; // Bir projenin birden fazla ödülü olabilir
+  // Artık string değil, çeviri anahtarı (key) tutuyoruz
+  projectKey: string;
+  categoryKey: string;
+  awardsKeys: string;
+  images: string[];
 };
 
 export const AWARDS_DATA: AwardItem[] = [
   {
     id: "a1",
     year: "2024",
-    project: "Kayıtsız",
-    category: "SİNEMA",
-    awards: [
-      "En İyi Film Ödülü - ABD Los Angeles Independent Women Film Awards",
-    ],
+    // JSON'daki yol: awards.projects.kayitsiz.title
+    projectKey: "awards.projects.kayitsiz.title",
+    // JSON'daki yol: awards.categories.cinema
+    categoryKey: "awards.categories.cinema",
+    // JSON'daki ödül listesinin tamamını çekeceğiz
+    awardsKeys: "awards.projects.kayitsiz.list", // String olarak path veriyoruz
+    images: [img1, img21, img14, img5],
   },
   {
     id: "a2",
     year: "2022",
-    project: "İşin Aslı",
-    category: "SİNEMA",
-    awards: [
-      "Zafer Altun Katılım Ödülü - Kazakistan Almatı Türk Filmleri Haftası",
-    ],
+    projectKey: "awards.projects.isin_asli.title",
+    categoryKey: "awards.categories.cinema",
+    awardsKeys: "awards.projects.isin_asli.list",
+    images: [img2, img19, img8],
   },
   {
     id: "a3",
     year: "2017",
-    project: "Rüya",
-    category: "SİNEMA",
-    awards: [
-      "Türk Kültürüne Katkı Ödülü - Yunus Emre Enstitüsü",
-      "Onur Ödülü - 8. Uluslararası Suç ve Ceza Film Festivali",
-    ],
+    projectKey: "awards.projects.ruya.title",
+    categoryKey: "awards.categories.cinema",
+    awardsKeys: "awards.projects.ruya.list",
+    // Karma: 5 adet görsel, yoğun içerik
+    images: [img3, img11, img20, img15, img6],
   },
   {
     id: "a4",
     year: "2015",
-    project: "Balık",
-    category: "SİNEMA",
-    awards: [
-      "Onur Ödülü / Altın Ada Festivali",
-      "Sinema Yazarları Derneği Ödülü / Malatya Film Festivali",
-      "En İyi Senaryo Ödülü / Adana Film Festivali",
-    ],
+    projectKey: "awards.projects.balik.title",
+    categoryKey: "awards.categories.cinema",
+    awardsKeys: "awards.projects.balik.list",
+
+    // Karma: 4 adet görsel
+    images: [img4, img9, img18, img12],
   },
+
   {
     id: "a5",
     year: "2009",
-    project: "Çok Orijinal Bir Oyun",
-    category: "TİYATRO",
-    role: "Bursa Devlet Tiyatrosu",
-    awards: [
-      "Yılın Genç Yetenek Ödülü - Direklerarası 9. Lions Kerem Yılmazer",
-    ],
+    projectKey: "awards.projects.cok_orijinal.title",
+    categoryKey: "awards.categories.theater",
+    awardsKeys: "awards.projects.cok_orijinal.list",
+    images: [img7, img10, img13, img16, img17],
   },
 ];

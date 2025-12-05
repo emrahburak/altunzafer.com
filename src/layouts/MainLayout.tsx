@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar"; // Yolunu projene göre ayarla
-// import Footer from "../components/Footer"; // Henüz yoksa yorum satırı kalsın
 
 export default function MainLayout() {
   return (
@@ -12,8 +11,6 @@ export default function MainLayout() {
       <div className="grow">
         <Outlet />
       </div>
-      {/* Footer her sayfada sabit */}
-      {/* <Footer /> */}
     </main>
   );
 }

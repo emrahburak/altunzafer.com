@@ -80,7 +80,7 @@ export default function Biography() {
 
         {/* SOL KOLON (Yazı) */}
         <div className="z-40 relative">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 border-l-4 border-red-800 pl-6 font-royal-7">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 border-l-4 border-gold-500 pl-6 font-royal-7">
             {t("biography.title")}
           </h2>
 

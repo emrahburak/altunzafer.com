@@ -40,5 +40,55 @@
   "videos": {
     "sectionTitle": "SHOWREEL",
     "description": "Work samples from national and international projects that reflect my acting and directing vision."
+  },
+  "awards": {
+    "title": "HONORS & AWARDS",
+    "subtitle": "Curriculum Vitae",
+    "categories": {
+      "cinema": "CINEMA",
+      "theater": "THEATER"
+    },
+    "projects": {
+      "kayitsiz": {
+        "title": "Indifferent (Kayıtsız)",
+        "list": [
+          "Best Film Award - USA Los Angeles Independent Women Film Awards"
+        ]
+      },
+      "isin_asli": {
+        "title": "The Truth of the Matter",
+        "list": [
+          "Zafer Altun Participation Award - Kazakhstan Almaty Turkish Film Week"
+        ]
+      },
+      "ruya": {
+        "title": "The Dream",
+        "list": [
+          "Contribution to Turkish Culture Award - Yunus Emre Institute",
+          "Honorary Award - 8th International Crime and Punishment Film Festival"
+        ]
+      },
+      "balik": {
+        "title": "The Fish",
+        "list": [
+          "Honorary Award / Golden Island Festival",
+          "Film Critics Association Award / Malatya Film Festival",
+          "Best Screenplay Award / Adana Film Festival"
+        ]
+      },
+      "cok_orijinal": {
+        "title": "A Very Original Play",
+        "list": [
+          "Young Talent of the Year - Direklerarası 9th Lions Kerem Yılmazer"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "management": "MANAGEMENT",
+    "email": "E-MAIL",
+    "founder": "Time Right Production Founder",
+    "locations": "Istanbul / Switzerland / Netherlands"
   }
 }

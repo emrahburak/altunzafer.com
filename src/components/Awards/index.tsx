@@ -1,146 +1,170 @@
-import { useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { AWARDS_DATA } from "@/data/awards";
-import type { AwardItem } from "@/data/awards"
+import type { AwardItem } from "@/data/awards";
 
 export default function Awards() {
   const { t } = useTranslation();
-  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
 
-  // Hangi ödülün aktif olduğunu tutuyoruz
+  // Hangi ödülün üzerinde olduğumuzu tutuyoruz
   const [activeAward, setActiveAward] = useState<AwardItem | null>(null);
 
-  // Mouse takibi için ref
-  const cursorLabelRef = useRef<HTMLDivElement>(null);
-
+  // --- ANİMASYON MANTIĞI: LİSTE GİRİŞİ ---
   useGSAP(() => {
-    // 1. Liste Giriş Animasyonu
-    gsap.from(".award-item", {
+    gsap.from(".award-list-item", {
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 70%",
+        trigger: containerRef.current,
+        start: "top 75%",
       },
-      y: 100,
+      y: 50,
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
       stagger: 0.1,
-      ease: "power4.out"
+      ease: "power2.out"
     });
+  }, { scope: containerRef });
 
-    // 2. Mouse Takip Eden Label (Cursor Follower)
-    const xTo = gsap.quickTo(cursorLabelRef.current, "x", { duration: 0.3, ease: "power3" });
-    const yTo = gsap.quickTo(cursorLabelRef.current, "y", { duration: 0.3, ease: "power3" });
+  // --- ANİMASYON MANTIĞI: RESİMLERİN BELİRMESİ ---
+  useGSAP(() => {
+    if (activeAward) {
+      gsap.fromTo(".scatter-img",
+        {
+          scale: 0.8, // %80 boyuttan başla
+          opacity: 0,
+          y: 30, // Hafif aşağıdan yukarı
+          rotation: () => gsap.utils.random(-15, 15) // Rastgele başlangıç açısı
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          y: 0,
+          rotation: () => gsap.utils.random(-10, 10), // Rastgele bitiş açısı
+          duration: 0.8, // Smooth (Yumuşak) süre
+          stagger: 0.08, // Pıt-pıt-pıt etkisi
+          ease: "power3.out", // Kadife gibi duruş (Yaylanmasız)
+          overwrite: true
+        }
+      );
+    }
+  }, [activeAward]);
 
-    const handleMouseMove = (e: MouseEvent) => {
-      // Mouse konumunu alıp follower'a ilet
-      // Sayfa scroll'unu hesaba katmadan viewport'a göre pozisyon almalı (fixed ise)
-      // Ama burada container içinde absolute kullanacağız
-      if (sectionRef.current) {
-        // Container'a göre göreceli pozisyon hesaplama (daha güvenli)
-        // Bu örnekte basitlik için clientX/Y kullanıyoruz ve fixed element yapıyoruz
-        xTo(e.clientX);
-        yTo(e.clientY);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-
-  }, { scope: sectionRef });
+  // --- ASİMETRİK KONUMLANDIRMA FONKSİYONU ---
+  const getImageStyle = (index: number) => {
+    // Sağ panel içindeki yüzdesel konumlar (Responsive ve Asimetrik)
+    const positions = [
+      { top: "10%", left: "10%", width: "18rem", zIndex: 10 }, // Sol Üst
+      { top: "40%", left: "40%", width: "22rem", zIndex: 20 }, // Merkez
+      { top: "15%", left: "55%", width: "16rem", zIndex: 15 }, // Sağ Üst
+      { top: "55%", left: "5%", width: "20rem", zIndex: 25 },  // Sol Alt
+      { top: "60%", left: "50%", width: "18rem", zIndex: 5 },  // Sağ Alt
+    ];
+    return positions[index % positions.length];
+  };
 
   return (
     <section
-      ref={sectionRef}
+      ref={containerRef}
       id="awards"
-      className="min-h-screen py-24 bg-black flex flex-col justify-center relative overflow-hidden"
+      className="h-screen bg-dark-bg py-24 flex items-center relative overflow-hidden"
     >
-      {/* BAŞLIK */}
-      <div className="container mx-auto px-6 md:px-24 mb-12 border-b border-white/10 pb-6 flex items-end justify-between">
-        <div>
-          <span className="text-gold-500 font-bold tracking-[0.2em] text-xs uppercase block mb-2">
-            Curriculum Vitae
-          </span>
-          <h2 className="text-4xl md:text-6xl font-royal-7 text-white uppercase tracking-tighter">
-            {t('ÖDÜLLER')}
-          </h2>
-        </div>
-        <div className="text-right hidden md:block">
-          <span className="text-gray-500 text-sm">Selected Recognitions</span>
-        </div>
-      </div>
+      <div className="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row h-full relative z-10">
 
-      {/* --- LİSTE --- */}
-      <div className="container mx-auto px-6 md:px-24 z-10">
-        <div className="flex flex-col">
-          {AWARDS_DATA.map((item) => (
-            <div
-              key={item.id}
-              className="award-item group relative border-b border-white/10 py-8 cursor-none transition-colors duration-300 hover:bg-white/5"
-              onMouseEnter={() => setActiveAward(item)}
-              onMouseLeave={() => setActiveAward(null)}
-            >
-              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between">
+        {/* --- SOL KOLON: LİSTE --- */}
+        <div className="w-full lg:w-5/12 z-20 flex flex-col justify-center">
 
-                {/* Sol: Yıl ve Proje Adı */}
-                <div className="flex items-baseline gap-6">
-                  <span className="text-gold-500/50 font-mono text-sm md:text-base">
-                    {item.year}
-                  </span>
-                  <h3 className="text-3xl md:text-6xl font-bold text-gray-400 group-hover:text-white group-hover:translate-x-4 transition-all duration-500 ease-out">
-                    {item.project}
-                  </h3>
-                </div>
-
-                {/* Sağ: Kategori (Mobilde gizlenebilir veya alta alınabilir) */}
-                <span className="text-xs font-bold px-2 py-1 border border-white/10 text-gray-500 rounded uppercase mt-2 md:mt-0 opacity-50 group-hover:opacity-100 group-hover:border-gold-500 group-hover:text-gold-500 transition-all">
-                  {item.category}
-                </span>
-              </div>
-
-              {/* Mobil İçin: Detaylar hemen altta çıksın (Mouse yoksa) */}
-              <div className="md:hidden mt-4 text-gray-400 text-sm">
-                {item.awards.map((award, i) => (
-                  <p key={i}>• {award}</p>
-                ))}
-              </div>
-
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* --- MOUSE FOLLOWER (Sadece Masaüstü) --- */}
-      {/* Mouse üzerine gelince beliren detay kutusu */}
-      <div
-        ref={cursorLabelRef}
-        className={`fixed top-0 left-0 pointer-events-none z-50 hidden md:block
-                    ${activeAward ? 'opacity-100 scale-100' : 'opacity-0 scale-50'} 
-                    transition-all duration-300 ease-out`}
-        style={{
-          transform: 'translate(-50%, -50%)', // Mouse'u ortala
-          // Mouse'un biraz sağında dursun ki yazıyı kapatmasın
-          marginLeft: '20px',
-          marginTop: '20px'
-        }}
-      >
-        {activeAward && (
-          <div className="bg-gold-500 text-black p-6 min-w-[300px] max-w-[400px] shadow-2xl rounded-sm">
-            <p className="font-bold text-xs tracking-widest uppercase mb-2 opacity-70 border-b border-black/20 pb-1">
-              {activeAward.role || "ÖDÜLLER"}
-            </p>
-            <ul className="space-y-2">
-              {activeAward.awards.map((award, i) => (
-                <li key={i} className="text-lg font-bold leading-tight">
-                  {award}
-                </li>
-              ))}
-            </ul>
+          {/* Başlık */}
+          <div className="mb-12 border-l-4 border-gold-500 pl-6">
+            <h2 className="text-4xl md:text-5xl font-royal-7 text-white uppercase tracking-tight">
+              {t('awards.title', 'ÖDÜLLER')}
+            </h2>
           </div>
-        )}
-      </div>
 
+          {/* Liste */}
+          <div className="space-y-6">
+            {AWARDS_DATA.map((item) => {
+              // i18n'den ödül listesini dizi olarak çekme
+              const awardList = t(item.awardsKeys, { returnObjects: true }) as string[];
+
+              return (
+                <div
+                  key={item.id}
+                  className="award-list-item group cursor-pointer"
+                  onMouseEnter={() => setActiveAward(item)}
+                // Son seçilen ekranda kalsın diye onMouseLeave boş bırakıldı
+                >
+                  {/* Proje Adı */}
+                  <h3 className={`text-2xl md:text-4xl font-bold transition-all duration-300 
+                                ${activeAward?.id === item.id ? 'text-gold-500 translate-x-4' : 'text-gray-400 group-hover:text-white'}`}>
+                    {t(item.projectKey)}
+                  </h3>
+
+                  {/* Alt Bilgi (Accordion) */}
+                  <div className={`mt-2 pl-1 border-l border-white/10 transition-all duration-500 overflow-hidden
+                                    ${activeAward?.id === item.id ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+                    <div className="pl-4 py-2">
+                      <p className="text-sm text-gold-500/80 font-mono mb-1">
+                        {item.year} — {t(item.categoryKey)}
+                      </p>
+                      {/* Ödüller */}
+                      {Array.isArray(awardList) && awardList.map((award, i) => (
+                        <p key={i} className="text-sm text-gray-300 font-light leading-relaxed">
+                          • {award}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+
+        {/* --- SAĞ KOLON: ASİMETRİK GÖRSELLER (SAHNE) --- */}
+        <div className="hidden lg:block lg:w-7/12 relative h-[80vh] pointer-events-none">
+
+          {/* Aktif ödül varsa resimleri göster */}
+          {activeAward && activeAward.images.map((imgSrc, index) => {
+            const style = getImageStyle(index);
+
+            return (
+              <div
+                key={`${activeAward.id}-img-${index}`}
+                className="scatter-img absolute p-2 bg-white shadow-2xl origin-center"
+                style={{
+                  top: style.top,
+                  left: style.left,
+                  width: style.width,
+                  zIndex: style.zIndex,
+                  // transform: rotate GSAP tarafından yönetiliyor
+                }}
+              >
+                {/* Polaroid Çerçeve */}
+                <div className="w-full h-full overflow-hidden bg-gray-200">
+                  <img
+                    src={imgSrc}
+                    alt="Award moment"
+                    className="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700 ease-in-out pointer-events-auto"
+                  />
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Boş Durum (Hiçbir şey seçili değilken) */}
+          {!activeAward && (
+            <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+              <span className="text-6xl md:text-8xl font-royal-7 text-white tracking-[0.5em] rotate-0 select-none">
+                ZAFER ALTUN
+              </span>
+            </div>
+          )}
+        </div>
+
+      </div>
     </section>
   );
 }

@@ -13,8 +13,8 @@ import t03 from "@/assets/images/tiyatro/webp/altun-tiyatro-03.webp";
 import t04 from "@/assets/images/tiyatro/webp/altun-tiyatro-04.webp";
 import t05 from "@/assets/images/tiyatro/webp/altun-tiyatro-05.webp";
 import t06 from "@/assets/images/tiyatro/webp/altun-tiyatro-06.webp";
-import t07 from "@/assets/images/tiyatro/webp/altun-tiyatro-01.webp";
-import t08 from "@/assets/images/tiyatro/webp/altun-tiyatro-02.webp";
+import t07 from "@/assets/images/tiyatro/webp/altun-tiyatro-07.webp";
+import t08 from "@/assets/images/tiyatro/webp/altun-tiyatro-08.webp";
 
 // --- ANA VERİ KAYNAĞI ---
 const initialData = [
