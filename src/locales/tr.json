@@ -1,25 +1,38 @@
 {
   "navbar": {
-    "home": "Ana Sayfa",
-    "biography": "Biyografi",
-    "career": "Kariyer",
-    "awards": "Ödüller",
-    "contact": "İletişim",
-    "privacy": "Gizlilik Politikası",
+    "home": "ANASAYFA",
+    "biography": "BİYOGRAFİ",
+    "career": "KARİYER",
+    "videos": "PERFORMANSLAR",
+    "awards": "ÖDÜLLER",
+    "contact": "İLETİŞİM",
     "menu": "MENÜ",
     "close": "KAPAT"
+  },
+  "hero": {
+    "subtitle": "OYUNCU & YÖNETMEN & EĞITMEN",
+    "description": "Sahne, ekran ve eğitimde uluslararası bir kariyer."
   },
   "biography": {
     "title": "Biyografi",
     "p1": "1980 yılında Bursa'da doğdu. 2001 yılında girdiği Selçuk Üniversitesi Devlet Konservatuvarı Tiyatro Oyunculuk Bölümü'nden 2005 yılında mezun oldu.",
     "p2": "Kariyerine Bursa Devlet Tiyatrosu'nda başladı ve 'Çok Orijinal Bir Oyun' adlı performansı ile Direklerarası Lions Kerem Yılmazer Genç Yetenek Ödülü'ne layık görüldü.",
     "p3": "Uluslararası alanda İsviçre ve Hollanda merkezli projelerde yönetmen, oyuncu ve yapımcı olarak çalışmalarını sürdürmektedir. Kendi yapım şirketi Time Right Production ile global projelere imza atmaktadır.",
-    "skillsTitle": "Özel Beceriler",
+    "instructorTitle": "EĞİTMENLİK ALANLARI",
+    "instructor": {
+      "theaterActing": "Tiyatro Oyunculuk",
+      "diction": "Diksiyon",
+      "cameraActing": "Kamera Önü Oyunculuk",
+      "effectiveSpeaking": "Etkili Konuşma",
+      "audition": "Audition Teknikleri"
+    },
+
+    "skillsTitle": "KİŞİSEL BECERİLER",
     "skills": {
       "percussion": "Perküsyon",
       "horse": "At Biniciliği",
-      "sword": "Kılıç & Pala Kullanımı",
-      "driving": "İleri Sürüş Teknikleri"
+      "sword": "Kılıç Kullanımı",
+      "driving": "Araba Sürme"
     }
   },
   "career": {
@@ -89,5 +102,10 @@
     "email": "E-POSTA",
     "founder": "Time Right Production Kurucusu",
     "locations": "İstanbul / İsviçre / Hollanda"
+  },
+  "footer": {
+    "privacy": "Gizlilik Politikası ve Kullanım Şartları",
+    "rights": "Tüm hakları saklıdır.",
+    "developer": "Geliştirici:"
   }
 }

@@ -1,25 +1,38 @@
 {
   "navbar": {
-    "home": "Home",
-    "biography": "Biography",
-    "career": "Career",
-    "awards": "Awards",
-    "contact": "Contact",
-    "privacy": "Privacy Policy",
+    "home": "HOME",
+    "biography": "BIOGRAPHY",
+    "career": "CAREER",
+    "videos": "PERFORMANCES",
+    "awards": "AWARDS",
+    "contact": "CONTACT",
     "menu": "MENU",
     "close": "CLOSE"
+  },
+  "hero": {
+    "subtitle": "ACTOR, DIRECTOR & ACTING COACH",
+    "description": "An international career across stage, screen, and education."
   },
   "biography": {
     "title": "Biography",
     "p1": "Born in Bursa in 1980. He graduated from Selçuk University State Conservatory, Department of Acting in 2005.",
     "p2": "He started his career at Bursa State Theater and was deemed worthy of the Direklerarası Lions Kerem Yılmazer Young Talent Award for his performance in 'A Very Original Play'.",
     "p3": "He continues his work as a director, actor, and producer in international projects based in Switzerland and the Netherlands. He signs global projects with his own production company, Time Right Production.",
-    "skillsTitle": "Special Skills",
+    "instructorTitle": "INSTRUCTOR AREAS",
+    "instructor": {
+      "theaterActing": "Theater Acting",
+      "diction": "Diction",
+      "cameraActing": "On-Camera Acting",
+      "effectiveSpeaking": "Effective Speaking",
+      "audition": "Audition Techniques"
+    },
+
+    "skillsTitle": "PERSONAL SKILLS",
     "skills": {
       "percussion": "Percussion",
       "horse": "Horse Riding",
-      "sword": "Sword & Machete",
-      "driving": "Advanced Driving"
+      "sword": "Sword Fighting",
+      "driving": "Driving Car"
     }
   },
   "career": {
@@ -90,5 +103,10 @@
     "email": "E-MAIL",
     "founder": "Time Right Production Founder",
     "locations": "Istanbul / Switzerland / Netherlands"
+  },
+  "footer": {
+    "privacy": "Privacy Policy and Terms & Conditions",
+    "rights": "All rights reserved.",
+    "developer": "Developed by"
   }
 }

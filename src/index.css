@@ -94,3 +94,11 @@
     /* Firefox */
   }
 }
+
+/* GSAP Pinning'in çalışması için bu önemli */
+html,
+body {
+  overflow-x: clip;
+  /* hidden yerine clip kullanmak daha güvenlidir */
+  /* height: 100%; <-- Bu varsa silmeyi dene */
+}
