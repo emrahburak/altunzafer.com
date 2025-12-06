@@ -10,6 +10,8 @@ import Contact from "../components/Contact";
 // --- GSAP MERKEZİ KAYIT ---
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MobileCareer from '@/components/MobileCareer';
+import MobileAwards from '@/components/MobileAwards';
 
 // 1. Eklentiyi burada, bileşen dışına kaydediyoruz.
 // Böylece Home yüklendiği anda ScrollTrigger tüm uygulama için hazır olur.
@@ -34,11 +36,32 @@ export default function Home() {
       <div id="biography">
         <Biography />
       </div>
+      {/* TEKİL SABİT ÇAPA: Tüm mobil/desktop geçişlerini sarmalar. */}
+      {/* Navbar'ın hedefi her zaman bu div olacaktır. */}
       <div id="career">
-        <Career />
+
+        {/* DESKTOP (LG ve üzeri) İçin Complex Animasyonlu Bileşen */}
+        {/* Bileşenin kendisinde ID olmamalıdır! */}
+        <div className="hidden lg:block">
+          <Career />
+        </div>
+
+        {/* MOBİL (LG altı) İçin Sade Sticky Versiyon */}
+        {/* Bileşenin kendisinde ID olmamalıdır! */}
+        <div className="lg:hidden">
+          <MobileCareer />
+        </div>
+
       </div>
       <div id="awards">
-        <Awards />
+
+        <div className="hidden lg:block">
+          <Awards />
+        </div>
+
+        <div className="lg:hidden">
+          <MobileAwards />
+        </div>
       </div>
       {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
       <div id="videos">

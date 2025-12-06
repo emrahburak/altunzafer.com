@@ -71,9 +71,10 @@ export default function Navbar() {
         <div className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
             <button
+              type="button"
               key={link.id}
               onClick={() => handleNavigation(link.id)}
-              className="text-sm uppercase tracking-[0.2em] text-gray-300 hover:text-gold-500 transition-colors font-light"
+              className=" uppercase tracking-[0.2em] text-gray-300 hover:text-gold-500 transition-colors font-light cursor-pointer"
             >
               {link.label}
             </button>
@@ -82,15 +83,17 @@ export default function Navbar() {
           {/* --- DİL DEĞİŞTİRME BUTONU (DESKTOP) --- */}
           <div className="flex items-center gap-2 ml-4 border-l border-gray-700 pl-6">
             <button
+              type="button"
               onClick={() => i18n.changeLanguage('tr')}
-              className={`text-xs font-bold transition-colors ${i18n.language === 'tr' ? 'text-gold-500' : 'text-gray-500 hover:text-white'}`}
+              className={`text-xs font-bold transition-colors cursor-pointer ${i18n.language === 'tr' ? 'text-gold-500' : 'text-gray-500 hover:text-white'}`}
             >
               TR
             </button>
             <span className="text-gray-600">|</span>
             <button
+              type="button"
               onClick={() => i18n.changeLanguage('en')}
-              className={`text-xs font-bold transition-colors ${i18n.language === 'en' ? 'text-gold-500' : 'text-gray-500 hover:text-white'}`}
+              className={`text-xs font-bold transition-colors cursor-pointer ${i18n.language === 'en' ? 'text-gold-500' : 'text-gray-500 hover:text-white'}`}
             >
               EN
             </button>

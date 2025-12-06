@@ -62,7 +62,7 @@ export default function Sinema() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full h-full relative flex overflow-hidden">
+      <div ref={containerRef} className="w-full h-auto relative flex overflow-hidden">
 
         {/* --- A) SOL TARAF: TEXT İÇERİĞİ (%40) --- */}
         <div className="relative z-20 w-full lg:w-[40%] h-full flex flex-col justify-center px-12 md:px-16 bg-linear-to-r from-black via-black to-transparent">

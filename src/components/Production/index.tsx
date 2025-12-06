@@ -105,7 +105,7 @@ export default function Production() {
     <>
       <div
         ref={containerRef}
-        className="w-full h-full bg-[#0a0a0a] relative flex items-center justify-center"
+        className="w-full h-auto bg-dark-bg relative flex items-center justify-center"
       >
         {/* Arka Plan Dekoru */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
@@ -119,7 +119,7 @@ export default function Production() {
 
         {/* --- İKİ KOLONLU KAPSAYICI --- */}
         <div className="
-           w-full h-full lg:w-[90vw] lg:h-[100vh] 
+           w-full h-full lg:w-[90vw] lg:h-screen 
            flex flex-col lg:flex-row lg:justify-between lg:items-center 
            overflow-y-auto lg:overflow-hidden 
            px-6 py-24 lg:p-0
@@ -164,7 +164,7 @@ export default function Production() {
                     <div
                       key={`${colIndex}-${i}`}
                       onClick={() => handleImageClick(item.img)}
-                      className="group relative w-full aspect-[3/4] rounded-sm overflow-hidden border border-white/5 bg-white/5 cursor-pointer flex-shrink-0"
+                      className="group relative w-full aspect-3/4 rounded-sm overflow-hidden border border-white/5 bg-white/5 cursor-pointer shrink-0"
                     >
                       <img
                         src={item.img}
@@ -172,11 +172,10 @@ export default function Production() {
                         className="w-full h-full object-cover opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                       />
 
-                      <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <div className="absolute bottom-0 left-0 w-full p-4 bg-linear-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-gold-500 text-[10px] uppercase tracking-widest block mb-1">
                           {t('career.production.itemRole')}
                         </span>
-                        <h3 className="text-white font-royal-1 text-sm">{item.title}</h3>
                       </div>
                     </div>
                   ))}

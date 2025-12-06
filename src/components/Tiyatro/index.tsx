@@ -93,7 +93,11 @@ export default function Tiyatro() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full h-full bg-[#0a0a0a] relative flex items-center justify-start overflow-hidden">
+      <div
+        ref={containerRef}
+        // DÜZELTME: Mobilde esnek kalması için 'h-auto', Masaüstünde tam yükseklik için 'lg:h-full'
+        className="w-full h-auto lg:h-full bg-[#0a0a0a] relative flex items-center justify-start overflow-hidden"
+      >
 
         {/* Arka Plan Efektleri */}
         <div className="absolute inset-0 bg-radial-gradient from-[#2a0a0a] to-black opacity-60 pointer-events-none"></div>
@@ -123,7 +127,7 @@ export default function Tiyatro() {
                   key={i}
                   onClick={() => handleImageClick(item)}
                   // hover:z-30 ve lg:hover:scale-105 etkileşimi için group sınıfı kullanılır
-                  className={`${itemWidthClass} flex-shrink-0 relative h-full overflow-hidden border border-white/5 bg-black cursor-pointer group
+                  className={`${itemWidthClass} shrink-0 relative h-full overflow-hidden border border-white/5 bg-black cursor-pointer group
                                  shadow-xl transition-all duration-300 ease-out 
                                  hover:z-30 lg:hover:scale-105`}
                 >

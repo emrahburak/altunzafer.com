@@ -41,6 +41,11 @@
       "theater": "TİYATRO",
       "production": "EĞİTİM & YAPIM"
     },
+    "intro": {
+      "sinema": "Sinema ve televizyon projelerinden seçilen bu eserler, Zafer Altun'un dramatik derinliğini ve kamera önü hakimiyetini sergilemektedir. Her bir eser, kariyerindeki dönüm noktalarını temsil eder.",
+      "theater": "Tiyatro sahnelerinden seçilen bu kareler, sanatçının sahne hakimiyetini ve karakter derinliğini yansıtmaktadır. Çağdaş ve klasik eserlerden özel kesitler sunulmaktadır.",
+      "production": "Time Right Production çatısı altında yürütülen eğitim ve yapımcılık faaliyetleri, Türkiye sınırlarını aşarak Avrupa'ya uzanmaktadır. Oyuncu, yönetmen ve uygulayıcı yapımcı kimlikleriyle İsviçre (Zürich), Almanya (Berlin) ve Hollanda başta olmak üzere, 5 farklı ülkede 30 günlük 'Pir Sultan Abdal' turnesi gibi büyük organizasyonlara imza atmıştır. Bu global çalışmalar, 'Eny Finance' Reklam Serisi ve Simtronik Belgesel Filmi gibi uluslararası yapımcılık görevlerini ve Maya Kult Verein (Zürich) çatısı altında verilen oyunculuk atölyelerini kapsamaktadır."
+    },
     "production": {
       "title": "Eğitim & Yapım",
       "subtitle": "Time Right Production",
