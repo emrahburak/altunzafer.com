@@ -1,0 +1,116 @@
+{
+  "navbar": {
+    "home": "ANASAYFA",
+    "biography": "BİYOGRAFİ",
+    "career": "KARİYER",
+    "videos": "PERFORMANSLAR",
+    "awards": "ÖDÜLLER",
+    "contact": "İLETİŞİM",
+    "menu": "MENÜ",
+    "close": "KAPAT"
+  },
+  "hero": {
+    "subtitle": "OYUNCU & YÖNETMEN & EĞITMEN",
+    "description": "Sahne, ekran ve eğitimde uluslararası bir kariyer."
+  },
+  "biography": {
+    "title": "Biyografi",
+    "p1": "1980 yılında Bursa'da doğdu. 2001 yılında girdiği Selçuk Üniversitesi Devlet Konservatuvarı Tiyatro Oyunculuk Bölümü'nden 2005 yılında mezun oldu.",
+    "p2": "Kariyerine Bursa Devlet Tiyatrosu'nda başladı ve 'Çok Orijinal Bir Oyun' adlı performansı ile Direklerarası Lions Kerem Yılmazer Genç Yetenek Ödülü'ne layık görüldü.",
+    "p3": "Uluslararası alanda İsviçre ve Hollanda merkezli projelerde yönetmen, oyuncu ve yapımcı olarak çalışmalarını sürdürmektedir. Kendi yapım şirketi Time Right Production ile global projelere imza atmaktadır.",
+    "instructorTitle": "EĞİTMENLİK ALANLARI",
+    "instructor": {
+      "theaterActing": "Tiyatro Oyunculuk",
+      "diction": "Diksiyon",
+      "cameraActing": "Kamera Önü Oyunculuk",
+      "effectiveSpeaking": "Etkili Konuşma",
+      "audition": "Audition Teknikleri"
+    },
+
+    "skillsTitle": "KİŞİSEL BECERİLER",
+    "skills": {
+      "percussion": "Perküsyon",
+      "horse": "At Biniciliği",
+      "sword": "Kılıç Kullanımı",
+      "driving": "Araba Sürme"
+    }
+  },
+  "career": {
+    "sectionTitle": {
+      "cinema": "SİNEMA & TV",
+      "theater": "TİYATRO",
+      "production": "EĞİTİM & YAPIM"
+    },
+    "intro": {
+      "sinema": "Sinema ve televizyon projelerinden seçilen bu eserler, Zafer Altun'un dramatik derinliğini ve kamera önü hakimiyetini sergilemektedir. Her bir eser, kariyerindeki dönüm noktalarını temsil eder.",
+      "theater": "Tiyatro sahnelerinden seçilen bu kareler, sanatçının sahne hakimiyetini ve karakter derinliğini yansıtmaktadır. Çağdaş ve klasik eserlerden özel kesitler sunulmaktadır.",
+      "production": "Time Right Production çatısı altında yürütülen eğitim ve yapımcılık faaliyetleri, Türkiye sınırlarını aşarak Avrupa'ya uzanmaktadır. Oyuncu, yönetmen ve uygulayıcı yapımcı kimlikleriyle İsviçre (Zürich), Almanya (Berlin) ve Hollanda başta olmak üzere, 5 farklı ülkede 30 günlük 'Pir Sultan Abdal' turnesi gibi büyük organizasyonlara imza atmıştır. Bu global çalışmalar, 'Eny Finance' Reklam Serisi ve Simtronik Belgesel Filmi gibi uluslararası yapımcılık görevlerini ve Maya Kult Verein (Zürich) çatısı altında verilen oyunculuk atölyelerini kapsamaktadır."
+    },
+    "production": {
+      "title": "Eğitim & Yapım",
+      "subtitle": "Time Right Production",
+      "globalExperienceTitle": "Global İş Ortaklıkları ve Eğitim Misyası",
+      "globalExperienceText": "Time Right Production çatısı altında yürütülen eğitim ve yapımcılık faaliyetleri, Türkiye sınırlarını aşarak Avrupa'ya uzanmaktadır. Oyuncu, yönetmen ve uygulayıcı yapımcı kimlikleriyle İsviçre (Zürich), Almanya (Berlin) ve Hollanda başta olmak üzere, 5 farklı ülkede 30 günlük 'Pir Sultan Abdal' turnesi gibi büyük organizasyonlara imza atmıştır. Bu global çalışmalar, 'Eny Finance' Reklam Serisi ve Simtronik Belgesel Filmi gibi uluslararası yapımcılık görevlerini ve Maya Kult Verein (Zürich) çatısı altında verilen oyunculuk atölyelerini kapsamaktadır.",
+      "itemRole": "Yapım & Eğitim"
+    }
+  },
+  "videos": {
+    "sectionTitle": "SHOWREEL",
+    "description": "Yer aldığım ulusal ve uluslararası projelerden, oyunculuk ve yönetmenlik vizyonumu yansıtan çalışma örnekleri"
+  },
+  "awards": {
+    "title": "BAŞARILAR & ÖDÜLLER",
+    "subtitle": "Curriculum Vitae",
+    "categories": {
+      "cinema": "SİNEMA",
+      "theater": "TİYATRO"
+    },
+    "projects": {
+      "kayitsiz": {
+        "title": "Kayıtsız",
+        "list": [
+          "En İyi Film Ödülü - ABD Los Angeles Independent Women Film Awards"
+        ]
+      },
+      "isin_asli": {
+        "title": "İşin Aslı",
+        "list": [
+          "Zafer Altun Katılım Ödülü - Kazakistan Almatı Türk Filmleri Haftası"
+        ]
+      },
+      "ruya": {
+        "title": "Rüya",
+        "list": [
+          "Türk Kültürüne Katkı Ödülü - Yunus Emre Enstitüsü",
+          "Onur Ödülü - 8. Uluslararası Suç ve Ceza Film Festivali"
+        ]
+      },
+      "balik": {
+        "title": "Balık",
+        "list": [
+          "Onur Ödülü / Altın Ada Festivali",
+          "Sinema Yazarları Derneği Ödülü / Malatya Film Festivali",
+          "En İyi Senaryo Ödülü / Adana Film Festivali"
+        ]
+      },
+      "cok_orijinal": {
+        "title": "Çok Orijinal Bir Oyun",
+        "list": [
+          "Yılın Genç Yetenek Ödülü - Direklerarası 9. Lions Kerem Yılmazer"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "İLETİŞİM",
+    "management": "MENAJERLİK",
+    "email": "E-POSTA",
+    "founder": "Time Right Production Kurucusu",
+    "locations": "İstanbul / İsviçre / Hollanda"
+  },
+  "footer": {
+    "privacy": "Gizlilik Politikası ve Kullanım Şartları",
+    "rights": "Tüm hakları saklıdır.",
+    "developer": "Geliştirici:"
+  }
+}

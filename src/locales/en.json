@@ -1,0 +1,117 @@
+{
+  "navbar": {
+    "home": "HOME",
+    "biography": "BIOGRAPHY",
+    "career": "CAREER",
+    "videos": "PERFORMANCES",
+    "awards": "AWARDS",
+    "contact": "CONTACT",
+    "menu": "MENU",
+    "close": "CLOSE"
+  },
+  "hero": {
+    "subtitle": "ACTOR, DIRECTOR & ACTING COACH",
+    "description": "An international career across stage, screen, and education."
+  },
+  "biography": {
+    "title": "Biography",
+    "p1": "Born in Bursa in 1980. He graduated from Selçuk University State Conservatory, Department of Acting in 2005.",
+    "p2": "He started his career at Bursa State Theater and was deemed worthy of the Direklerarası Lions Kerem Yılmazer Young Talent Award for his performance in 'A Very Original Play'.",
+    "p3": "He continues his work as a director, actor, and producer in international projects based in Switzerland and the Netherlands. He signs global projects with his own production company, Time Right Production.",
+    "instructorTitle": "INSTRUCTOR AREAS",
+    "instructor": {
+      "theaterActing": "Theater Acting",
+      "diction": "Diction",
+      "cameraActing": "On-Camera Acting",
+      "effectiveSpeaking": "Effective Speaking",
+      "audition": "Audition Techniques"
+    },
+
+    "skillsTitle": "PERSONAL SKILLS",
+    "skills": {
+      "percussion": "Percussion",
+      "horse": "Horse Riding",
+      "sword": "Sword Fighting",
+      "driving": "Driving Car"
+    }
+  },
+  "career": {
+    "sectionTitle": {
+      "cinema": "CINEMA & TV",
+      "theater": "THEATRE",
+      "production": "EDUCATION & PRODUCTION"
+    },
+
+    "intro": {
+      "sinema": "This selection of film and television projects showcases Zafer Altun's dramatic depth and on-camera mastery. Each work represents a major milestone in his career.",
+      "theater": "Selected frames from theater stages reflect the artist's stage presence and character depth, offering special excerpts from contemporary and classical works.",
+      "production": "Training and production activities carried out under Time Right Production extend beyond Turkey to Europe. As an actor, director, and executive producer, he has undertaken major organizations, including a 30-day 'Pir Sultan Abdal' tour across 5 different countries, primarily in Switzerland (Zurich), Germany (Berlin), and the Netherlands. These global endeavors include international production roles, such as the 'Eny Finance' Commercial Series and the Simtronik Documentary Film, and acting workshops conducted under the Maya Kult Verein (Zurich)."
+    },
+    "production": {
+      "title": "Education & Production",
+      "subtitle": "Time Right Production",
+      "globalExperienceTitle": "Global Partnerships and Educational Mission",
+      "globalExperienceText": "Educational and production activities carried out under the umbrella of Time Right Production extend beyond Turkey to Europe. As an actor, director, and executive producer, Zafer Altun has signed off on major organizations, including a 30-day 'Pir Sultan Abdal' tour across 5 different countries, primarily Switzerland (Zurich), Germany (Berlin), and the Netherlands. These global works encompass international production duties such as the 'Eny Finance' Commercial Series and the Simtronik Documentary Film, as well as acting workshops provided under the Maya Kult Verein (Zurich).",
+      "itemRole": "Production & Education"
+    }
+  },
+  "videos": {
+    "sectionTitle": "SHOWREEL",
+    "description": "Work samples from national and international projects that reflect my acting and directing vision."
+  },
+  "awards": {
+    "title": "HONORS & AWARDS",
+    "subtitle": "Curriculum Vitae",
+    "categories": {
+      "cinema": "CINEMA",
+      "theater": "THEATER"
+    },
+    "projects": {
+      "kayitsiz": {
+        "title": "Indifferent (Kayıtsız)",
+        "list": [
+          "Best Film Award - USA Los Angeles Independent Women Film Awards"
+        ]
+      },
+      "isin_asli": {
+        "title": "The Truth of the Matter",
+        "list": [
+          "Zafer Altun Participation Award - Kazakhstan Almaty Turkish Film Week"
+        ]
+      },
+      "ruya": {
+        "title": "The Dream",
+        "list": [
+          "Contribution to Turkish Culture Award - Yunus Emre Institute",
+          "Honorary Award - 8th International Crime and Punishment Film Festival"
+        ]
+      },
+      "balik": {
+        "title": "The Fish",
+        "list": [
+          "Honorary Award / Golden Island Festival",
+          "Film Critics Association Award / Malatya Film Festival",
+          "Best Screenplay Award / Adana Film Festival"
+        ]
+      },
+      "cok_orijinal": {
+        "title": "A Very Original Play",
+        "list": [
+          "Young Talent of the Year - Direklerarası 9th Lions Kerem Yılmazer"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "management": "MANAGEMENT",
+    "email": "E-MAIL",
+    "founder": "Time Right Production Founder",
+    "locations": "Istanbul / Switzerland / Netherlands"
+  },
+  "footer": {
+    "privacy": "Privacy Policy and Terms & Conditions",
+    "rights": "All rights reserved.",
+    "developer": "Developed by"
+  }
+}
