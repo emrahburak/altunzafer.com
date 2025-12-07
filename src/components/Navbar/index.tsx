@@ -53,6 +53,7 @@ export default function Navbar() {
     { id: "biography", label: t("navbar.biography") },
     { id: "career", label: t("navbar.career") },
     { id: "awards", label: t("navbar.awards") },
+    { id: "showreel", label: t("navbar.showreel") },
     { id: "contact", label: t("navbar.contact") },
   ];
 

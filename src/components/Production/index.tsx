@@ -1,51 +1,13 @@
 import { useRef, useState, useMemo } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useTranslation } from "react-i18next"; // i18n eklendi
+import { useTranslation } from "react-i18next";
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// --- EĞİTİM & YAPIM GÖRSELLERİ İMPORT (p01 - p16) ---
-import p01 from "@/assets/images/egitim/webp/altun-egitim-01.webp";
-import p02 from "@/assets/images/egitim/webp/altun-egitim-02.webp";
-import p03 from "@/assets/images/egitim/webp/altun-egitim-03.webp";
-import p04 from "@/assets/images/egitim/webp/altun-egitim-04.webp";
-import p05 from "@/assets/images/egitim/webp/altun-egitim-05.webp";
-import p06 from "@/assets/images/egitim/webp/altun-egitim-06.webp";
-import p07 from "@/assets/images/egitim/webp/altun-egitim-07.webp";
-import p08 from "@/assets/images/egitim/webp/altun-egitim-08.webp";
-import p09 from "@/assets/images/egitim/webp/altun-egitim-09.webp";
-import p10 from "@/assets/images/egitim/webp/altun-egitim-10.webp";
-import p11 from "@/assets/images/egitim/webp/altun-egitim-11.webp";
-import p12 from "@/assets/images/egitim/webp/altun-egitim-12.webp";
-import p13 from "@/assets/images/egitim/webp/altun-egitim-13.webp";
-import p14 from "@/assets/images/egitim/webp/altun-egitim-14.webp";
-import p15 from "@/assets/images/egitim/webp/altun-egitim-15.webp";
-import p16 from "@/assets/images/egitim/webp/altun-egitim-16.webp";
-
-// Görsel değişkenlerini kolay erişim için bir diziye topluyoruz
-const allImages = [p01, p02, p03, p04, p05, p06, p07, p08, p09, p10, p11, p12, p13, p14, p15, p16];
-
-// --- VERİ HAVUZU (Sadece başlıklar için) ---
-const rawData = [
-  { id: 1, img: allImages[0], title: "Kamera Önü Eğitimi" },
-  { id: 2, img: allImages[1], title: "Time Right Production" },
-  { id: 3, img: allImages[2], title: "Diksiyon Atölyesi" },
-  { id: 4, img: allImages[3], title: "İsviçre Reklam Çekimi" },
-  { id: 5, img: allImages[4], title: "Hollanda Belgesel" },
-  { id: 6, img: allImages[5], title: "Audition Teknikleri" },
-  { id: 7, img: allImages[6], title: "Set Arkası" },
-  { id: 8, img: allImages[7], title: "Yapım Toplantısı" },
-  { id: 9, img: allImages[8], title: "Öğrenci Çalışmaları" },
-  { id: 10, img: allImages[9], title: "Reji Masası" },
-  { id: 11, img: allImages[10], title: "Cast Seçimi" },
-  { id: 12, img: allImages[11], title: "Senaryo Analizi" },
-  { id: 13, img: allImages[12], title: "Atölye Pratiği" },
-  { id: 14, img: allImages[13], title: "Global Ortaklık" },
-  { id: 15, img: allImages[14], title: "Montaj Süreci" },
-  { id: 16, img: allImages[15], title: "Final Kurgu" },
-];
+// YENİ DATA IMPORT
+import { PRODUCTION_DATA } from "@/data/production";
 
 export default function Production() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,6 +16,9 @@ export default function Production() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
+  // Veriyi değişkene ata (Kodun geri kalanıyla uyumlu olması için)
+  const rawData = PRODUCTION_DATA;
+
   // --- SÜTUNLARA DAĞITMA (2 Sütun) ---
   const columns = useMemo(() => {
     const cols = [[], []] as typeof rawData[];
@@ -61,7 +26,7 @@ export default function Production() {
       cols[i % 2].push(item);
     });
     return cols;
-  }, []);
+  }, []); // rawData dışarıdan geldiği için dependency array boş kalabilir veya [rawData] eklenebilir
 
   const slides = rawData.map((item) => ({ src: item.img, alt: item.title }));
 
@@ -119,10 +84,10 @@ export default function Production() {
 
         {/* --- İKİ KOLONLU KAPSAYICI --- */}
         <div className="
-           w-full h-full lg:w-[90vw] lg:h-screen 
-           flex flex-col lg:flex-row lg:justify-between lg:items-center 
-           overflow-y-auto lg:overflow-hidden 
-           px-6 py-24 lg:p-0
+            w-full h-full lg:w-[90vw] lg:h-screen 
+            flex flex-col lg:flex-row lg:justify-between lg:items-center 
+            overflow-y-auto lg:overflow-hidden 
+            px-6 py-24 lg:p-0
         ">
 
           {/* --- 1. SOL ALAN: STATİK METİN (GENİŞLİK: 45%) --- */}
@@ -160,6 +125,7 @@ export default function Production() {
                 className="relative w-1/2 h-auto lg:h-[150%] -mt-[10%] flex flex-col gap-6"
               >
                 <div className="column-reel flex flex-col gap-6 w-full">
+                  {/* Sonsuz döngü için veriyi iki kez render ediyoruz */}
                   {[...colItems, ...colItems].map((item, i) => (
                     <div
                       key={`${colIndex}-${i}`}
@@ -175,6 +141,9 @@ export default function Production() {
                       <div className="absolute bottom-0 left-0 w-full p-4 bg-linear-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-gold-500 text-[10px] uppercase tracking-widest block mb-1">
                           {t('career.production.itemRole')}
+                        </span>
+                        <span className="text-white text-xs font-royal-1 text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                          {item.title}
                         </span>
                       </div>
                     </div>

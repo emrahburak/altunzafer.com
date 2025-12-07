@@ -1,10 +1,12 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../Footer";
-// Eğer React Router kullanıyorsan Link'i import et, yoksa <a> etiketi de çalışır.
-import { Link } from "react-router-dom";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -41,33 +43,55 @@ export default function Contact() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* --- MENAJERLİK --- */}
+
+          {/* --- SOL KOLON: ADRES - GSM - CV İNDİR --- */}
           <div>
-            <h4 className="contact-anim text-gold-500 text-sm uppercase tracking-widest mb-4">
-              {t('contact.management')}
-            </h4>
-            {/* Kişi 1 */}
-            <div className="mb-6">
-              <p className="contact-anim text-white text-lg">Aslı Bankoğlu</p>
+
+
+
+            {/* 2. YENİ EKLENEN: GSM BÖLÜMÜ */}
+            <div className="mb-10">
+              <h4 className="contact-anim text-gold-500 text-sm uppercase tracking-widest mb-2">
+                {t('contact.gsm')}
+              </h4>
               <div className="contact-anim">
-                <a href="tel:+905323614347" className="text-gray-400 hover:text-white transition-colors">
-                  +90 532 361 43 47
+                <a
+                  href="tel:+905053743810"
+                  className="text-white text-lg hover:text-gold-500 transition-colors inline-block"
+                >
+                  +90 505 374 38 10
                 </a>
               </div>
             </div>
 
-            {/* Kişi 2 */}
-            <div>
-              <p className="contact-anim text-white text-lg">Fatoş Yılmaz</p>
-              <div className="contact-anim">
-                <a href="tel:+905327726506" className="text-gray-400 hover:text-white transition-colors">
-                  +90 532 772 65 06
-                </a>
-              </div>
+            {/* 3. CV İNDİR BUTONU */}
+            <div className="contact-anim">
+              <a
+                href="/zafer-altun-cv.pdf"
+                download="Zafer_Altun_CV.pdf"
+                className="group inline-flex items-center gap-3 px-6 py-3 border border-gold-500 text-gold-500 uppercase tracking-widest text-sm font-medium hover:bg-gold-500 hover:text-black transition-all duration-300"
+              >
+                {/* Download Icon (SVG) */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-5 h-5 group-hover:translate-y-1 transition-transform"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                {t('contact.downloadCV')}
+              </a>
             </div>
           </div>
 
-          {/* --- E-POSTA ve YASAL --- */}
+          {/* --- SAĞ KOLON: E-POSTA, SOSYAL & YASAL --- */}
           <div>
             <h4 className="contact-anim text-sm uppercase tracking-widest mb-4 text-gold-500">
               {t('contact.email')}
@@ -75,11 +99,12 @@ export default function Contact() {
 
             <a
               href="mailto:altunzafer@gmail.com"
-              className="contact-anim text-2xl text-white transition-colors block mb-8 hover:text-gold-500"
+              className="contact-anim text-2xl text-white transition-colors block mb-8 hover:text-gold-500 break-all"
             >
               altunzafer@gmail.com
             </a>
-            {/* --- INSTAGRAM LINKI (YENİ EKLENDİ) --- */}
+
+            {/* --- INSTAGRAM LINKI --- */}
             <div className="contact-anim mb-8">
               <a
                 href="https://www.instagram.com/altunzafer/"
@@ -87,7 +112,6 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-gray-500 hover:text-gold-500 transition-colors group"
               >
-                {/* Instagram Icon (SVG) */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -112,8 +136,7 @@ export default function Contact() {
               {t('contact.locations')}
             </p>
 
-            {/* --- GİZLİLİK LİNKİ (BURAYA EKLENDİ) --- */}
-            {/* contact-anim sınıfı ile bu da animasyona dahil olur */}
+            {/* --- GİZLİLİK LİNKİ --- */}
             <div className="contact-anim">
               <Link
                 to="/privacy"

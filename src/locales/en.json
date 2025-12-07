@@ -5,6 +5,7 @@
     "career": "CAREER",
     "videos": "PERFORMANCES",
     "awards": "AWARDS",
+    "showreel": "SHOWREEL",
     "contact": "CONTACT",
     "menu": "MENU",
     "close": "CLOSE"
@@ -104,7 +105,9 @@
   },
   "contact": {
     "title": "CONTACT",
-    "management": "MANAGEMENT",
+    "addressTitle": "ADDRESS",
+    "gsm": "GSM",
+    "downloadCV": "DOWNLOAD CV",
     "email": "E-MAIL",
     "founder": "Time Right Production Founder",
     "locations": "Istanbul / Switzerland / Netherlands"

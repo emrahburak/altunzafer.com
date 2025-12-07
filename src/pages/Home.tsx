@@ -64,7 +64,7 @@ export default function Home() {
         </div>
       </div>
       {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
-      <div id="videos">
+      <div id="showreel">
         <Suspense fallback={
           // Kullanıcı scroll ettiğinde, Videos yüklenirken basit bir yükleme animasyonu göster
           <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white">

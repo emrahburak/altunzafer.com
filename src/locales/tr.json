@@ -5,6 +5,7 @@
     "career": "KARİYER",
     "videos": "PERFORMANSLAR",
     "awards": "ÖDÜLLER",
+    "showreel": "SHOWREEL",
     "contact": "İLETİŞİM",
     "menu": "MENÜ",
     "close": "KAPAT"
@@ -103,7 +104,9 @@
   },
   "contact": {
     "title": "İLETİŞİM",
-    "management": "MENAJERLİK",
+    "addressTitle": "ADRES",
+    "gsm": "GSM",
+    "downloadCV": "CV İNDİR",
     "email": "E-POSTA",
     "founder": "Time Right Production Kurucusu",
     "locations": "İstanbul / İsviçre / Hollanda"
