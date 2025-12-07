@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// YENİ DATA IMPORT
 import { PRODUCTION_DATA } from "@/data/production";
 
 export default function Production() {
@@ -16,60 +15,58 @@ export default function Production() {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
 
-  // Veriyi değişkene ata (Kodun geri kalanıyla uyumlu olması için)
   const rawData = PRODUCTION_DATA;
 
-  // --- SÜTUNLARA DAĞITMA (2 Sütun) ---
+  // --- 2 Sütuna Böl ---
   const columns = useMemo(() => {
     const cols = [[], []] as typeof rawData[];
-    rawData.forEach((item, i) => {
-      cols[i % 2].push(item);
-    });
+    rawData.forEach((item, i) => cols[i % 2].push(item));
     return cols;
-  }, []);
+  }, [rawData]);
 
   const slides = rawData.map((item) => ({ src: item.img, alt: item.title }));
 
   const handleImageClick = (clickedItemImg: string) => {
-    const slideIndex = rawData.findIndex(s => s.img === clickedItemImg);
+    const slideIndex = rawData.findIndex((s) => s.img === clickedItemImg);
     if (slideIndex >= 0) {
       setIndex(slideIndex);
       setOpen(true);
     }
   };
 
-  useGSAP(() => {
-    const mm = gsap.matchMedia();
+  // --- GSAP Infinite Scroll Setup ---
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
 
-    mm.add("(min-width: 1024px)", () => {
-      const reels = gsap.utils.toArray<HTMLElement>(".column-reel");
+      // GSAP'i yalnızca Desktop'ta çalıştırma ve null kontrolü yapma (En iyi performans için korundu)
+      mm.add("(min-width: 1024px)", () => {
+        const reels = gsap.utils.toArray<HTMLElement>(".column-reel");
 
-      // KRİTİK KONTROL: GSAP uyarılarını engellemek için kontrol eklendi
-      if (reels.length === 0) {
-        return;
-      }
+        if (reels.length === 0) return;
 
-      reels.forEach((reel, i) => {
-        const direction = i % 2 === 0 ? -1 : 1;
-        const distance = reel.scrollHeight / 2;
+        reels.forEach((reel, i) => {
+          const direction = i % 2 === 0 ? -1 : 1;
+          const distance = reel.scrollHeight / 2;
 
-        if (direction === 1) {
-          gsap.set(reel, { y: -distance });
-        }
+          if (direction === 1) gsap.set(reel, { y: -distance });
 
-        const tween = gsap.to(reel, {
-          y: direction === -1 ? -distance : 0,
-          duration: 25 + i * 5,
-          ease: "none",
-          repeat: -1,
+          const tween = gsap.to(reel, {
+            y: direction === -1 ? -distance : 0,
+            duration: 25 + i * 5,
+            ease: "none",
+            repeat: -1,
+          });
+
+          reel.addEventListener("mouseenter", () => tween.pause());
+          reel.addEventListener("mouseleave", () => tween.play());
         });
-
-        reel.addEventListener("mouseenter", () => tween.pause());
-        reel.addEventListener("mouseleave", () => tween.play());
       });
-    });
 
-  }, { scope: containerRef });
+      return () => mm.revert();
+    },
+    { scope: containerRef }
+  );
 
   return (
     <>
@@ -77,53 +74,52 @@ export default function Production() {
         ref={containerRef}
         className="w-full h-auto bg-dark-bg relative flex items-center justify-center"
       >
-        {/* Arka Plan Dekoru */}
+        {/* ARKA PLAN DEKORU */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
-        {/* --- DİKEY BAŞLIK --- */}
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 -translate-x-1/2 -rotate-90 origin-center whitespace-nowrap opacity-100 transition-opacity z-50 hidden lg:block">
-          <span className="text-4xl text-gold-500 font-royal-7 tracking-widest uppercase transition-colors">
-            {t('career.sectionTitle.production')}
+        {/* DİKEY BAŞLIK (Korunmalı - Mobil bozmamalı) */}
+        <div className="absolute left-0 top-0 w-[150px] h-full flex items-center justify-center bg-black/50 z-50 hidden lg:flex">
+          <span className="text-4xl text-gold-500 font-royal-7 tracking-widest uppercase writing-mode-vertical-rl rotate-180">
+            {t("career.sectionTitle.production")}
           </span>
         </div>
 
-        {/* --- İKİ KOLONLU KAPSAYICI --- */}
-        <div className="
-            w-full h-full lg:w-[90vw] lg:h-screen 
-            flex flex-col lg:flex-row lg:justify-between lg:items-center 
-            overflow-y-auto lg:overflow-hidden 
+        {/* ANA KAPSAYICI */}
+        <div
+          className="
+            w-full h-full lg:w-[90vw] lg:h-screen
+            flex flex-col lg:flex-row lg:justify-between lg:items-center
+            overflow-y-auto lg:overflow-hidden
             px-6 py-24 lg:p-0
-        ">
-
-          {/* --- 1. SOL ALAN: STATİK METİN (GENİŞLİK: 45%) --- */}
-          <div className="w-full lg:w-[45%] h-auto lg:h-full flex flex-col justify-center px-4 lg:pl-32 lg:pr-16 z-20 shrink-0">
-
-            {/* Ana Başlık Bloğu */}
+          "
+        >
+          {/* SOL TARAF — METİN (lg:pl-32 yerine 150px'e karşılık gelen değer eklendi) */}
+          <div className=" w-[35%] h-auto  flex flex-col ml-30  z-20 shrink-0 ">
             <div className="mb-12 lg:mb-16">
               <span className="text-gold-500 font-geometric tracking-[0.3em] text-xs uppercase block mb-2">
-                {t('career.production.subtitle')}
+                {t("career.production.subtitle")}
               </span>
               <h2 className="text-4xl md:text-4xl font-royal-7 text-white leading-tight">
-                {t('career.production.title').split(' ').map((word, index) => (
-                  <span key={index}>{word} </span>
-                ))}
+                {t("career.production.title")
+                  .split(" ")
+                  .map((word, i) => (
+                    <span key={i}>{word} </span>
+                  ))}
               </h2>
             </div>
 
-            {/* Uluslararası Tecrübe Paragrafı */}
             <div className="bg-black/70 backdrop-blur-sm p-6 md:p-8 border-l-4 border-gold-500/50 shadow-lg mt-8 lg:mt-0">
               <h3 className="text-xl font-royal-7 text-gold-500 mb-3">
-                {t('career.production.globalExperienceTitle')}
+                {t("career.production.globalExperienceTitle")}
               </h3>
               <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed font-fluid-2">
-                {t('career.production.globalExperienceText')}
+                {t("career.production.globalExperienceText")}
               </p>
             </div>
           </div>
 
-          {/* --- 2. SAĞ ALAN: MAKARALAR (GENİŞLİK: 50%) --- */}
+          {/* SAĞ TARAF — İKİ KOLON REEL */}
           <div className="w-full lg:w-[50%] h-full flex lg:flex-row gap-4 lg:gap-8 overflow-hidden pt-12 lg:pt-0">
-
             {columns.map((colItems, colIndex) => (
               <div
                 key={colIndex}
@@ -143,7 +139,6 @@ export default function Production() {
                         className="w-full h-full object-cover opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                       />
 
-                      {/* YAZIM HATASI DÜZELTİLDİ: bg-linear-to-t -> bg-gradient-to-t */}
                       <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-gold-500 text-[10px] uppercase tracking-widest block mb-1">
                           {t('career.production.itemRole')}
@@ -162,9 +157,7 @@ export default function Production() {
         </div>
 
         {/* --- DEKORATİF BİTİŞ --- */}
-        {/* YAZIM HATASI DÜZELTİLDİ: bg-linear-to-b -> bg-gradient-to-b */}
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-dark-bg to-transparent z-10 pointer-events-none hidden lg:block"></div>
-        {/* YAZIM HATASI DÜZELTİLDİ: bg-linear-to-t -> bg-gradient-to-t */}
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-dark-bg to-transparent z-10 pointer-events-none hidden lg:block"></div>
 
       </div>
