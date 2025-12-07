@@ -34,6 +34,9 @@ export default function Hero(): React.JSX.Element {
   useGSAP(() => {
     if (!wrapperRef.current) return;
 
+    // GSAP UYARILARINI ÖNLEME: Eğer bileşen gizlenmişse çalışmaz.
+    if (!image2Ref.current || !subtitleRef.current) return;
+
     const chars = gsap.utils.toArray(".char");
     const words = gsap.utils.toArray(".word");
 
@@ -55,9 +58,9 @@ export default function Hero(): React.JSX.Element {
       scrollTrigger: {
         trigger: wrapperRef.current,
         start: "top top",
-        end: "+=1500", // Mesafe
+        end: "+=1500",
         pin: true,
-        scrub: 1, // Smoothness
+        scrub: 1,
         pinSpacing: true,
         invalidateOnRefresh: true,
       }
@@ -82,49 +85,33 @@ export default function Hero(): React.JSX.Element {
 
   }, { scope: wrapperRef });
 
-  const heroTitleName = "ZAFER";
-  const heroTitleSurname = "ALTUN";
+  const heroTitleName = t('hero.name', 'ZAFER');
+  const heroTitleSurname = t('hero.surname', 'ALTUN');
   const descText = t('hero.description', 'Sahne, ekran ve eğitimde uluslararası bir kariyer.');
 
   return (
     <div ref={wrapperRef} className="relative w-full h-screen bg-dark-bg overflow-hidden">
 
-      {/* LAYOUT AYARLARI:
-         - flex-col: Mobilde alt alta
-         - md:flex-row: Masaüstünde yan yana
-         - gap-12: Mobilde metin ve resim arası boşluk
-         - md:gap-0: Masaüstünde boşluk sıfır (flex düzeni hallediyor)
-      */}
       <div className="w-full h-full flex flex-col md:flex-row items-center relative z-10 container mx-auto px-6 gap-12 md:gap-0">
 
         {/* SOL: Metin Alanı */}
-        {/* DÜZELTME NOTLARI:
-            1. Parent'tan 'text-center' gibi sınıfları kaldırdım, kafa karıştırmasın.
-            2. 'items-center': Flex elemanlarını (kutuları) ortalar.
-            3. 'md:items-start': Masaüstünde kutuları sola yaslar.
-        */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-center  h-full pt-24 md:pt-0 z-20">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center h-full pt-24 md:pt-0 z-20">
 
           <h2
             ref={subtitleRef}
-            // DÜZELTME:
-            // - w-full KALDIRILDI: Flexbox (items-center) kutuyu içeriği kadar daraltıp ortalasın.
-            // - text-center md:text-left: Metin hizalaması mobilde orta, masaüstünde sol.
-            // - indent-[0.3em]: Tracking yüzünden sağda kalan boşluğu dengelemek için soldan ittik (Optik Ortalama).
-            className="text-center w-full mb-4 font-light tracking-[0.3em] indent-[0.3em] text-gray-400 font-geometric transition-all will-change-[letter-spacing]"
+            // DÜZELTME: md:text-left eklendi. Mobil ortalama, Desktop sola yaslama.
+            className="text-center md:text-left w-full mb-4 font-light tracking-[0.3em] indent-[0.3em] text-gray-400 font-geometric transition-all will-change-[letter-spacing]"
           >
             {t('hero.subtitle', 'OYUNCU, YÖNETMEN & EĞİTMEN')}
           </h2>
 
           {/* H1 BAŞLIK */}
-          {/* text-center md:text-left ekledik */}
           <h1 className="text-center md:text-left text-6xl sm:text-7xl md:text-[7rem] lg:text-[8rem] font-bold leading-[0.9] text-white font-royal-7 whitespace-nowrap">
             <div className="overflow-hidden py-1 md:py-2">{splitChars(heroTitleName)}</div>
             <div className="overflow-hidden py-1 md:py-2 text-gray-600">{splitChars(heroTitleSurname)}</div>
           </h1>
 
           {/* AÇIKLAMA METNİ */}
-          {/* justify-center (Mobil) -> justify-start (Desktop) */}
           <div className="hero-desc mt-6 md:mt-8 max-w-xs md:max-w-md text-gray-400 font-light leading-relaxed font-fluid-2 flex flex-wrap justify-center md:justify-start text-sm md:text-base text-center md:text-left">
             {splitWords(descText)}
           </div>
@@ -134,7 +121,6 @@ export default function Hero(): React.JSX.Element {
         <div className="w-full md:w-1/2 h-full flex items-start md:items-center justify-center relative pointer-events-none">
 
           {/* FOTOĞRAF KAPSAYICI */}
-          {/* Mobilde genişlik %70, yükseklik %45vh (biraz küçülttük ki sığsın) */}
           <div className="relative w-[70vw] h-[45vh] md:w-[28vw] md:h-[65vh]">
 
             {/* RESİM 1 (Base) */}

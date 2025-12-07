@@ -39,12 +39,13 @@
   "career": {
     "sectionTitle": {
       "cinema": "CINEMA & TV",
+      "cinemaBack": "CINEMA",
       "theater": "THEATRE",
       "production": "EDUCATION & PRODUCTION"
     },
 
     "intro": {
-      "sinema": "This selection of film and television projects showcases Zafer Altun's dramatic depth and on-camera mastery. Each work represents a major milestone in his career.",
+      "sinema": "A 20-year journey in front of the camera. Feature films honored at international festivals, Turkey’s most-watched TV series, and projects for leading digital platforms..",
       "theater": "Selected frames from theater stages reflect the artist's stage presence and character depth, offering special excerpts from contemporary and classical works.",
       "production": "Training and production activities carried out under Time Right Production extend beyond Turkey to Europe. As an actor, director, and executive producer, he has undertaken major organizations, including a 30-day 'Pir Sultan Abdal' tour across 5 different countries, primarily in Switzerland (Zurich), Germany (Berlin), and the Netherlands. These global endeavors include international production roles, such as the 'Eny Finance' Commercial Series and the Simtronik Documentary Film, and acting workshops conducted under the Maya Kult Verein (Zurich)."
     },

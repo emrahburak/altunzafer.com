@@ -26,7 +26,7 @@ export default function Production() {
       cols[i % 2].push(item);
     });
     return cols;
-  }, []); // rawData dışarıdan geldiği için dependency array boş kalabilir veya [rawData] eklenebilir
+  }, []);
 
   const slides = rawData.map((item) => ({ src: item.img, alt: item.title }));
 
@@ -43,6 +43,11 @@ export default function Production() {
 
     mm.add("(min-width: 1024px)", () => {
       const reels = gsap.utils.toArray<HTMLElement>(".column-reel");
+
+      // KRİTİK KONTROL: GSAP uyarılarını engellemek için kontrol eklendi
+      if (reels.length === 0) {
+        return;
+      }
 
       reels.forEach((reel, i) => {
         const direction = i % 2 === 0 ? -1 : 1;
@@ -84,11 +89,11 @@ export default function Production() {
 
         {/* --- İKİ KOLONLU KAPSAYICI --- */}
         <div className="
-            w-full h-full lg:w-[90vw] lg:h-screen 
-            flex flex-col lg:flex-row lg:justify-between lg:items-center 
-            overflow-y-auto lg:overflow-hidden 
-            px-6 py-24 lg:p-0
-        ">
+            w-full h-full lg:w-[90vw] lg:h-screen 
+            flex flex-col lg:flex-row lg:justify-between lg:items-center 
+            overflow-y-auto lg:overflow-hidden 
+            px-6 py-24 lg:p-0
+        ">
 
           {/* --- 1. SOL ALAN: STATİK METİN (GENİŞLİK: 45%) --- */}
           <div className="w-full lg:w-[45%] h-auto lg:h-full flex flex-col justify-center px-4 lg:pl-32 lg:pr-16 z-20 shrink-0">
@@ -138,11 +143,12 @@ export default function Production() {
                         className="w-full h-full object-cover opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
                       />
 
-                      <div className="absolute bottom-0 left-0 w-full p-4 bg-linear-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      {/* YAZIM HATASI DÜZELTİLDİ: bg-linear-to-t -> bg-gradient-to-t */}
+                      <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                         <span className="text-gold-500 text-[10px] uppercase tracking-widest block mb-1">
                           {t('career.production.itemRole')}
                         </span>
-                        <span className="text-white text-xs font-royal-1 text-center opacity-70 group-hover:opacity-100 transition-opacity">
+                        <span className="text-white text-xs font-bold text-center opacity-70 group-hover:opacity-100 transition-opacity">
                           {item.title}
                         </span>
                       </div>
@@ -156,8 +162,10 @@ export default function Production() {
         </div>
 
         {/* --- DEKORATİF BİTİŞ --- */}
-        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-[#0a0a0a] to-transparent z-10 pointer-events-none hidden lg:block"></div>
-        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10 pointer-events-none hidden lg:block"></div>
+        {/* YAZIM HATASI DÜZELTİLDİ: bg-linear-to-b -> bg-gradient-to-b */}
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-dark-bg to-transparent z-10 pointer-events-none hidden lg:block"></div>
+        {/* YAZIM HATASI DÜZELTİLDİ: bg-linear-to-t -> bg-gradient-to-t */}
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-dark-bg to-transparent z-10 pointer-events-none hidden lg:block"></div>
 
       </div>
 

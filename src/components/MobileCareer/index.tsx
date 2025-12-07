@@ -6,7 +6,7 @@ import MobileSinema from "../MobileSinema";
 import MobileTiyatro from "../MobileTiyatro";
 import MobileProduction from "../MobileProduction";
 
-// --- ACCORDION ITEM YARDIMCI BİLEŞENİ ARAYÜZÜ (AYNI KALDI) ---
+// --- ACCORDION ITEM YARDIMCI BİLEŞENİ ARAYÜZÜ ---
 interface MobileCareerItemProps {
   labelKey: string;
   Component: React.ComponentType;
@@ -14,13 +14,13 @@ interface MobileCareerItemProps {
   onClick: () => void;
 }
 
-// YENİ TANIM: React.FC bırakıldı, tiplendirme doğrudan parametre listesine yapıldı.
+// --- ACCORDION ITEM BİLEŞENİ ---
 const MobileCareerItem = ({
   labelKey,
   Component,
   isOpen,
   onClick,
-}: MobileCareerItemProps) => { // <-- Hata burada çözüldü
+}: MobileCareerItemProps) => {
   const { t } = useTranslation();
 
   // Açık/Kapalı duruma göre dinamik stiller
@@ -54,7 +54,11 @@ const MobileCareerItem = ({
       <div
         className={`overflow-hidden transition-max-height duration-500 ease-in-out ${isOpen ? 'max-h-[3000px] py-4' : 'max-h-0'}`}
       >
-        <div className="px-6 pb-6 pt-0">
+        {/* DÜZELTME BURADA YAPILDI: 
+            pb-6 yerine pb-12 kullanıldı. 
+            Bu ekstra boşluk, son satırdaki resimlerin veya yazıların kesilmesini engeller.
+        */}
+        <div className="px-6 pb-12 pt-2">
           <Component />
         </div>
       </div>
@@ -65,11 +69,10 @@ const MobileCareerItem = ({
 // --- ANA BİLEŞEN: MOBILE CAREER ---
 export default function MobileCareer() {
 
-  // DÜZELTME: Tüm accordion'lar default olarak kapalı
+  // Accordion'lar default olarak kapalı
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const sections = [
-    // DÜZELTME: number özelliği tamamen kaldırıldı
     { id: 'cinema', labelKey: 'career.sectionTitle.cinema', Component: MobileSinema },
     { id: 'theater', labelKey: 'career.sectionTitle.theater', Component: MobileTiyatro },
     { id: 'production', labelKey: 'career.sectionTitle.production', Component: MobileProduction },
@@ -78,12 +81,11 @@ export default function MobileCareer() {
   return (
     <section
       id="career"
-      className="relative w-full bg-black  pt-8 pb-8"
+      className="relative w-full bg-black pt-8 pb-8"
     >
       {sections.map((section, index) => (
         <MobileCareerItem
           key={section.id}
-          // number prop'u artık geçilmiyor
           labelKey={section.labelKey}
           Component={section.Component}
           isOpen={activeIndex === index}

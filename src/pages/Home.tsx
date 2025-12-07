@@ -22,7 +22,7 @@ const LazyVideos = lazy(() => import('../components/Videos'));
 export default function Home() {
   return (
     <>
-      {/* SEO AYARLARI BURADA YAPILIR */}
+      {/* SEO AYARLARI */}
       <Helmet>
         <title>Zafer Altun | Actor & Director</title>
         <meta name="description" content="Zafer Altun'un resmi portfolyo sitesi. Tiyatro, Sinema, Yönetmenlik ve Time Right Production projeleri." />
@@ -33,47 +33,52 @@ export default function Home() {
       <div id="hero">
         <Hero />
       </div>
+
       <div id="biography">
         <Biography />
       </div>
-      {/* TEKİL SABİT ÇAPA: Tüm mobil/desktop geçişlerini sarmalar. */}
-      {/* Navbar'ın hedefi her zaman bu div olacaktır. */}
+
+      {/* --- KARİYER BÖLÜMÜ --- */}
+      {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
       <div id="career">
 
-        {/* DESKTOP (LG ve üzeri) İçin Complex Animasyonlu Bileşen */}
-        {/* Bileşenin kendisinde ID olmamalıdır! */}
-        <div className="hidden lg:block">
+        {/* DESKTOP (Sadece XL ve üzeri - Laptop/PC) */}
+        <div className="hidden xl:block">
           <Career />
         </div>
 
-        {/* MOBİL (LG altı) İçin Sade Sticky Versiyon */}
-        {/* Bileşenin kendisinde ID olmamalıdır! */}
-        <div className="lg:hidden">
+        {/* MOBİL & TABLET (XL altı - Telefonlar ve Tabletler) */}
+        <div className="xl:hidden">
           <MobileCareer />
         </div>
 
       </div>
+
+      {/* --- ÖDÜLLER BÖLÜMÜ --- */}
+      {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
       <div id="awards">
 
-        <div className="hidden lg:block">
+        <div className="hidden xl:block">
           <Awards />
         </div>
 
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <MobileAwards />
         </div>
+
       </div>
+
       {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
       <div id="showreel">
         <Suspense fallback={
-          // Kullanıcı scroll ettiğinde, Videos yüklenirken basit bir yükleme animasyonu göster
-          <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white">
-            Seçme Projeler Yükleniyor...
+          <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white font-royal-7 tracking-widest">
+            Yükleniyor...
           </div>
         }>
           <LazyVideos />
         </Suspense>
       </div>
+
       <div id="contact">
         <Contact />
       </div>

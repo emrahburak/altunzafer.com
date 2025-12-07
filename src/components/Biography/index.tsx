@@ -42,6 +42,12 @@ export default function Biography() {
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
+
+      // KRİTİK KONTROL: Hedef elementler yoksa (null ise) timeline'ı kurma
+      if (!middlePhotoRef.current || !topPhotoRef.current) {
+        return;
+      }
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,

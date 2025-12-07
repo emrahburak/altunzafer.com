@@ -55,6 +55,6 @@ export const TIYATRO_DATA: TiyatroItem[] = [
   {
     id: 10,
     img: t10,
-    title: "2007-2008 “Fareler ve nsanlar” / Ekim Sanat Oyuncular",
+    title: "2007-2008 “Fareler ve İnsanlar” / Ekim Sanat Oyuncular",
   },
 ];
