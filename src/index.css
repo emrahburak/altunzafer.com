@@ -80,7 +80,6 @@
 /* src/index.css dosyasının en altı */
 
 @layer utilities {
-
   /* Chrome, Safari ve Opera için */
   .no-scrollbar::-webkit-scrollbar {
     display: none;
@@ -96,6 +95,10 @@
 }
 
 /* GSAP Pinning'in çalışması için bu önemli */
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   overflow-x: clip;
