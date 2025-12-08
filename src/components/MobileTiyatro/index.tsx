@@ -53,10 +53,11 @@ export default function MobileTiyatro() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
-            {/* Overlay: Başlık (Desktop versiyonundaki mantık) */}
+            {/* Overlay: Başlık */}
             <div className="absolute inset-0 bg-black/40 flex items-end justify-center p-2 transition-opacity duration-300">
-              <span className="text-white text-xs font-semibold uppercase tracking-wider text-center opacity-90">
-                {item.title}
+              <span className="text-white text-xs font-semibold uppercase tracking-wider text-center opacity-90 w-full whitespace-normal break-words leading-tight">
+                {/* / işaretlerinden sonra boşluk bırakarak doğal kırılma sağla */}
+                {item.title.replace(/\//g, ' / ')}
               </span>
             </div>
           </div>

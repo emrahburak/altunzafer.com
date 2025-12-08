@@ -130,8 +130,11 @@ export default function Sinema() {
                   {/* --- DÜZELTME BURADA YAPILDI (ROW 2) --- */}
                   {/* pb-10 eklenerek yazı yukarı itildi */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex items-end justify-center px-4 pb-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                      {item.title}
+                    <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center w-full whitespace-normal break-words leading-tight translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                      {/* 1. replace(/\//g, ' / ') -> "2006/Film" yerine "2006 / Film" yapar. 
+          Böylece tarayıcı / işaretinden sonra rahatça alt satıra geçer.
+    */}
+                      {item.title.replace(/\//g, ' / ')}
                     </span>
                   </div>
 

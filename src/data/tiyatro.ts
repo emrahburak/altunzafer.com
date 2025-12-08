@@ -27,7 +27,7 @@ export const TIYATRO_DATA: TiyatroItem[] = [
   {
     id: 2,
     img: t02,
-    title: "2005-2009 “Sııntılar” / Ekim Sanat Oyuncuları (Baş Rol)",
+    title: "2005-2009 “Sııntılar” / Ekim Sanat Oyuncuları",
   },
   { id: 3, img: t03, title: "2017-2019 “Netçoka Nezvanova” / Yabancı Sahne" },
   { id: 4, img: t04, title: "2017-2019 “Netçoka Nezvanova” / Yabancı Sahne" },
@@ -44,7 +44,7 @@ export const TIYATRO_DATA: TiyatroItem[] = [
   {
     id: 7,
     img: t07,
-    title: "2016-2018 “Veronalı ki Centilmen” / Duru Tiyatro",
+    title: "2017-2019 “Netçoka Nezvanova” / Yabancı Sahne",
   },
   { id: 8, img: t08, title: "8. Antalya Uluslar Arası Tiyatro Festivali" },
   {

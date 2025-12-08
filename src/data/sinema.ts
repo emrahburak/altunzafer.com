@@ -19,6 +19,7 @@ import c15 from "@/assets/images/sinema/webp/altun-sinema-15.webp";
 import c16 from "@/assets/images/sinema/webp/altun-sinema-16.webp";
 import c17 from "@/assets/images/sinema/webp/altun-sinema-17.webp";
 import c18 from "@/assets/images/sinema/webp/altun-sinema-18.webp";
+import c19 from "@/assets/images/sinema/webp/altun-sinema-19.webp";
 
 export type SinemaItem = {
   id: number;
@@ -41,8 +42,8 @@ export const SINEMA_DATA: SinemaItem[] = [
   // ROW 2 (9-17)
   { id: 9, img: c09, title: "2025/ Gülizar Yolayrımı/ Sinama" },
   { id: 10, img: c10, title: "2023/ Kirli Sepeti/ Dizi" },
-  { id: 11, img: c11, title: "2016/ Seddülbahir/ Dizi" },
-  { id: 12, img: c12, title: "2016/ Seddülbahir/ Dizi" },
+  { id: 11, img: c11, title: "Beyaz Hüzün/ Sinema" },
+  { id: 12, img: c12, title: "Beyaz Hüzün/ Sinema" },
   {
     id: 13,
     img: c13,
@@ -50,12 +51,17 @@ export const SINEMA_DATA: SinemaItem[] = [
   },
 
   { id: 14, img: c14, title: "2025/ Gülizar Yolayrımı/ Sinama" },
-  { id: 15, img: c15, title: "2022/ Köşkü Ammar/ Sinema" },
+  { id: 15, img: c15, title: "2022/ Köşkü Ammar/ Sinema (Baş Rol)" },
   { id: 16, img: c16, title: "2022/ Malazgirt 1071/ Sinama" },
   { id: 17, img: c17, title: "2016/ Seddülbahir/ Dizi" },
   {
     id: 18,
     img: c18,
     title: "2006/ Karagöz ve Hacivat Neden Öldürüldü/ Sinema",
+  },
+  {
+    id: 19,
+    img: c19,
+    title: "2014/ O Hayat Benim/ Dizi",
   },
 ];
