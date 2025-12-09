@@ -24,8 +24,14 @@ const allSlides = SINEMA_DATA.map((item) => ({
 export default function Sinema() {
   const { t } = useTranslation();
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // DOM Referansları
   const marqueeRef1 = useRef<HTMLDivElement>(null);
   const marqueeRef2 = useRef<HTMLDivElement>(null);
+
+  // Animasyon Kontrol Referansları (YENİ EKLENDİ)
+  const tween1Ref = useRef<gsap.core.Tween | null>(null);
+  const tween2Ref = useRef<gsap.core.Tween | null>(null);
 
   // --- LIGHTBOX STATE ---
   const [open, setOpen] = useState(false);
@@ -34,19 +40,21 @@ export default function Sinema() {
   useGSAP(() => {
     // MARQUEE ANİMASYONU
     const duration = 60;
-    // KONTROL: Eğer referanslar null ise (bileşen DOM'da değilse) animasyonu başlatma
+
     if (!marqueeRef1.current || !marqueeRef2.current) {
       return;
     }
 
-    gsap.to(marqueeRef1.current, {
+    // Üst satır: Animasyonu ref'e atıyoruz (YENİ)
+    tween1Ref.current = gsap.to(marqueeRef1.current, {
       xPercent: -50,
       ease: "none",
       duration: duration,
       repeat: -1
     });
 
-    gsap.fromTo(marqueeRef2.current,
+    // Alt satır: Animasyonu ref'e atıyoruz (YENİ)
+    tween2Ref.current = gsap.fromTo(marqueeRef2.current,
       { xPercent: -50 },
       { xPercent: 0, ease: "none", duration: duration, repeat: -1 }
     );
@@ -87,7 +95,12 @@ export default function Sinema() {
         >
 
           {/* Şerit 1 */}
-          <div className="w-full overflow-hidden whitespace-nowrap">
+          <div
+            className="w-full overflow-hidden whitespace-nowrap"
+            // HOVER KONTROLÜ (YENİ): Sadece bu satırı durdur/başlat
+            onMouseEnter={() => tween1Ref.current?.pause()}
+            onMouseLeave={() => tween1Ref.current?.play()}
+          >
             <div ref={marqueeRef1} className="inline-flex gap-4 w-max">
               {[...row1, ...row1].map((item, i) => (
                 <div
@@ -100,11 +113,9 @@ export default function Sinema() {
                 >
                   <img src={item.img} className="w-full h-full object-cover" alt={item.title} />
 
-                  {/* --- DÜZELTME BURADA YAPILDI (ROW 1) --- */}
-                  {/* pb-10 eklenerek yazı yukarı itildi */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex items-end justify-center px-4 pb-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                      {item.title}
+                    <span className="text-white text-xs font-semibold uppercase tracking-wider text-center opacity-90 w-full whitespace-normal break-words leading-tight">
+                      {item.title.replace(/\//g, ' / ')}
                     </span>
                   </div>
 
@@ -114,7 +125,12 @@ export default function Sinema() {
           </div>
 
           {/* Şerit 2 */}
-          <div className="w-full overflow-hidden whitespace-nowrap">
+          <div
+            className="w-full overflow-hidden whitespace-nowrap"
+            // HOVER KONTROLÜ (YENİ): Sadece bu satırı durdur/başlat
+            onMouseEnter={() => tween2Ref.current?.pause()}
+            onMouseLeave={() => tween2Ref.current?.play()}
+          >
             <div ref={marqueeRef2} className="inline-flex gap-4 w-max">
               {[...row2, ...row2].map((item, i) => (
                 <div
@@ -127,13 +143,8 @@ export default function Sinema() {
                 >
                   <img src={item.img} className="w-full h-full object-cover" alt={item.title} />
 
-                  {/* --- DÜZELTME BURADA YAPILDI (ROW 2) --- */}
-                  {/* pb-10 eklenerek yazı yukarı itildi */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex items-end justify-center px-4 pb-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center w-full whitespace-normal break-words leading-tight translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                      {/* 1. replace(/\//g, ' / ') -> "2006/Film" yerine "2006 / Film" yapar. 
-          Böylece tarayıcı / işaretinden sonra rahatça alt satıra geçer.
-    */}
                       {item.title.replace(/\//g, ' / ')}
                     </span>
                   </div>

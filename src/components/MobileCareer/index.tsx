@@ -79,19 +79,22 @@ export default function MobileCareer() {
   ];
 
   return (
-    <section
-      id="career"
-      className="relative w-full bg-black pt-8 pb-8"
-    >
-      {sections.map((section, index) => (
-        <MobileCareerItem
-          key={section.id}
-          labelKey={section.labelKey}
-          Component={section.Component}
-          isOpen={activeIndex === index}
-          onClick={() => setActiveIndex(index === activeIndex ? -1 : index)}
-        />
-      ))}
-    </section>
+    <>
+      <div
+        id="career"
+        className="relative w-full bg-black pt-8 pb-8"
+      >
+        {sections.map((section, index) => (
+          <MobileCareerItem
+            key={section.id}
+            labelKey={section.labelKey}
+            Component={section.Component}
+            isOpen={activeIndex === index}
+            onClick={() => setActiveIndex(index === activeIndex ? -1 : index)}
+          />
+        ))}
+      </div>
+    </>
+
   );
 }

@@ -12,6 +12,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MobileCareer from '@/components/MobileCareer';
 import MobileAwards from '@/components/MobileAwards';
+import { useTranslation } from 'react-i18next';
 
 // 1. Eklentiyi burada, bileşen dışına kaydediyoruz.
 // Böylece Home yüklendiği anda ScrollTrigger tüm uygulama için hazır olur.
@@ -20,13 +21,30 @@ gsap.registerPlugin(ScrollTrigger);
 const LazyVideos = lazy(() => import('../components/Videos'));
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
   return (
     <>
       {/* SEO AYARLARI */}
       <Helmet>
-        <title>Zafer Altun | Actor & Director</title>
-        <meta name="description" content="Zafer Altun'un resmi portfolyo sitesi. Tiyatro, Sinema, Yönetmenlik ve Time Right Production projeleri." />
-        <link rel="canonical" href="https://altunzafer.com/" />
+        {/* Dil ayarı */}
+        <html lang={i18n.language} />
+
+        {/* --- TEMEL SEO --- */}
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
+        <meta name="keywords" content={t('seo.keywords')} />
+
+        {/* --- OPEN GRAPH (Facebook / LinkedIn / WhatsApp) --- */}
+        <meta property="og:title" content={t('seo.ogTitle')} />
+        <meta property="og:description" content={t('seo.ogDescription')} />
+        {/* og:image, og:url, og:type INDEX.HTML'de kalacak */}
+
+        {/* --- TWITTER --- */}
+        <meta name="twitter:title" content={t('seo.ogTitle')} /> {/* Genelde aynı başlık kullanılır */}
+        <meta name="twitter:description" content={t('seo.ogDescription')} />
+        {/* twitter:card, twitter:image INDEX.HTML'de kalacak */}
+
+        <link rel="canonical" href="https://www.altunzafer.com/" />
       </Helmet>
 
       {/* SAYFA İÇERİĞİ */}
@@ -34,13 +52,13 @@ export default function Home() {
         <Hero />
       </div>
 
-      <div id="biography">
+      <section id="biography">
         <Biography />
-      </div>
+      </section>
 
       {/* --- KARİYER BÖLÜMÜ --- */}
       {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
-      <div id="career">
+      <section id="career">
 
         {/* DESKTOP (Sadece XL ve üzeri - Laptop/PC) */}
         <div className="hidden xl:block">
@@ -52,11 +70,11 @@ export default function Home() {
           <MobileCareer />
         </div>
 
-      </div>
+      </section>
 
       {/* --- ÖDÜLLER BÖLÜMÜ --- */}
       {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
-      <div id="awards">
+      <section id="awards">
 
         <div className="hidden xl:block">
           <Awards />
@@ -66,10 +84,10 @@ export default function Home() {
           <MobileAwards />
         </div>
 
-      </div>
+      </section>
 
       {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
-      <div id="showreel">
+      <section id="showreel">
         <Suspense fallback={
           <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white font-royal-7 tracking-widest">
             Yükleniyor...
@@ -77,11 +95,11 @@ export default function Home() {
         }>
           <LazyVideos />
         </Suspense>
-      </div>
+      </section>
 
-      <div id="contact">
+      <section id="contact">
         <Contact />
-      </div>
+      </section>
     </>
   );
 }

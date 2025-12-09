@@ -33,8 +33,6 @@ export default function Hero(): React.JSX.Element {
 
   useGSAP(() => {
     if (!wrapperRef.current) return;
-
-    // GSAP UYARILARINI ÖNLEME: Eğer bileşen gizlenmişse çalışmaz.
     if (!image2Ref.current || !subtitleRef.current) return;
 
     const chars = gsap.utils.toArray(".char");
@@ -66,17 +64,14 @@ export default function Hero(): React.JSX.Element {
       }
     });
 
-    // A) Metin Animasyonları
     scrollTl.to(chars, {
       color: "#eab308", stagger: 0.1, ease: "none",
     });
 
-    // B) Subtitle Genişleme
     scrollTl.to(subtitleRef.current, {
       letterSpacing: "0.5em", color: "#ffffff", opacity: 1, ease: "none"
     }, "<");
 
-    // C) IMAGE 2 - AWARDS TARZI GİRİŞ
     scrollTl.fromTo(image2Ref.current,
       { opacity: 0, scale: 0.8, rotation: -10, y: 50 },
       { opacity: 1, scale: 1, rotation: 6, y: 0, ease: "power2.out" },
@@ -85,9 +80,13 @@ export default function Hero(): React.JSX.Element {
 
   }, { scope: wrapperRef });
 
+  // SEO: Fallback değerler eklendi (ChatGPT Madde 1)
   const heroTitleName = t('hero.name', 'ZAFER');
   const heroTitleSurname = t('hero.surname', 'ALTUN');
   const descText = t('hero.description', 'Sahne, ekran ve eğitimde uluslararası bir kariyer.');
+
+  // SEO: Tam başlık metni (H1 için)
+  const fullTitle = `${heroTitleName} ${heroTitleSurname}`;
 
   return (
     <div ref={wrapperRef} className="relative w-full h-screen bg-dark-bg overflow-hidden">
@@ -99,20 +98,30 @@ export default function Hero(): React.JSX.Element {
 
           <h2
             ref={subtitleRef}
-            // DÜZELTME: md:text-left eklendi. Mobil ortalama, Desktop sola yaslama.
             className="text-center md:text-left w-full mb-4 font-light tracking-[0.3em] indent-[0.3em] text-gray-400 font-geometric transition-all will-change-[letter-spacing]"
           >
             {t('hero.subtitle', 'OYUNCU, YÖNETMEN & EĞİTMEN')}
           </h2>
 
-          {/* H1 BAŞLIK */}
-          <h1 className="text-center md:text-left text-6xl sm:text-7xl md:text-[7rem] lg:text-[8rem] font-bold leading-[0.9] text-white font-royal-7 whitespace-nowrap">
-            <div className="overflow-hidden py-1 md:py-2">{splitChars(heroTitleName)}</div>
-            <div className="overflow-hidden py-1 md:py-2 text-gray-600">{splitChars(heroTitleSurname)}</div>
+          {/* --- SEO DOSTU H1 ÇÖZÜMÜ (ChatGPT Madde 2) --- */}
+
+          {/* 1. GERÇEK H1 (Görünmez ama Google okur) */}
+          <h1 className="sr-only">
+            {fullTitle} - Oyuncu, Yönetmen ve Eğitmen
           </h1>
 
+          {/* 2. GÖRSEL BAŞLIK (Animasyonlu - Botlardan gizlendi aria-hidden="true") */}
+          <div
+            aria-hidden="true"
+            className="text-center md:text-left text-6xl sm:text-7xl md:text-[7rem] lg:text-[8rem] font-bold leading-[0.9] text-white font-royal-7 whitespace-nowrap"
+          >
+            <div className="overflow-hidden py-1 md:py-2">{splitChars(heroTitleName)}</div>
+            <div className="overflow-hidden py-1 md:py-2 text-gray-600">{splitChars(heroTitleSurname)}</div>
+          </div>
+
           {/* AÇIKLAMA METNİ */}
-          <div className="hero-desc mt-6 md:mt-8 max-w-xs md:max-w-md text-gray-400 font-light leading-relaxed font-fluid-2 flex flex-wrap justify-center md:justify-start text-sm md:text-base text-center md:text-left">
+          {/* Desktop için ml-2 eklendi */}
+          <div className="hero-desc mt-6 max-w-xs text-gray-400 font-light leading-relaxed font-fluid-2 flex flex-wrap justify-start text-sm text-left ml-2">
             {splitWords(descText)}
           </div>
         </div>
@@ -127,7 +136,8 @@ export default function Hero(): React.JSX.Element {
             <div className="absolute inset-0 z-10 transform -rotate-3 border-[8px] md:border-[10px] border-white/10 shadow-2xl bg-black">
               <img
                 src={heroImage1}
-                alt="Zafer Altun Portrait 1"
+                // SEO: Alt etiketi güçlendirildi (ChatGPT Madde 3)
+                alt="Zafer Altun Portre - Siyah Beyaz"
                 className="w-full h-full object-cover opacity-80"
               />
             </div>
@@ -139,7 +149,8 @@ export default function Hero(): React.JSX.Element {
             >
               <img
                 src={heroImage2}
-                alt="Zafer Altun Portrait 2"
+                // SEO: Alt etiketi güçlendirildi (ChatGPT Madde 3)
+                alt="Zafer Altun - Oyuncu ve Yönetmen"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -30,9 +30,9 @@ export type SinemaItem = {
 // --- ANA VERİ HAVUZU ---
 export const SINEMA_DATA: SinemaItem[] = [
   // ROW 1 (1-8)
-  { id: 1, img: c01, title: "2023/ Mahsusa/ Dizi" },
-  { id: 2, img: c02, title: "2023/ Mahsusa/ Dizi" },
-  { id: 3, img: c03, title: "2023/ Mahsusa/ Dizi" },
+  { id: 1, img: c01, title: "2023/ Mahsusa:Trablusgarb/ Dizi" },
+  { id: 2, img: c02, title: "2023/ Mahsusa:Trablusgarb/ Dizi" },
+  { id: 3, img: c03, title: "2023/ Mahsusa:Trablusgarb/ Dizi" },
   { id: 4, img: c04, title: "2025/ Gülizar Yolayrımı/ Sinama" },
   { id: 5, img: c05, title: "2023/ Kirli Sepeti/ Dizi" },
   { id: 6, img: c06, title: "2014/ Balık/ Sinema" },

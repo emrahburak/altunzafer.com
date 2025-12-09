@@ -1,4 +1,11 @@
 {
+  "seo": {
+    "title": "Zafer Altun | Oyuncu, Yönetmen & Eğitmen",
+    "description": "Uluslararası oyuncu, yönetmen ve eğitmen Zafer Altun'un resmi portfolyo sitesi. Sinema, tiyatro, oyunculuk eğitimi ve Time Right Production projeleri.",
+    "keywords": "Zafer Altun, Oyuncu, Yönetmen, Eğitmen, Tiyatro, Sinema, Time Right Production, Tiyatro oyunculuk, Kamera önü oyunculuğu, Diksiyon, Etkili konuşma, Çocuk oyunu, Audition Teknikleri, Oyunculuk dersleri, Drama Eğitmeni, İsviçre Oyunculuk Eğitimi, Zurich Oyunculuk Eğitimi, İsviçre Kamere Önü Oyunculuk Eğitimi, Zurich Kamera Önü Oyunculuk Eğitimi, İstanbul Oyunculuk Eğitimi, İstanbul Kamere Önü Oyunculuk Eğitimi, Berlin Oyunculuk Eğitimi, Berlin Kamera Önü Oyunculuk Eğitimi, İstanbul Etkili Türkçe Konuşma Eğitimi, Hollanda Kamera Önü Oyunculuk Egitimi",
+    "ogTitle": "Zafer Altun | Oyuncu, Yönetmen & Eğitmen",
+    "ogDescription": "Uluslararası oyuncu, yönetmen ve eğitmen Zafer Altun'un resmi portfolyo sitesi. Sinema, tiyatro ve global yapımcılık projeleri."
+  },
   "navbar": {
     "home": "ANASAYFA",
     "biography": "BİYOGRAFİ",
@@ -52,7 +59,7 @@
       "title": "Eğitim & Yapım",
       "subtitle": "Time Right Production",
       "globalExperienceTitle": "Global İş Ortaklıkları ve Eğitim Misyonları",
-      "globalExperienceText": "Time Right Production çatısı altında yürütülen eğitim ve yapımcılık faaliyetleri, Türkiye sınırlarını aşarak Avrupa'ya uzanmaktadır. Oyuncu, yönetmen ve uygulayıcı yapımcı kimlikleriyle İsviçre (Zürich), Almanya (Berlin) ve Hollanda başta olmak üzere, 5 farklı ülkede 30 günlük 'Pir Sultan Abdal' turnesi gibi büyük organizasyonlara imza atmıştır. Bu global çalışmalar, 'Eny Finance' Reklam Serisi ve Simtronik Belgesel Filmi gibi uluslararası yapımcılık görevlerini ve Maya Kult Verein (Zürich) çatısı altında verilen oyunculuk atölyelerini kapsamaktadır.",
+      "globalExperienceText": "Time Right Production çatısı altında yürütülen faaliyetler, Zafer Altun'un yapımcı ve eğitmen kimliğiyle Avrupa'ya uzanmaktadır. Hollanda ve İsviçre başta olmak üzere, 'Simtronik' belgesel filmi ve uluslararası reklam serileri gibi projelerin uygulayıcı yapımcılığını üstlenen Altun; bu üretim vizyonunu eğitimle birleştirmektedir. Sanatçı, Zürih (Maya Kult Verein) ve Berlin'de düzenlediği oyunculuk atölyeleriyle, sektörel tecrübesini global ölçekte aktarmaya devam etmektedir.",
       "itemRole": "Yapım & Eğitim"
     }
   },

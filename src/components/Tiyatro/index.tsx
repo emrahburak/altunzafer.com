@@ -81,15 +81,16 @@ export default function Tiyatro() {
         <div className="absolute inset-0 bg-radial-gradient from-[#2a0a0a] to-black opacity-60 pointer-events-none"></div>
 
         {/* --- DİKEY BAŞLIK (Sabit) --- */}
-        <div className="absolute left-0 top-0 w-[150px] h-full flex items-center justify-center bg-black/50 z-50">
+        {/* DÜZELTME: Genişlik 150px'den 80px'e düşürüldü. */}
+        <div className="absolute left-0 top-0 w-[80px] h-full flex items-center justify-center bg-black/50 z-50 border-r border-white/10">
           <span className="text-4xl text-gold-500 font-royal-7 tracking-widest uppercase transition-colors writing-mode-vertical-rl rotate-180">
-            {/* DÜZELTİLDİ: Orijinal key kullanıldı */}
             {t('career.sectionTitle.theater')}
           </span>
         </div>
 
         {/* --- YATAY KAYDIRICI CONTAINER --- */}
-        <div className="relative h-full w-full pl-[150px] overflow-hidden">
+        {/* DÜZELTME: Padding 150px'den 80px'e düşürüldü (Başlık genişliği kadar) */}
+        <div className="relative h-full w-full pl-[80px] overflow-hidden">
 
           {/* --- SLIDER TRACK --- */}
           <div
@@ -112,7 +113,8 @@ export default function Tiyatro() {
                   />
 
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-lienar-to-t from-black via-black/70 to-transparent flex items-end justify-center px-4 pb-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* DÜZELTME: bg-lienar-to-t -> bg-gradient-to-t */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent flex items-end justify-center px-4 pb-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="text-white text-xs md:text-sm font-bold uppercase tracking-widest text-center w-full whitespace-normal break-words leading-tight translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                       {/* replace fonksiyonu, '/' işaretlerinin yanına boşluk ekleyerek doğal kırılma sağlar */}
                       {item.title.replace(/\//g, ' / ')}

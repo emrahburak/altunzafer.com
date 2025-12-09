@@ -39,7 +39,7 @@ export default function Production() {
     () => {
       const mm = gsap.matchMedia();
 
-      // GSAP'i yalnızca Desktop'ta çalıştırma ve null kontrolü yapma (En iyi performans için korundu)
+      // GSAP'i yalnızca Desktop'ta çalıştırma
       mm.add("(min-width: 1024px)", () => {
         const reels = gsap.utils.toArray<HTMLElement>(".column-reel");
 
@@ -77,8 +77,8 @@ export default function Production() {
         {/* ARKA PLAN DEKORU */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
-        {/* DİKEY BAŞLIK (Korunmalı - Mobil bozmamalı) */}
-        <div className="absolute left-0 top-0 w-[150px] h-full flex items-center justify-center bg-black/50 z-50 hidden lg:flex">
+        {/* DİKEY BAŞLIK */}
+        <div className="absolute left-0 top-0 w-[80px] h-full flex items-center justify-center bg-black/50 z-50 hidden lg:flex border-r border-white/10">
           <span className="text-4xl text-gold-500 font-royal-7 tracking-widest uppercase writing-mode-vertical-rl rotate-180">
             {t("career.sectionTitle.production")}
           </span>
@@ -87,14 +87,15 @@ export default function Production() {
         {/* ANA KAPSAYICI */}
         <div
           className="
-            w-full h-full lg:w-[90vw] lg:h-screen
-            flex flex-col lg:flex-row lg:justify-between lg:items-center
-            overflow-y-auto lg:overflow-hidden
-            px-6 py-24 lg:p-0
-          "
+            w-full h-full lg:w-[90vw] lg:h-screen
+            flex flex-col lg:flex-row lg:justify-between lg:items-center
+            overflow-y-auto lg:overflow-hidden
+            px-6 py-24 lg:p-0
+          "
         >
-          {/* SOL TARAF — METİN (lg:pl-32 yerine 150px'e karşılık gelen değer eklendi) */}
-          <div className=" w-[35%] h-auto  flex flex-col ml-30  z-20 shrink-0 ">
+          {/* SOL TARAF — METİN */}
+          {/* DÜZELTME: Genişlik %45'ten %35'e düşürüldü, padding korundu. */}
+          <div className="w-full lg:w-[35%] h-auto lg:h-full flex flex-col justify-center px-4 lg:pl-[30px] lg:pr-8 z-20 shrink-0">
             <div className="mb-12 lg:mb-16">
               <span className="text-gold-500 font-geometric tracking-[0.3em] text-xs uppercase block mb-2">
                 {t("career.production.subtitle")}
@@ -112,21 +113,21 @@ export default function Production() {
               <h3 className="text-xl font-royal-7 text-gold-500 mb-3">
                 {t("career.production.globalExperienceTitle")}
               </h3>
-              <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed font-fluid-2">
+              <p className="text-sm md:text-base text-gray-300 font-light leading-relaxed font-fluid-2 text-justify">
                 {t("career.production.globalExperienceText")}
               </p>
             </div>
           </div>
 
           {/* SAĞ TARAF — İKİ KOLON REEL */}
-          <div className="w-full lg:w-[50%] h-full flex lg:flex-row gap-4 lg:gap-8 overflow-hidden pt-12 lg:pt-0">
+          {/* DÜZELTME: Genişlik %60'tan %55'e düşürüldü ki taşmasın. */}
+          <div className="w-full lg:w-[55%] h-full flex lg:flex-row gap-4 lg:gap-8 overflow-hidden pt-12 lg:pt-0">
             {columns.map((colItems, colIndex) => (
               <div
                 key={colIndex}
                 className="relative w-1/2 h-auto lg:h-[150%] -mt-[10%] flex flex-col gap-6"
               >
                 <div className="column-reel flex flex-col gap-6 w-full">
-                  {/* Sonsuz döngü için veriyi iki kez render ediyoruz */}
                   {[...colItems, ...colItems].map((item, i) => (
                     <div
                       key={`${colIndex}-${i}`}

@@ -1,4 +1,11 @@
 {
+  "seo": {
+    "title": "Zafer Altun | Actor, Director & Instructor",
+    "description": "Official portfolio of international actor, director, and instructor Zafer Altun. Cinema, theater, acting training, and Time Right Production projects.",
+    "keywords": "Zafer Altun, Actor, Director, Instructor, Theater, Cinema, Time Right Production, Screen Acting, Diction, Public Speaking, Audition Techniques, Acting Classes, Drama Instructor, Switzerland Acting Training, Zurich Acting Classes, Istanbul Acting Workshop, Berlin Screen Acting, Netherlands Acting Training",
+    "ogTitle": "Zafer Altun | Actor, Director & Instructor",
+    "ogDescription": "Official portfolio of international actor and director Zafer Altun. Cinema, theater, and global production projects."
+  },
   "navbar": {
     "home": "HOME",
     "biography": "BIOGRAPHY",
@@ -53,7 +60,7 @@
       "title": "Education & Production",
       "subtitle": "Time Right Production",
       "globalExperienceTitle": "Global Partnerships and Educational Mission",
-      "globalExperienceText": "Educational and production activities carried out under the umbrella of Time Right Production extend beyond Turkey to Europe. As an actor, director, and executive producer, Zafer Altun has signed off on major organizations, including a 30-day 'Pir Sultan Abdal' tour across 5 different countries, primarily Switzerland (Zurich), Germany (Berlin), and the Netherlands. These global works encompass international production duties such as the 'Eny Finance' Commercial Series and the Simtronik Documentary Film, as well as acting workshops provided under the Maya Kult Verein (Zurich).",
+      "globalExperienceText": "The operations conducted under the umbrella of Time Right Production extend to Europe, reflecting Zafer Altun's dual role as a producer and instructor. Serving as the executive producer for projects such as the 'Simtronik' documentary and international commercial series—primarily in the Netherlands and Switzerland—Altun merges this production vision with education. Through acting workshops held in Zurich (Maya Kult Verein) and Berlin, he continues to pass on his industry expertise on a global scale.",
       "itemRole": "Production & Education"
     }
   },
