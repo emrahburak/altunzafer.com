@@ -1,10 +1,12 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "../Footer";
-// Eğer React Router kullanıyorsan Link'i import et, yoksa <a> etiketi de çalışır.
-import { Link } from "react-router-dom";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Contact() {
   const { t } = useTranslation();

@@ -106,15 +106,16 @@ export default function Videos() {
 
   return (
     <section id="videos" className="w-full min-h-screen bg-black py-20 flex flex-col items-center justify-center">
-      <div className="container mx-auto px-4 space-y-5">
+      {/* DÜZELTME: 
+         1. 'container' ve 'mx-auto' kaldırıldı. (Ortalamayı iptal ettik)
+         2. 'px-6 md:px-24' eklendi. (Diğer sayfalarla aynı sol boşluk verildi)
+      */}
+      <div className="w-full space-y-5 px-6 md:px-24">
 
-        {/* ... BAŞLIK ve ANA VİDEO ALANI (Aynı kalacak) ... */}
-        {/* ... Buradaki kodlar değişmedi ... */}
         <div className="text-left mb-10">
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-10 border-l-4 border-gold-500 pl-6 font-royal-7">
             {t('videos.sectionTitle')}
           </h2>
-          {/* ... */}
 
           <div className="space-y-6 text-lg font-light text-gray-300 leading-relaxed font-fluid-2 pl-6">
             {t('videos.description')}

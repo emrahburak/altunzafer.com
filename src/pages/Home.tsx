@@ -12,6 +12,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MobileCareer from '@/components/MobileCareer';
 import MobileAwards from '@/components/MobileAwards';
+import { useTranslation } from 'react-i18next';
 
 // 1. Eklentiyi burada, bileşen dışına kaydediyoruz.
 // Böylece Home yüklendiği anda ScrollTrigger tüm uygulama için hazır olur.
@@ -20,63 +21,85 @@ gsap.registerPlugin(ScrollTrigger);
 const LazyVideos = lazy(() => import('../components/Videos'));
 
 export default function Home() {
+  const { t, i18n } = useTranslation();
   return (
     <>
-      {/* SEO AYARLARI BURADA YAPILIR */}
+      {/* SEO AYARLARI */}
       <Helmet>
-        <title>Zafer Altun | Actor & Director</title>
-        <meta name="description" content="Zafer Altun'un resmi portfolyo sitesi. Tiyatro, Sinema, Yönetmenlik ve Time Right Production projeleri." />
-        <link rel="canonical" href="https://altunzafer.com/" />
+        {/* Dil ayarı */}
+        <html lang={i18n.language} />
+
+        {/* --- TEMEL SEO --- */}
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
+        <meta name="keywords" content={t('seo.keywords')} />
+
+        {/* --- OPEN GRAPH (Facebook / LinkedIn / WhatsApp) --- */}
+        <meta property="og:title" content={t('seo.ogTitle')} />
+        <meta property="og:description" content={t('seo.ogDescription')} />
+        {/* og:image, og:url, og:type INDEX.HTML'de kalacak */}
+
+        {/* --- TWITTER --- */}
+        <meta name="twitter:title" content={t('seo.ogTitle')} /> {/* Genelde aynı başlık kullanılır */}
+        <meta name="twitter:description" content={t('seo.ogDescription')} />
+        {/* twitter:card, twitter:image INDEX.HTML'de kalacak */}
+
+        <link rel="canonical" href="https://www.altunzafer.com/" />
       </Helmet>
 
       {/* SAYFA İÇERİĞİ */}
       <div id="hero">
         <Hero />
       </div>
-      <div id="biography">
-        <Biography />
-      </div>
-      {/* TEKİL SABİT ÇAPA: Tüm mobil/desktop geçişlerini sarmalar. */}
-      {/* Navbar'ın hedefi her zaman bu div olacaktır. */}
-      <div id="career">
 
-        {/* DESKTOP (LG ve üzeri) İçin Complex Animasyonlu Bileşen */}
-        {/* Bileşenin kendisinde ID olmamalıdır! */}
-        <div className="hidden lg:block">
+      <section id="biography">
+        <Biography />
+      </section>
+
+      {/* --- KARİYER BÖLÜMÜ --- */}
+      {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
+      <section id="career">
+
+        {/* DESKTOP (Sadece XL ve üzeri - Laptop/PC) */}
+        <div className="hidden xl:block">
           <Career />
         </div>
 
-        {/* MOBİL (LG altı) İçin Sade Sticky Versiyon */}
-        {/* Bileşenin kendisinde ID olmamalıdır! */}
-        <div className="lg:hidden">
+        {/* MOBİL & TABLET (XL altı - Telefonlar ve Tabletler) */}
+        <div className="xl:hidden">
           <MobileCareer />
         </div>
 
-      </div>
-      <div id="awards">
+      </section>
 
-        <div className="hidden lg:block">
+      {/* --- ÖDÜLLER BÖLÜMÜ --- */}
+      {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
+      <section id="awards">
+
+        <div className="hidden xl:block">
           <Awards />
         </div>
 
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <MobileAwards />
         </div>
-      </div>
+
+      </section>
+
       {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
-      <div id="videos">
+      <section id="showreel">
         <Suspense fallback={
-          // Kullanıcı scroll ettiğinde, Videos yüklenirken basit bir yükleme animasyonu göster
-          <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white">
-            Seçme Projeler Yükleniyor...
+          <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white font-royal-7 tracking-widest">
+            Yükleniyor...
           </div>
         }>
           <LazyVideos />
         </Suspense>
-      </div>
-      <div id="contact">
+      </section>
+
+      <section id="contact">
         <Contact />
-      </div>
+      </section>
     </>
   );
 }
