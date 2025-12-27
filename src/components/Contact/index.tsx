@@ -89,6 +89,20 @@ export default function Contact() {
               </div>
             </div>
 
+          {/* --- E-POSTA ve YASAL --- */}
+          <div>
+            <h4 className="contact-anim text-sm uppercase tracking-widest mb-4 text-gold-500">
+              {t('contact.email')}
+            </h4>
+
+            <a
+              href="mailto:info@altunzafer.com"
+              className="contact-anim text-2xl text-white transition-colors block mb-8 hover:text-gold-500"
+            >
+              info@altunzafer.com
+            </a>
+            {/* --- INSTAGRAM LINKI (YENİ EKLENDİ) --- */}
+            <div className="contact-anim mb-8">
             {/* --- SAĞ KOLON: E-POSTA, SOSYAL & YASAL --- */}
             <div>
               <h4 className="contact-anim text-sm uppercase tracking-widest mb-4 text-gold-500">

@@ -22,4 +22,10 @@ i18n
     },
   });
 
+// --- SEO İÇİN EKLENEN KISIM ---
+// Dil her değiştiğinde HTML'deki lang özniteliğini günceller
+i18n.on("languageChanged", (lng) => {
+  document.documentElement.lang = lng;
+});
+
 export default i18n;
