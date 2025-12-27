@@ -74,10 +74,10 @@ export default function Contact() {
             </h4>
 
             <a
-              href="mailto:altunzafer@gmail.com"
+              href="mailto:info@altunzafer.com"
               className="contact-anim text-2xl text-white transition-colors block mb-8 hover:text-gold-500"
             >
-              altunzafer@gmail.com
+              info@altunzafer.com
             </a>
             {/* --- INSTAGRAM LINKI (YENİ EKLENDİ) --- */}
             <div className="contact-anim mb-8">
