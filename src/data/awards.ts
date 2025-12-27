@@ -1,7 +1,6 @@
 /// --- GÖRSEL IMPORTLARI (01 - 21) ---
 // Not: Klasör ismin 'ödül' olduğu için path'i ona göre düzenledim.
 // Build hatası alırsan klasör adını 'odul' yapmanı öneririm.
-import img1 from "@/assets/images/ödül/webp/altun-odul-01.webp";
 import img2 from "@/assets/images/ödül/webp/altun-odul-02.webp";
 import img3 from "@/assets/images/ödül/webp/altun-odul-03.webp";
 import img4 from "@/assets/images/ödül/webp/altun-odul-04.webp";
@@ -13,15 +12,16 @@ import img9 from "@/assets/images/ödül/webp/altun-odul-09.webp";
 import img10 from "@/assets/images/ödül/webp/altun-odul-10.webp";
 import img11 from "@/assets/images/ödül/webp/altun-odul-11.webp";
 import img12 from "@/assets/images/ödül/webp/altun-odul-12.webp";
-import img13 from "@/assets/images/ödül/webp/altun-odul-13.webp";
 import img14 from "@/assets/images/ödül/webp/altun-odul-14.webp";
 import img15 from "@/assets/images/ödül/webp/altun-odul-15.webp";
-import img16 from "@/assets/images/ödül/webp/altun-odul-16.webp";
 import img17 from "@/assets/images/ödül/webp/altun-odul-17.webp";
 import img18 from "@/assets/images/ödül/webp/altun-odul-18.webp";
 import img19 from "@/assets/images/ödül/webp/altun-odul-19.webp";
 import img20 from "@/assets/images/ödül/webp/altun-odul-20.webp";
-import img21 from "@/assets/images/ödül/webp/altun-odul-21.webp";
+import img22 from "@/assets/images/ödül/webp/altun-odul-22.webp";
+import img23 from "@/assets/images/ödül/webp/altun-odul-23.webp";
+import img24 from "@/assets/images/ödül/webp/altun-odul-24.webp";
+import img25 from "@/assets/images/ödül/webp/altun-odul-25.webp";
 
 export type AwardItem = {
   id: string;
@@ -43,7 +43,7 @@ export const AWARDS_DATA: AwardItem[] = [
     categoryKey: "awards.categories.cinema",
     // JSON'daki ödül listesinin tamamını çekeceğiz
     awardsKeys: "awards.projects.kayitsiz.list", // String olarak path veriyoruz
-    images: [img1, img21, img14, img5],
+    images: [img22, img23, img24, img25, img14],
   },
   {
     id: "a2",
@@ -51,7 +51,7 @@ export const AWARDS_DATA: AwardItem[] = [
     projectKey: "awards.projects.isin_asli.title",
     categoryKey: "awards.categories.cinema",
     awardsKeys: "awards.projects.isin_asli.list",
-    images: [img2, img19, img8],
+    images: [img2, img19, img8, img5],
   },
   {
     id: "a3",
@@ -70,7 +70,7 @@ export const AWARDS_DATA: AwardItem[] = [
     awardsKeys: "awards.projects.balik.list",
 
     // Karma: 4 adet görsel
-    images: [img4, img9, img18, img12],
+    images: [img4, img18, img9, img12],
   },
 
   {
@@ -79,6 +79,6 @@ export const AWARDS_DATA: AwardItem[] = [
     projectKey: "awards.projects.cok_orijinal.title",
     categoryKey: "awards.categories.theater",
     awardsKeys: "awards.projects.cok_orijinal.list",
-    images: [img7, img10, img13, img16, img17],
+    images: [img7, img10, img17],
   },
 ];
