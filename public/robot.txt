@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemizin yol haritası
+Sitemap: https://altunzafer.com/sitemap.xml

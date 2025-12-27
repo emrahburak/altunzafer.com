@@ -1,10 +1,7 @@
 {
-  "seo": {
-    "title": "Zafer Altun | Actor, Director & Instructor",
-    "description": "Official portfolio of international actor, director, and instructor Zafer Altun. Cinema, theater, acting training, and Time Right Production projects.",
-    "keywords": "Zafer Altun, Actor, Director, Instructor, Theater, Cinema, Time Right Production, Screen Acting, Diction, Public Speaking, Audition Techniques, Acting Classes, Drama Instructor, Switzerland Acting Training, Zurich Acting Classes, Istanbul Acting Workshop, Berlin Screen Acting, Netherlands Acting Training",
-    "ogTitle": "Zafer Altun | Actor, Director & Instructor",
-    "ogDescription": "Official portfolio of international actor and director Zafer Altun. Cinema, theater, and global production projects."
+  "metadata": {
+    "title": "Zafer Altun | Actor, Director & Acting Coach",
+    "description": "Official portfolio of Zafer Altun. International actor, director, and educator based in Switzerland & Turkey."
   },
   "navbar": {
     "home": "HOME",

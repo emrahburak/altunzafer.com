@@ -32,7 +32,7 @@ export default function Contact() {
 
   return (
     <>
-      <div
+      <section
         ref={containerRef}
         id="contact"
         className="min-h-[60vh] py-20 px-6 md:px-24 bg-black flex flex-col justify-between"
@@ -44,75 +44,53 @@ export default function Contact() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
-
-            {/* --- SOL KOLON: ADRES - GSM - CV İNDİR --- */}
+            {/* --- MENAJERLİK --- */}
             <div>
-
-              {/* 2. GSM BÖLÜMÜ */}
-              <div className="mb-10">
-                <h4 className="contact-anim text-gold-500 text-sm uppercase tracking-widest mb-2">
-                  {t('contact.gsm')}
-                </h4>
+              <h4 className="contact-anim text-gold-500 text-sm uppercase tracking-widest mb-4">
+                {t('contact.management')}
+              </h4>
+              {/* Kişi 1 */}
+              <div className="mb-6">
+                <p className="contact-anim text-white text-lg">Aslı Bankoğlu</p>
                 <div className="contact-anim">
-                  <a
-                    href="tel:+905053743810"
-                    className="text-white text-lg hover:text-gold-500 transition-colors inline-block"
-                  >
-                    +90 505 374 38 10
+                  <a href="tel:+905323614347" className="text-gray-400 hover:text-white transition-colors">
+                    +90 532 361 43 47
                   </a>
                 </div>
               </div>
 
-              {/* 3. CV İNDİR BUTONU */}
-              <div className="contact-anim">
-                <a
-                  href="/zafer-altun-cv.pdf"
-                  download="Zafer_Altun_CV.pdf"
-                  className="group inline-flex items-center gap-3 px-6 py-3 border border-gold-500 text-gold-500 uppercase tracking-widest text-sm font-medium hover:bg-gold-500 hover:text-black transition-all duration-300"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-5 h-5 group-hover:translate-y-1 transition-transform"
-                  >
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                  </svg>
-                  {t('contact.downloadCV')}
-                </a>
+              {/* Kişi 2 */}
+              <div>
+                <p className="contact-anim text-white text-lg">Fatoş Yılmaz</p>
+                <div className="contact-anim">
+                  <a href="tel:+905327726506" className="text-gray-400 hover:text-white transition-colors">
+                    +90 532 772 65 06
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* --- SAĞ KOLON: E-POSTA, SOSYAL & YASAL --- */}
+            {/* --- E-POSTA ve YASAL --- */}
             <div>
               <h4 className="contact-anim text-sm uppercase tracking-widest mb-4 text-gold-500">
                 {t('contact.email')}
               </h4>
 
               <a
-                href="mailto:altunzafer@gmail.com"
-                className="contact-anim text-2xl text-white transition-colors block mb-8 hover:text-gold-500 break-all"
+                href="mailto:info@altunzafer.com"
+                className="contact-anim text-2xl text-white transition-colors block mb-8 hover:text-gold-500"
               >
-                altunzafer@gmail.com
+                info@altunzafer.com
               </a>
-
-              {/* --- SOSYAL MEDYA LİNKLERİ (INSTAGRAM & IMDB) --- */}
-              {/* DÜZELTME: Flex-col ile alt alta sıralandı */}
-              <div className="contact-anim mb-8 flex flex-col gap-4 items-start">
-                
-                {/* INSTAGRAM */}
+              {/* --- INSTAGRAM LINKI (YENİ EKLENDİ) --- */}
+              <div className="contact-anim mb-8">
                 <a
                   href="https://www.instagram.com/altunzafer/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-gray-500 hover:text-gold-500 transition-colors group"
                 >
+                  {/* Instagram Icon (SVG) */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -129,26 +107,6 @@ export default function Contact() {
                   </svg>
                   <span className="text-sm tracking-wider uppercase font-medium">Instagram</span>
                 </a>
-
-                {/* IMDB (YENİ EKLENDİ) */}
-                <a
-                  href="https://www.imdb.com/name/nm3667884/?ref_=nv_sr_srsg_0_tt_0_nm_2_in_0_q_zafer%2520altun"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gray-500 hover:text-gold-500 transition-colors group"
-                >
-                  {/* IMDb Logo SVG */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6 group-hover:scale-110 transition-transform"
-                  >
-                    <path d="M19.8 3H4.2C3.5 3 3 3.5 3 4.2v15.6c0 .7.5 1.2 1.2 1.2h15.6c.7 0 1.2-.5 1.2-1.2V4.2c0-.7-.5-1.2-1.2-1.2zM7.1 18.3H5.4V5.7h1.7v12.6zm4.1 0H9.1V5.7h2.1c2.2 0 2.6 1.4 2.6 3.4v5.8c0 2-1.4 3.4-2.6 3.4zm7.4 0h-1.6v-5.2c0-.3 0-2.3-1-2.3-.8 0-.9 1.7-.9 2.3v5.2h-1.6V5.7h1.6v1.9c.5-1.5 1.7-2.1 2.6-1.9 1 .2 1 1.4 1 1.9v8.8z" />
-                  </svg>
-                  <span className="text-sm tracking-wider uppercase font-medium">IMDb</span>
-                </a>
-
               </div>
 
               {/* Şirket Bilgisi */}
@@ -157,7 +115,8 @@ export default function Contact() {
                 {t('contact.locations')}
               </p>
 
-              {/* --- GİZLİLİK LİNKİ --- */}
+              {/* --- GİZLİLİK LİNKİ (BURAYA EKLENDİ) --- */}
+              {/* contact-anim sınıfı ile bu da animasyona dahil olur */}
               <div className="contact-anim">
                 <Link
                   to="/privacy"
@@ -175,7 +134,8 @@ export default function Contact() {
         <div className="contact-anim mt-20">
           <Footer />
         </div>
-      </div>
+      </section>
     </>
+
   );
 }
