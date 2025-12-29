@@ -3,14 +3,14 @@ import { lazy, Suspense } from 'react';
 import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 import Biography from "../components/Biography";
-import Career from "../components/Career";
+// import Career from "../components/Career";
 import Awards from "../components/Awards";
 import Contact from "../components/Contact";
 
 // --- GSAP MERKEZİ KAYIT ---
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import MobileCareer from '@/components/MobileCareer';
+// import MobileCareer from '@/components/MobileCareer';
 import MobileAwards from '@/components/MobileAwards';
 import { useTranslation } from 'react-i18next';
 import MvpCareer from '@/components/MvpCareer';
@@ -62,17 +62,15 @@ export default function Home() {
       <section id="career">
 
         {/* DESKTOP (Sadece XL ve üzeri - Laptop/PC) */}
-        <div className="hidden xl:block">
-          <Career />
-        </div>
-        <div className="hidden xl:block">
-          <MvpCareer />
-        </div>
+
+        <MvpCareer />
+        {/* <div className="hidden xl:block"> */}
+        {/* </div> */}
 
         {/* MOBİL & TABLET (XL altı - Telefonlar ve Tabletler) */}
-        <div className="xl:hidden">
-          <MobileCareer />
-        </div>
+        {/* <div className="xl:hidden"> */}
+        {/*   <MobileCareer /> */}
+        {/* </div> */}
 
       </section>
 

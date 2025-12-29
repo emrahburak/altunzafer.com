@@ -30,7 +30,7 @@ export default function MobileProduction() {
 
   return (
     // DÜZELTME: pb-8 ekleyerek en altta güvenlik boşluğu bıraktık
-    <div className="w-full pb-8">
+    <div className="w-full pb-8 px-3">
 
       {/* 1. TANITIM YAZISI */}
       <p className="text-sm text-gray-400 leading-relaxed mb-6">

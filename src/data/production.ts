@@ -17,6 +17,8 @@ import p13 from "@/assets/images/egitim/webp/altun-egitim-13.webp";
 import p14 from "@/assets/images/egitim/webp/altun-egitim-14.webp";
 import p15 from "@/assets/images/egitim/webp/altun-egitim-15.webp";
 import p16 from "@/assets/images/egitim/webp/altun-egitim-16.webp";
+import p17 from "@/assets/images/egitim/webp/altun-egitim-17.webp";
+import p18 from "@/assets/images/egitim/webp/altun-egitim-18.webp";
 
 export type ProductionItem = {
   id: number;
@@ -42,6 +44,8 @@ const allImages = [
   p14,
   p15,
   p16,
+  p17,
+  p18,
 ];
 
 // --- VERİ HAVUZU ---
@@ -62,4 +66,6 @@ export const PRODUCTION_DATA: ProductionItem[] = [
   { id: 14, img: allImages[13], title: "Zurich/Switzerland" },
   { id: 15, img: allImages[14], title: "TC. Cumhurbaşkanlığı Kariyer Fuarı" },
   { id: 16, img: allImages[15], title: "Final Kurgu" },
+  { id: 17, img: allImages[16], title: "Rotterdam/Kuzeyin Hikayesi" },
+  { id: 18, img: allImages[17], title: "Rotterdam/Kuzeyin Hikayesi" },
 ];
