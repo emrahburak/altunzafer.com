@@ -75,7 +75,12 @@ export default function Tiyatro() {
 
   return (
     <>
-      <div ref={containerRef} className="w-full h-full bg-dark-bg relative flex items-center justify-start overflow-hidden">
+      {/* <div ref={containerRef} className="w-full h-full bg-dark-bg relative flex items-center justify-start overflow-hidden"> */}
+
+      <div
+        ref={containerRef}
+        className="w-full h-screen bg-black relative flex items-center justify-start overflow-hidden"
+      >
 
         {/* Arka Plan Efektleri */}
         <div className="absolute inset-0 bg-radial-gradient from-[#2a0a0a] to-black opacity-60 pointer-events-none"></div>
