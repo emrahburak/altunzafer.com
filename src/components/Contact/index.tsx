@@ -44,33 +44,30 @@ export default function Contact() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* --- MENAJERLİK --- */}
+            {/* --- İLETİŞİM BİLGİLERİ (GSM & CV) --- */}
             <div>
               <h4 className="contact-anim text-gold-500 text-sm uppercase tracking-widest mb-4">
-                {t('contact.management')}
+                {t('contact.gsm')}
               </h4>
-              {/* Kişi 1 */}
-              <div className="mb-6">
-                <p className="contact-anim text-white text-lg">Aslı Bankoğlu</p>
-                <div className="contact-anim">
-                  <a href="tel:+905323614347" className="text-gray-400 hover:text-white transition-colors">
-                    +90 532 361 43 47
-                  </a>
-                </div>
+              <div className="mb-8">
+                <a href="tel:+905053743810" className="contact-anim text-white text-2xl hover:text-gold-500 transition-colors">
+                  +90 505 374 38 10
+                </a>
               </div>
 
-              {/* Kişi 2 */}
-              <div>
-                <p className="contact-anim text-white text-lg">Fatoş Yılmaz</p>
-                <div className="contact-anim">
-                  <a href="tel:+905327726506" className="text-gray-400 hover:text-white transition-colors">
-                    +90 532 772 65 06
-                  </a>
-                </div>
+              {/* CV İNDİRME BUTONU */}
+              <div className="contact-anim">
+                <a
+                  href="/zafer-altun-cv.pdf"
+                  download="zafer-altun-cv.pdf"
+                  className="inline-block px-8 py-3 border border-gold-600 text-gold-500 text-sm uppercase tracking-widest hover:bg-gold-500 hover:text-black transition-all"
+                >
+                  {t('contact.downloadCV')}
+                </a>
               </div>
             </div>
 
-            {/* --- E-POSTA ve YASAL --- */}
+            {/* --- E-POSTA ve KURUMSAL --- */}
             <div>
               <h4 className="contact-anim text-sm uppercase tracking-widest mb-4 text-gold-500">
                 {t('contact.email')}
@@ -82,32 +79,6 @@ export default function Contact() {
               >
                 info@altunzafer.com
               </a>
-              {/* --- INSTAGRAM LINKI (YENİ EKLENDİ) --- */}
-              <div className="contact-anim mb-8">
-                <a
-                  href="https://www.instagram.com/altunzafer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-gray-500 hover:text-gold-500 transition-colors group"
-                >
-                  {/* Instagram Icon (SVG) */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-6 h-6 group-hover:scale-110 transition-transform"
-                  >
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                  <span className="text-sm tracking-wider uppercase font-medium">Instagram</span>
-                </a>
-              </div>
 
               {/* Şirket Bilgisi */}
               <p className="contact-anim text-white text-sm leading-relaxed mb-6">
@@ -115,8 +86,7 @@ export default function Contact() {
                 {t('contact.locations')}
               </p>
 
-              {/* --- GİZLİLİK LİNKİ (BURAYA EKLENDİ) --- */}
-              {/* contact-anim sınıfı ile bu da animasyona dahil olur */}
+              {/* Gizlilik Linki */}
               <div className="contact-anim">
                 <Link
                   to="/privacy"
@@ -125,7 +95,6 @@ export default function Contact() {
                   {t('footer.privacy', 'Gizlilik Politikası ve Kullanım Şartları')}
                 </Link>
               </div>
-
             </div>
           </div>
         </div>
@@ -136,6 +105,5 @@ export default function Contact() {
         </div>
       </section>
     </>
-
   );
 }

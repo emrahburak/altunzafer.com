@@ -29,7 +29,7 @@ export default function MobileTiyatro() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full px-3">
 
       {/* 1. TANITIM YAZISI */}
       <p className="text-sm text-gray-400 leading-relaxed mb-6">
@@ -55,7 +55,7 @@ export default function MobileTiyatro() {
 
             {/* Overlay: Başlık */}
             <div className="absolute inset-0 bg-black/40 flex items-end justify-center p-2 transition-opacity duration-300">
-              <span className="text-white text-xs font-semibold uppercase tracking-wider text-center opacity-90 w-full whitespace-normal break-words leading-tight">
+                   <span className="text-white text-xs font-semibold uppercase tracking-wider text-center opacity-90 w-full whitespace-normal break-words leading-tight">
                 {/* / işaretlerinden sonra boşluk bırakarak doğal kırılma sağla */}
                 {item.title.replace(/\//g, ' / ')}
               </span>

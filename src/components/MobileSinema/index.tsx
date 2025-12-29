@@ -30,7 +30,7 @@ export default function MobileSinema() {
 
   return (
     // pb-8: Accordion altındaki taşma sorununu önlemek için güvenlik boşluğu
-    <div className="w-full pb-8">
+    <div className="w-full pb-8 px-3">
 
       {/* 1. TANITIM YAZISI */}
       <p className="text-sm text-gray-400 leading-relaxed mb-6">
@@ -57,7 +57,7 @@ export default function MobileSinema() {
             {/* Overlay: Başlık */}
             {/* Sinema başlıkları uzun olabileceği için replace fonksiyonu ve break-words eklendi */}
             <div className="absolute inset-0 bg-black/40 flex items-end justify-center p-2 transition-opacity duration-300">
-              <span className="text-white text-xs font-semibold uppercase tracking-wider text-center opacity-90 w-full whitespace-normal break-words leading-tight">
+              <span className="text-white text-[0.6rem] font-semibold uppercase tracking-wider text-center opacity-90 w-full whitespace-normal break-words leading-tight">
                 {item.title.replace(/\//g, ' / ')}
               </span>
             </div>
