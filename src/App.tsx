@@ -12,24 +12,30 @@ export default function App() {
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    // 1. Sayfa Başlığını Güncelle
-    document.title = t('metadata.title');
+    const currentTitle = t('metadata.title');
 
-    // 2. Meta Description'ı Güncelle
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', t('metadata.description'));
+    // Eğer t fonksiyonu henüz çeviriyi yükleyemediyse 'metadata.title' string'ini döner.
+    // Bu durumda başlığı güncelleme, bekle.
+    if (currentTitle && currentTitle !== 'metadata.title') {
+      document.title = currentTitle;
+
+      // Meta Description Güncelleme
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', t('metadata.description'));
+      }
+
+      // Open Graph Başlığı Güncelleme
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute('content', t('metadata.title'));
+      }
     }
 
-    // 3. HTML 'lang' özniteliğini güncelle
+    // HTML lang özniteliğini her zaman güncelle
     document.documentElement.lang = i18n.language;
 
-    // 4. Open Graph Başlığını da güncelleyelim (Sosyal medya paylaşımları için bonus)
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute('content', t('metadata.title'));
-    }
-  }, [i18n.language, t]);
+  }, [i18n.language, t]); // i18n.language veya t değiştiğinde çalışır
 
   return (
     <>

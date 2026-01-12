@@ -26,24 +26,22 @@ export default function Home() {
   return (
     <>
       {/* SEO AYARLARI */}
-      <Helmet>
+      <Helmet key={i18n.language}>
         {/* Dil ayarı */}
         <html lang={i18n.language} />
 
         {/* --- TEMEL SEO --- */}
-        <title>{t('seo.title')}</title>
-        <meta name="description" content={t('seo.description')} />
-        <meta name="keywords" content={t('seo.keywords')} />
+        <title>{t('metadata.title')}</title>
+        <meta name="description" content={t('metadata.description')} />
+        <meta name="keywords" content={t('metadata.keywords')} />
 
-        {/* --- OPEN GRAPH (Facebook / LinkedIn / WhatsApp) --- */}
-        <meta property="og:title" content={t('seo.ogTitle')} />
-        <meta property="og:description" content={t('seo.ogDescription')} />
-        {/* og:image, og:url, og:type INDEX.HTML'de kalacak */}
+        {/* --- OPEN GRAPH --- */}
+        <meta property="og:title" content={t('metadata.ogTitle')} />
+        <meta property="og:description" content={t('metadata.ogDescription')} />
 
         {/* --- TWITTER --- */}
-        <meta name="twitter:title" content={t('seo.ogTitle')} /> {/* Genelde aynı başlık kullanılır */}
-        <meta name="twitter:description" content={t('seo.ogDescription')} />
-        {/* twitter:card, twitter:image INDEX.HTML'de kalacak */}
+        <meta name="twitter:title" content={t('metadata.ogTitle')} />
+        <meta name="twitter:description" content={t('metadata.ogDescription')} />
 
         <link rel="canonical" href="https://www.altunzafer.com/" />
       </Helmet>
