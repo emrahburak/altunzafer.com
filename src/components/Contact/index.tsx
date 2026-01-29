@@ -141,6 +141,14 @@ export default function Contact() {
                 {t('contact.founder')}<br />
                 {t('contact.locations')}
               </p>
+              <a
+                href="https://timerightproduction.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-gray-500 hover:text-gold-500 transition-colors group"
+              >
+                TIME RIGHT PRODUCTION
+              </a>
 
               {/* Gizlilik Linki */}
               <div className="contact-anim">

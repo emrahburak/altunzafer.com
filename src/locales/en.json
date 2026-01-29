@@ -124,5 +124,11 @@
     "privacy": "Privacy Policy and Terms & Conditions",
     "rights": "All rights reserved.",
     "developer": "Developed by"
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "heading": "The Page You Are Looking For Could Not Be Found",
+    "description": "The page may have been moved, deleted, or the address may have changed. Please return to the home page.",
+    "button": "RETURN TO HOME"
   }
 }
