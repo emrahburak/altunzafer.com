@@ -124,5 +124,11 @@
     "privacy": "Gizlilik Politikası ve Kullanım Şartları",
     "rights": "Tüm hakları saklıdır.",
     "developer": "Geliştirici:"
+  },
+  "notFound": {
+    "title": "404 - Sayfa Bulunamadı",
+    "heading": "Aradığınız Sayfaya Ulaşılamadı",
+    "description": "Aradığınız sayfa taşınmış, silinmiş veya adresi değişmiş olabilir. Lütfen ana sayfaya dönerek devam edin.",
+    "button": "ANA SAYFAYA DÖN"
   }
 }

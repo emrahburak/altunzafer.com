@@ -6,6 +6,7 @@ import Privacy from "./pages/Privacy";
 import ScrollToTop from "./utils/ScrollToTop";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
 
@@ -53,7 +54,7 @@ export default function App() {
           <Route path="privacy" element={<Privacy />} />
 
           {/* 404 Sayfası (Opsiyonel - İleride ekleriz) */}
-          <Route path="*" element={<div className="h-screen flex items-center justify-center text-gold-500">Sayfa Bulunamadı</div>} />
+          <Route path="*" element={<NotFound />} />
 
         </Route>
       </Routes>
