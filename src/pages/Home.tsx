@@ -13,7 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import MobileCareer from '@/components/MobileCareer';
 import MobileAwards from '@/components/MobileAwards';
 import { useTranslation } from 'react-i18next';
-import MvpCareer from '@/components/MvpCareer';
+import Career from '@/components/MvpCareer';
 
 // 1. Eklentiyi burada, bileşen dışına kaydediyoruz.
 // Böylece Home yüklendiği anda ScrollTrigger tüm uygulama için hazır olur.
@@ -58,18 +58,7 @@ export default function Home() {
       {/* --- KARİYER BÖLÜMÜ --- */}
       {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
       <section id="career">
-
-        {/* DESKTOP (Sadece XL ve üzeri - Laptop/PC) */}
-
-        <MvpCareer />
-        {/* <div className="hidden xl:block"> */}
-        {/* </div> */}
-
-        {/* MOBİL & TABLET (XL altı - Telefonlar ve Tabletler) */}
-        {/* <div className="xl:hidden"> */}
-        {/*   <MobileCareer /> */}
-        {/* </div> */}
-
+        <Career />
       </section>
 
       {/* --- ÖDÜLLER BÖLÜMÜ --- */}

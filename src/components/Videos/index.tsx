@@ -126,6 +126,7 @@ export default function Videos() {
           {/* ... Video Player Kodları ... */}
           {/* ... Play Butonu Kodları ... */}
           <div className="relative w-full aspect-video bg-gray-900 shadow-2xl border border-white/10 rounded-sm overflow-hidden">
+            {/* ... mevcut kodların ... */}
             <video
               ref={videoRef}
               key={currentVideo.id}
@@ -134,9 +135,14 @@ export default function Videos() {
               preload="none"
               className="w-full h-full object-cover"
             >
-              <source src={currentVideo.webm} type="video/webm" />
-              <source src={currentVideo.mp4} type="video/mp4" />
+              {currentVideo.mp4 && (
+
+                <source src={currentVideo.mp4} type="video/mp4" />
+              )}
+
+              Tarayıcınız video oynatmayı desteklemiyor.
             </video>
+            {/* ... mevcut kodların ... */}
             {!isPlaying && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[2px] z-10">
                 <button onClick={handlePlayClick} className="group transition-transform active:scale-95">
@@ -197,9 +203,7 @@ export default function Videos() {
                   <h4 className={`text-sm lg:text-base font-bold truncate ${currentVideo.id === video.id ? 'text-gold-500' : 'text-white'}`}>
                     {video.titleKey}
                   </h4>
-                  <p className="text-xs text-gray-500 truncate">
-                    {t(video.descriptionKey)}
-                  </p>
+
                 </div>
               </div>
             ))}

@@ -17,7 +17,7 @@ const MobileProduction = lazy(() => import("../MobileProduction"));
  * MvpCareer: Kod bölme (Code Splitting) uygulanmış, 
  * yüksek performanslı sinematik kariyer ana bileşeni.
  */
-export default function MvpCareer() {
+export default function Career() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -116,7 +116,7 @@ export default function MvpCareer() {
 
             <button
               onClick={() => handleOpen(item.title.split('/')[0].toLowerCase())}
-              className="w-full mt-4 lg:mt-6 py-4 lg:py-5 border border-gold-600 text-gold-500 font-royal-7 uppercase tracking-[0.4em] rounded-xl transition-all duration-500 hover:bg-gold-500 hover:text-black"
+              className="w-full mt-4 lg:mt-6 py-4 lg:py-5 border border-gold-600 text-gold-500 font-royal-7 uppercase tracking-[0.4em] rounded-xl transition-all duration-500 hover:bg-gold-500 hover:text-black "
             >
               {(() => {
                 const title = item.title.toLowerCase();
@@ -142,7 +142,7 @@ export default function MvpCareer() {
           className="fixed top-6 left-6 lg:top-10 lg:left-10 z-[70] flex items-center gap-3 lg:gap-4 text-gold-500 group transition-all bg-black/50 p-2 rounded-lg backdrop-blur-sm"
         >
           <span className="text-2xl lg:text-4xl transition-transform group-hover:-translate-x-2">&larr;</span>
-          <span className="uppercase tracking-[0.5em] text-xs lg:text-sm">{t('career.turnBack')}</span>
+          <span className="uppercase tracking-[0.5em] text-xs lg:text-sm cursor-pointer">{t('career.turnBack')}</span>
         </button>
 
         <div className="w-full min-h-screen pt-20 lg:pt-0">
