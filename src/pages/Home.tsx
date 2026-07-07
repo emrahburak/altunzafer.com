@@ -3,14 +3,12 @@ import { lazy, Suspense } from 'react';
 import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 import Biography from "../components/Biography";
-// import Career from "../components/Career";
 import Awards from "../components/Awards";
 import Contact from "../components/Contact";
 
 // --- GSAP MERKEZİ KAYIT ---
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import MobileCareer from '@/components/MobileCareer';
 import MobileAwards from '@/components/MobileAwards';
 import { useTranslation } from 'react-i18next';
 import Career from '@/components/MvpCareer';
