@@ -59,13 +59,15 @@ public/                # Static deploy assets (favicons, OG image, sitemap, PDFs
 
 Photos and video posters are served from the **Cloudflare R2 CDN**, not from the repo.
 
-- Base CDN URL is defined in `src/utils/cdn.ts`.
+- Base CDN URL is read from the `VITE_CDN_URL` environment variable (fallback: `https://cdn.altunzafer.com`).
+- Set `VITE_CDN_URL` in Vercel under Project Settings > Environment Variables for Production/Preview/Development.
+- For local development, copy `.env.example` to `.env` and adjust if needed.
 - Use the helper to reference an image:
   ```ts
   import { cdnImage } from "@/utils/cdn";
   const img = cdnImage("altun-hero-01.webp");
   ```
-- The final URL is: `https://cdn.altunzafer.com/images/<filename>.webp`.
+- The final URL is: `<VITE_CDN_URL>/images/<filename>.webp`.
 - Upload new images to the R2 `images/` folder; do not add them to `src/assets/`.
 - The local image optimizer and `src/assets/images/` directory were removed; images are no longer bundled with the app.
 
