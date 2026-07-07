@@ -1,31 +1,31 @@
 // src/data/sinema.ts
-
-// --- SİNEMA GÖRSELLERİ İMPORT ---
-import c01 from "@/assets/images/sinema/webp/altun-sinema-01.webp";
-import c02 from "@/assets/images/sinema/webp/altun-sinema-02.webp";
-import c03 from "@/assets/images/sinema/webp/altun-sinema-03.webp";
-import c04 from "@/assets/images/sinema/webp/altun-sinema-04.webp";
-import c05 from "@/assets/images/sinema/webp/altun-sinema-05.webp";
-import c06 from "@/assets/images/sinema/webp/altun-sinema-06.webp";
-import c07 from "@/assets/images/sinema/webp/altun-sinema-07.webp";
-import c08 from "@/assets/images/sinema/webp/altun-sinema-08.webp";
-import c09 from "@/assets/images/sinema/webp/altun-sinema-09.webp";
-import c10 from "@/assets/images/sinema/webp/altun-sinema-10.webp";
-import c11 from "@/assets/images/sinema/webp/altun-sinema-11.webp";
-import c12 from "@/assets/images/sinema/webp/altun-sinema-12.webp";
-import c13 from "@/assets/images/sinema/webp/altun-sinema-13.webp";
-import c14 from "@/assets/images/sinema/webp/altun-sinema-14.webp";
-import c15 from "@/assets/images/sinema/webp/altun-sinema-15.webp";
-import c16 from "@/assets/images/sinema/webp/altun-sinema-16.webp";
-import c17 from "@/assets/images/sinema/webp/altun-sinema-17.webp";
-import c18 from "@/assets/images/sinema/webp/altun-sinema-18.webp";
-import c19 from "@/assets/images/sinema/webp/altun-sinema-19.webp";
+import { cdnImage } from "@/utils/cdn";
 
 export type SinemaItem = {
   id: number;
   img: string;
   title: string;
 };
+
+const c01 = cdnImage("altun-sinema-01.webp");
+const c02 = cdnImage("altun-sinema-02.webp");
+const c03 = cdnImage("altun-sinema-03.webp");
+const c04 = cdnImage("altun-sinema-04.webp");
+const c05 = cdnImage("altun-sinema-05.webp");
+const c06 = cdnImage("altun-sinema-06.webp");
+const c07 = cdnImage("altun-sinema-07.webp");
+const c08 = cdnImage("altun-sinema-08.webp");
+const c09 = cdnImage("altun-sinema-09.webp");
+const c10 = cdnImage("altun-sinema-10.webp");
+const c11 = cdnImage("altun-sinema-11.webp");
+const c12 = cdnImage("altun-sinema-12.webp");
+const c13 = cdnImage("altun-sinema-13.webp");
+const c14 = cdnImage("altun-sinema-14.webp");
+const c15 = cdnImage("altun-sinema-15.webp");
+const c16 = cdnImage("altun-sinema-16.webp");
+const c17 = cdnImage("altun-sinema-17.webp");
+const c18 = cdnImage("altun-sinema-18.webp");
+const c19 = cdnImage("altun-sinema-19.webp");
 
 // --- ANA VERİ HAVUZU ---
 export const SINEMA_DATA: SinemaItem[] = [
@@ -49,7 +49,6 @@ export const SINEMA_DATA: SinemaItem[] = [
     img: c13,
     title: "2006/ Karagöz ve Hacivat Neden Öldürüldü/ Sinema",
   },
-
   { id: 14, img: c14, title: "2025/ Gülizar Yolayrımı/ Sinama" },
   { id: 15, img: c15, title: "2022/ Köşkü Ammar/ Sinema (Baş Rol)" },
   { id: 16, img: c16, title: "2022/ Malazgirt 1071/ Sinama" },
