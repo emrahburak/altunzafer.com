@@ -4,10 +4,12 @@ import { useGSAP } from "@gsap/react";
 import { useTranslation } from "react-i18next";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { cdnImage } from "@/utils/cdn";
+
 // GÖRSELLER
-import baseImage from "@/assets/images/biyografy/webp/altun-bio-01.webp";
-import middleImage from "@/assets/images/biyografy/webp/altun-bio-02.webp";
-import topImage from "@/assets/images/biyografy/webp/altun-bio-03.webp";
+const baseImage = cdnImage("altun-bio-01.webp");
+const middleImage = cdnImage("altun-bio-02.webp");
+const topImage = cdnImage("altun-bio-03.webp");
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,11 +1,5 @@
-// --- POSTER (KAPAK RESMİ) IMPORTLARI ---
-// Senin optimizer çıktına göre güncellendi: src/assets/images/posters/webp/
-import p1 from "@/assets/images/posters/webp/altun-video-01-poster.webp";
-import p2 from "@/assets/images/posters/webp/altun-video-02-poster.webp";
-import p3 from "@/assets/images/posters/webp/altun-video-03-poster.webp";
-import p4 from "@/assets/images/posters/webp/altun-video-04-poster.webp";
-import p5 from "@/assets/images/posters/webp/altun-video-05-poster.webp";
-import p6 from "@/assets/images/posters/webp/altun-video-06-poster.webp";
+// src/data/videos.ts
+import { cdnImage } from "@/utils/cdn";
 
 const CDN_URL = "https://cdn.altunzafer.com/videos";
 
@@ -24,43 +18,42 @@ export const VIDEO_SHOWCASE: VideoItem[] = [
     id: "v0",
     titleKey: "ShowReel: Zafer Altun",
     mp4: `${CDN_URL}/altun-video-06.mp4`,
-    poster: p6,
+    poster: cdnImage("altun-video-06-poster.webp"),
     format: "720p",
   },
-
   {
     id: "v1",
     titleKey: "Dizi: Mahsusa",
     mp4: `${CDN_URL}/altun-video-01_720p.mp4`,
-    poster: p1,
+    poster: cdnImage("altun-video-01-poster.webp"),
     format: "720p",
   },
   {
     id: "v2",
     titleKey: "Sinema: Köşk-ü Ammar",
     mp4: `${CDN_URL}/altun-video-02_720p.mp4`,
-    poster: p2,
+    poster: cdnImage("altun-video-02-poster.webp"),
     format: "720p",
   },
   {
     id: "v3",
     titleKey: "Eğitim: Oyunculuk Atölyesi",
     mp4: `${CDN_URL}/altun-video-03_720p.mp4`,
-    poster: p3,
+    poster: cdnImage("altun-video-03-poster.webp"),
     format: "720p",
   },
   {
     id: "v4",
     titleKey: "Belgesel: Vahyin İzinde",
     mp4: `${CDN_URL}/altun-video-04_720p.mp4`,
-    poster: p4,
+    poster: cdnImage("altun-video-04-poster.webp"),
     format: "720p",
   },
   {
     id: "v5",
     titleKey: "Sinema: Sıfır Bir",
     mp4: `${CDN_URL}/altun-video-05_540p.mp4`,
-    poster: p5,
+    poster: cdnImage("altun-video-05-poster.webp"),
     format: "540p",
   },
 ];

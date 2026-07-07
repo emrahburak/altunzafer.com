@@ -1,73 +1,54 @@
-# React + TypeScript + Vite
+# altunzafer.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Zafer Altun'un resmi portfolyo web sitesi. Uluslararası oyuncu, yönetmen ve oyunculuk eğitmeni olarak sinema, tiyatro ve prodüksiyon çalışmalarını tanıtır.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Vite](https://vitejs.dev/) + [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS v4](https://tailwindcss.com/)
+- [React Router v7](https://reactrouter.com/)
+- [i18next](https://www.i18next.com/) (`tr` / `en`)
+- [GSAP](https://gsap.com/) + ScrollTrigger
+- [Vercel](https://vercel.com/) üzerinde barındırılır
 
-## React Compiler
+## Geliştirme
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+# Bağımlılıkları yükle
+npm install
 
-## Expanding the ESLint configuration
+# Geliştirme sunucusu
+npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Üretim derlemesi
+npm run build
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Derlemeyi yerel önizle
+npm run preview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Lint
+npm run lint
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Proje yapısı
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+  App.tsx              # Rota tanımları
+  main.tsx             # Uygulama başlangıcı
+  i18n.ts              # i18next yapılandırması
+  index.css            # Tailwind v4 girişi ve tema tanımları
+  layouts/             # Sayfa çerçeveleri
+  pages/               # Sayfa bileşenleri
+  components/          # Sayfa bölümleri
+  data/                # Statik veri modülleri
+  locales/             # Çeviri dosyaları
+  scripts/             # Görselleri optimize eden script
+public/                # Statik varlıklar
+```
+
+## Notlar
+
+- `npm run build` önce TypeScript'i (`tsc -b`) sonra Vite'ı çalıştırır.
+- Test çalıştırıcısı yapılandırılmamıştır; doğrulama `lint` ve `build` ile yapılır.
+- Görseller `src/assets/images/<kategori>/` altına orijinal formatında konur, ardından `npm run optimizer` ile `webp/` klasörüne dönüştürülür.

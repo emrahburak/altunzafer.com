@@ -1,7 +1,9 @@
 import React, { useRef } from "react";
-import heroImage1 from "@/assets/images/hero/webp/altun-hero-01.webp"; // Alttaki (Base)
-import heroImage2 from "@/assets/images/hero/webp/altun-hero-02.webp"; // Üste gelen
+import { cdnImage } from "@/utils/cdn";
 import { useTranslation } from "react-i18next";
+
+const heroImage1 = cdnImage("altun-hero-01.webp"); // Alttaki (Base)
+const heroImage2 = cdnImage("altun-hero-02.webp"); // Üste gelen
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

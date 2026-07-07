@@ -1,16 +1,5 @@
 // src/data/tiyatro.ts
-
-// GÖRSELLER
-import t01 from "@/assets/images/tiyatro/webp/altun-tiyatro-01.webp";
-import t02 from "@/assets/images/tiyatro/webp/altun-tiyatro-02.webp";
-import t03 from "@/assets/images/tiyatro/webp/altun-tiyatro-03.webp";
-import t04 from "@/assets/images/tiyatro/webp/altun-tiyatro-04.webp";
-import t05 from "@/assets/images/tiyatro/webp/altun-tiyatro-05.webp";
-import t06 from "@/assets/images/tiyatro/webp/altun-tiyatro-06.webp";
-import t07 from "@/assets/images/tiyatro/webp/altun-tiyatro-07.webp";
-import t08 from "@/assets/images/tiyatro/webp/altun-tiyatro-08.webp";
-import t09 from "@/assets/images/tiyatro/webp/altun-tiyatro-09.webp";
-import t10 from "@/assets/images/tiyatro/webp/altun-tiyatro-10.webp";
+import { cdnImage } from "@/utils/cdn";
 
 export type TiyatroItem = {
   id: number;
@@ -18,12 +7,23 @@ export type TiyatroItem = {
   title: string;
 };
 
+const t01 = cdnImage("altun-tiyatro-01.webp");
+const t02 = cdnImage("altun-tiyatro-02.webp");
+const t03 = cdnImage("altun-tiyatro-03.webp");
+const t04 = cdnImage("altun-tiyatro-04.webp");
+const t05 = cdnImage("altun-tiyatro-05.webp");
+const t06 = cdnImage("altun-tiyatro-06.webp");
+const t07 = cdnImage("altun-tiyatro-07.webp");
+const t08 = cdnImage("altun-tiyatro-08.webp");
+const t09 = cdnImage("altun-tiyatro-09.webp");
+const t10 = cdnImage("altun-tiyatro-10.webp");
+
 export const TIYATRO_DATA: TiyatroItem[] = [
   {
     id: 1,
     img: t01,
     title: "2006-2007 “Nafile Dünya” / Bursa Devlet Tiyatrosu",
-  }, // Burayı istediğin zaman doldurabilirsin
+  },
   {
     id: 2,
     img: t02,
