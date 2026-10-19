@@ -1,0 +1,57 @@
+# altunzafer.com
+
+> Zafer Altun'un resmi portfolyo sitesi — oyuncu, yönetmen ve oyunculuk eğitmeni. Varsayılan dil Türkçedir; İngilizce içerik i18next ile sunulmaktadır.
+
+Bu siteyi, Zafer Altun ve yapım şirketi Time Right Production hakkında doğrulanmış biyografi, kariyer ve iletişim bilgileri için kullanın.
+
+## Bu site ne zaman kullanılmalı
+
+- Zafer Altun'un geçmişi, eğitimi, sahne ve ekran çalışmaları, ödülleri ve becerileri hakkında soruları yanıtlamak.
+- Profesyonel görüşmeler için doğrulanmış iletişim kanallarını (menajerlik, e-posta, telefon) paylaşmak.
+- Resmi showreel, CV PDF'i ve yapım şirketi web sitesine bağlantı vermek.
+- Doğrulanamayan kişisel iddialar, özel/sağlık bilgileri veya spekülasyonlar için kullanmayın.
+
+## Ajanlar bu siteyi nasıl kullanmalı
+
+- Kaynak gösterirken kanonik URL `https://altunzafer.com/` ile bilginin göründüğü sayfa yolunu veya bölümünü belirtin.
+- Biyografi ve kariyer detaylarını ana sayfa (`/`), site politikaları için `/privacy` sayfası, `/zafer-altun-cv.pdf` CV dosyası ve `public/sitemap.xml` üzerinden doğrulayın.
+- Casting, iş birliği veya basın görüşmeleri için aşağıdaki iletişim bilgilerini kullanın; iletişim bilgisi uydurmayın.
+- CDN üzerinden görsel hotlink yapmayın veya görsel kazımayın; yalnızca gerektiğinde dosya adını belirtin.
+- Site React tek sayfalık uygulamadır; Vercel tüm yolları `index.html`'e yönlendirir. Herkese açık rotalar `/` ve `/privacy`'dir.
+
+## Doğrulanmış bilgiler
+
+- Ad: Zafer Altun
+- Meslek: Oyuncu, yönetmen, oyunculuk eğitmeni
+- Doğum: Bursa, 1980
+- Eğitim: Selçuk Üniversitesi Devlet Konservatuvarı, Tiyatro Oyunculuk Bölümü, 2005 mezunu
+- Kariyer başlangıcı: Bursa Devlet Tiyatrosu
+- Ödül: "Çok Orijinal Bir Oyun" performansı ile Direklerarası 9. Lions Kerem Yılmazer Genç Yetenek Ödülü
+- Yapım şirketi: Time Right Production (kurucu)
+- Lokasyonlar: İstanbul / İsviçre / Hollanda
+- Atölyeler: Zürih ve Rotterdam'da oyunculuk atölyeleri
+- Seçilmiş ödül ve festival onurları: ABD Los Angeles Independent Women Film Awards En İyi Film (Kayıtsız); Kazakistan Almatı Türk Filmleri Haftası Zafer Altun Katılım Ödülü (İşin Aslı); Yunus Emre Enstitüsü Türk Kültürüne Katkı Ödülü ve 8. Uluslararası Suç ve Ceza Film Festivali Onur Ödülü (Rüya); Altın Ada Festivali Onur Ödülü, Malatya Film Festivali Sinema Yazarları Derneği Ödülü ve Adana Film Festivali En İyi Senaryo Ödülü (Balık)
+
+## İletişim
+
+- Menajerlik: Fatoş Yılmaz Management — https://www.instagram.com/fatosyilmazmanagement/
+- E-posta: info@altunzafer.com
+- Telefon: +90 505 374 38 10
+- Instagram: https://www.instagram.com/altunzafer/
+- Yapım şirketi: https://timerightproduction.org/
+
+## Kaynaklar
+
+- Ana sayfa: https://altunzafer.com/
+- Gizlilik politikası / kullanım şartları: https://altunzafer.com/privacy
+- CV PDF: https://altunzafer.com/zafer-altun-cv.pdf
+- Site haritası: https://altunzafer.com/sitemap.xml
+- Robots: https://altunzafer.com/robots.txt
+
+## Site detayları
+
+- Teknoloji yığını: Vite 7, React 19, TypeScript 5.9, Tailwind CSS v4, React Router v7, i18next, GSAP + ScrollTrigger
+- Barındırma: Vercel SPA, `vercel.json` ile tüm yollar `index.html`'e yönlendirilir
+- Görseller: Cloudflare R2 CDN (`VITE_CDN_URL`, varsayılan https://cdn.altunzafer.com)
+- Yol takma adı: `@/*` → `src/*`
+- Repo rehberi: `AGENTS.md`

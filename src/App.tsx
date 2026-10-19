@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Privacy from "./pages/Privacy";
+import About from "./pages/About";
+import ContactPage from "./pages/ContactPage";
 import ScrollToTop from "./utils/ScrollToTop";
 import { Route, Routes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -53,7 +55,13 @@ export default function App() {
           {/* GİZLİLİK (altunzafer.com/privacy) */}
           <Route path="privacy" element={<Privacy />} />
 
-          {/* 404 Sayfası (Opsiyonel - İleride ekleriz) */}
+          {/* HAKKINDA (altunzafer.com/about) */}
+          <Route path="about" element={<About />} />
+
+          {/* İLETİŞİM (altunzafer.com/contact) */}
+          <Route path="contact" element={<ContactPage />} />
+
+          {/* 404 Sayfası (Bilinmeyen rotalar) */}
           <Route path="*" element={<NotFound />} />
 
         </Route>
