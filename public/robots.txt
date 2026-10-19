@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /about
+Allow: /contact
+Allow: /privacy
 
 # Sitemizin yol haritası
 Sitemap: https://altunzafer.com/sitemap.xml

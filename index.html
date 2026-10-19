@@ -91,7 +91,36 @@
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- STATİK İÇERİK: JavaScript yüklenene kadar arama motorları ve ajanlar için anlamlı HTML sağlar. JavaScript çalışan tarayıcılarda hemen gizlenir, böylece SPA yüklenirken flash oluşmaz. -->
+      <main id="static-fallback" style="background-color: #0a0a0a; color: #e5e5e5; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 2rem; min-height: 100vh;">
+        <h1 style="color: #ffffff; font-size: 2.5rem; margin: 0 0 0.5rem; line-height: 1.2;">Zafer Altun</h1>
+        <p style="color: #eab308; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0 0 2rem;">Oyuncu, Yönetmen &amp; Eğitmen</p>
+        <p style="line-height: 1.7; max-width: 65ch; margin-bottom: 1.5rem;">Sahne, ekran ve eğitimde uluslararası bir kariyere sahip sanatçı. 1980 yılında Bursa'da doğan Zafer Altun, 2005 yılında Selçuk Üniversitesi Devlet Konservatuvarı Tiyatro Oyunculuk Bölümü'nden mezun oldu.</p>
+
+        <h2 style="color: #ffffff; font-size: 1.8rem; margin: 2rem 0 1rem; line-height: 1.3;">Biyografi</h2>
+        <p style="line-height: 1.7; max-width: 65ch; margin-bottom: 1.5rem;">Kariyerine Bursa Devlet Tiyatrosu'nda başladı ve Çok Orijinal Bir Oyun performansı ile Direklerarası Lions Kerem Yılmazer Genç Yetenek Ödülü'ne layık görüldü. Tiyatro oyunculuğu, kamera önü oyunculuğu, diksiyon, etkili konuşma ve audition teknikleri alanlarında eğitmenlik yapmaktadır.</p>
+
+        <h2 style="color: #ffffff; font-size: 1.8rem; margin: 2rem 0 1rem; line-height: 1.3;">Kariyer</h2>
+        <p style="line-height: 1.7; max-width: 65ch; margin-bottom: 1.5rem;">Ulusal ve uluslararası sinema, televizyon ve dijital platform projelerinde oyuncu ve yönetmen olarak çalışmaktadır. Time Right Production çatısı altında İsviçre ve Hollanda merkezli yapımlarda yapımcı ve eğitmen olarak görev almaktadır.</p>
+
+        <h2 style="color: #ffffff; font-size: 1.8rem; margin: 2rem 0 1rem; line-height: 1.3;">Ödüller</h2>
+        <p style="line-height: 1.7; max-width: 65ch; margin-bottom: 1.5rem;">Kayıtsız, İşin Aslı, Rüya, Balık ve Çok Orijinal Bir Oyun projeleriyle ulusal ve uluslararası festival ödüllerine sahiptir. Bu projeler Los Angeles, Kazakistan, Malatya, Adana ve Altın Ada festivallerinde ödül almıştır.</p>
+
+        <h2 style="color: #ffffff; font-size: 1.8rem; margin: 2rem 0 1rem; line-height: 1.3;">Showreel</h2>
+        <p style="line-height: 1.7; max-width: 65ch; margin-bottom: 1.5rem;">TRT tabii Hür Mahalle Dizisi ve diğer ulusal-uluslararası projelerden oyunculuk ve yönetmenlik vizyonunu yansıtan performans örnekleri.</p>
+
+        <h2 style="color: #ffffff; font-size: 1.8rem; margin: 2rem 0 1rem; line-height: 1.3;">İletişim</h2>
+        <p style="line-height: 1.7; max-width: 65ch; margin-bottom: 1.5rem;">İstanbul, İsviçre ve Hollanda ofisleri üzerinden sanatsal işbirlikleri, yapım projeleri ve oyunculuk atölyeleri için iletişime geçebilirsiniz.</p>
+      </main>
+    </div>
+    <script>
+      // JavaScript çalışıyorsa statik fallback'ı hemen gizle; React mount'u öncesindeki flash'ı engelle.
+      (function () {
+        var fallback = document.getElementById('static-fallback');
+        if (fallback) fallback.style.display = 'none';
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

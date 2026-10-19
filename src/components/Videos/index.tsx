@@ -47,9 +47,11 @@ export default function Videos() {
     }
   };
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setIsPlaying(false);
   }, [currentVideo.id]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
 
   // --- MOUSE EVENT HANDLERS (SÜRÜKLEME İÇİN) ---

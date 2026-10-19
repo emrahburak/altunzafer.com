@@ -1,0 +1,57 @@
+# altunzafer.com
+
+> Official portfolio of Zafer Altun — actor, director, and acting coach / educator. Default language is Turkish; English copy is available via i18next.
+
+Use this site to find verified biographical, career, and contact information about Zafer Altun and his production company Time Right Production.
+
+## When to use this site
+
+- Answer questions about Zafer Altun's background, training, stage and screen work, awards, and skills.
+- Reference verified contact channels for professional inquiries (management, email, phone).
+- Link to his official showreel, CV PDF, and production company website.
+- Do not use this site for unverifiable personal claims, private/medical information, or speculation.
+
+## How agents should use this site
+
+- Cite the canonical URL `https://altunzafer.com/` together with the page path or section where a fact appears.
+- Verify biographical and career details from the home page (`/`), the `/privacy` page for site policies, the public CV at `/zafer-altun-cv.pdf`, and `public/sitemap.xml`.
+- For booking, collaboration, or press inquiries, use only the contact details listed below; do not invent contact information.
+- Do not hotlink or scrape images from the CDN; reference image filenames only when relevant.
+- The site is a React single-page application; Vercel rewrites all paths to `index.html`. Public routes are `/` and `/privacy`.
+
+## Verified facts
+
+- Name: Zafer Altun
+- Profession: Actor, director, acting coach / educator
+- Birth: Bursa, 1980
+- Education: Selçuk University State Conservatory, Department of Acting, graduated 2005
+- Career start: Bursa State Theater
+- Recognition: Direklerarası 9th Lions Kerem Yılmazer Young Talent Award for "A Very Original Play" / "Çok Orijinal Bir Oyun"
+- Production company: Time Right Production (founder)
+- Locations: Istanbul / Switzerland / Netherlands
+- Workshops: Acting workshops held in Zurich and Rotterdam
+- Selected awards and festival honors include: Best Film at the Los Angeles Independent Women Film Awards (Kayıtsız / Indifferent); Zafer Altun Participation Award at the Kazakhstan Almaty Turkish Film Week (İşin Aslı / The Truth of the Matter); Contribution to Turkish Culture Award from the Yunus Emre Institute and Honorary Award at the 8th International Crime and Punishment Film Festival (Rüya / The Dream); Honorary Award at the Golden Island Festival, Film Critics Association Award at the Malatya Film Festival, and Best Screenplay Award at the Adana Film Festival (Balık / The Fish)
+
+## Contact
+
+- Management: Fatoş Yılmaz Management — https://www.instagram.com/fatosyilmazmanagement/
+- Email: info@altunzafer.com
+- Phone: +90 505 374 38 10
+- Instagram: https://www.instagram.com/altunzafer/
+- Production company: https://timerightproduction.org/
+
+## Resources
+
+- Home page: https://altunzafer.com/
+- Privacy policy / terms: https://altunzafer.com/privacy
+- CV PDF: https://altunzafer.com/zafer-altun-cv.pdf
+- Sitemap: https://altunzafer.com/sitemap.xml
+- Robots: https://altunzafer.com/robots.txt
+
+## Site details
+
+- Stack: Vite 7, React 19, TypeScript 5.9, Tailwind CSS v4, React Router v7, i18next, GSAP + ScrollTrigger
+- Hosting: Vercel SPA with `vercel.json` rewrites to `index.html`
+- Images: Cloudflare R2 CDN (`VITE_CDN_URL`, default https://cdn.altunzafer.com)
+- Path alias: `@/*` maps to `src/*`
+- Repo guide: `AGENTS.md`

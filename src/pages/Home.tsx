@@ -44,24 +44,24 @@ export default function Home() {
         <link rel="canonical" href="https://www.altunzafer.com/" />
       </Helmet>
 
-      {/* SAYFA İÇERİĞİ */}
+      {/* SAYFA İÇERİĞİ: index.html içindeki statik geri dönüşle aynı bölüm sırasını korur. */}
       <div id="hero">
         <Hero />
       </div>
 
-      <section id="biography">
+      <section id="biography" aria-label={t('navbar.biography')}>
         <Biography />
       </section>
 
       {/* --- KARİYER BÖLÜMÜ --- */}
       {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
-      <section id="career">
+      <section id="career" aria-label={t('navbar.career')}>
         <Career />
       </section>
 
       {/* --- ÖDÜLLER BÖLÜMÜ --- */}
       {/* Tabletler (iPad Air/Pro) dahil MOBİL versiyonu görsün diye breakpoint 'xl' (1280px) yapıldı */}
-      <section id="awards">
+      <section id="awards" aria-label={t('navbar.awards')}>
 
         <div className="hidden xl:block">
           <Awards />
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* --- VIDEO BÖLÜMÜ (LAZY LOADED) --- */}
-      <section id="showreel">
+      <section id="showreel" aria-label={t('navbar.showreel')}>
         <Suspense fallback={
           <div className="w-full h-screen flex items-center justify-center bg-black/90 text-white font-royal-7 tracking-widest">
             Yükleniyor...
@@ -84,7 +84,7 @@ export default function Home() {
         </Suspense>
       </section>
 
-      <section id="contact">
+      <section id="contact" aria-label={t('navbar.contact')}>
         <Contact />
       </section>
     </>

@@ -125,6 +125,69 @@
     "rights": "All rights reserved.",
     "developer": "Developed by"
   },
+  "about": {
+    "title": "About",
+    "description": "Detailed information about the artistic journey, international projects, and educational work of actor, director, and acting coach Zafer Altun.",
+    "intro": "Born in Bursa in 1980, Zafer Altun is a versatile artist who combines his work on stage and in front of the camera with directing, producing, and acting coaching. After graduating from the Acting Department of Selçuk University State Conservatory in 2005, he began his career at Bursa State Theater.",
+    "background": "Following his conservatory training, Altun gained experience in state theater and was awarded the Direklerarası 9th Lions Kerem Yılmazer Young Talent of the Year Award for his performance in 'A Very Original Play'. This award marked a significant turning point in terms of character depth and technical discipline in his stage performances.",
+    "career": "His work in cinema and television includes feature films honored at international festivals and projects from Turkey's most-watched series. Through productions such as 'The Fish', 'The Dream', 'Indifferent', and 'The Truth of the Matter', he has contributed both as an actor and as a creative team member.",
+    "international": "Continuing his Europe-based work primarily in Switzerland and the Netherlands, Altun serves as line producer for international commercial series, documentary films, and theater projects through his own production company, Time Right Production. The Edel Stal Group documentary 'Simtronik' is among these works.",
+    "education": "Through acting workshops he conducts in Zurich and Rotterdam, he teaches theater acting, on-camera acting, diction, effective speaking, and audition techniques. He also applies personal skills such as percussion, horse riding, sword fighting, and driving in his professional projects.",
+    "approach": "Maintaining a production practice across Istanbul, Switzerland, and the Netherlands, he continues to train actors for both stage and screen by combining artistic experience with education."
+  },
+  "contactPage": {
+    "title": "Contact",
+    "description": "Contact and collaboration channels for Zafer Altun including phone, email, management, and social media.",
+    "intro": "You can use the channels below to get in touch and explore collaboration opportunities. Commercial projects, casting agencies, and media inquiries are handled through Fatoş Yılmaz Management. For direct messages regarding acting, directing, and acting coaching, you can use the phone number and email address. For professional offers, workshops, masterclasses, and international production collaborations, please use the management channel.",
+    "managementTitle": "Management",
+    "managementDescription": "For commercial offers, casting, and production inquiries, the official management contact is:",
+    "directTitle": "Direct Contact",
+    "directDescription": "For direct messages and urgent inquiries:",
+    "professionalTitle": "Production & Education",
+    "professionalDescription": "As the founder of Time Right Production, Zafer Altun carries out international projects between Istanbul, Switzerland, and the Netherlands. For corporate collaborations on production, directing, and acting workshops, you can visit the company website.",
+    "socialTitle": "Social Media",
+    "socialDescription": "Follow the official Instagram account for current projects, stage performances, and international work:",
+    "downloadCV": "DOWNLOAD CV",
+    "locations": "Istanbul / Switzerland / Netherlands"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "metaTitle": "Privacy Policy | Zafer Altun",
+    "metaDescription": "Privacy policy for the official Zafer Altun website.",
+    "lastUpdated": "Last Updated",
+    "overview": {
+      "title": "1. Overview",
+      "content": "Zafer Altun ('we') respects the privacy of our visitors. This Privacy Policy explains how personal data is handled when you visit our official website at altunzafer.com."
+    },
+    "collectedData": {
+      "title": "2. Information We Collect",
+      "content": "Our site does not require membership or form submission. When you contact us by email, phone, or social media, the information you provide—such as your name, email address, phone number, and message content—is used solely to respond to your inquiry."
+    },
+    "usage": {
+      "title": "3. How We Use Your Information",
+      "content": "Your contact details are used to respond to artistic collaborations, production projects, acting workshops, and management inquiries. We do not use your information for marketing purposes or contact you without consent."
+    },
+    "cookies": {
+      "title": "4. Cookies and Analytics",
+      "content": "Our website does not use third-party cookies, tracking pixels, or analytics tools. Browser information and browsing behavior are not collected directly by us. The site uses Cloudflare R2 CDN for image delivery."
+    },
+    "retention": {
+      "title": "5. Data Retention",
+      "content": "Information shared with us through contact channels may be retained for a reasonable period after your request is completed. You may request deletion at any time by emailing info@altunzafer.com."
+    },
+    "thirdParties": {
+      "title": "6. Sharing with Third Parties",
+      "content": "Personal data is not sold, rented, or shared with third parties for commercial purposes. Information may only be disclosed in response to legal obligations or authorized authority requests."
+    },
+    "rights": {
+      "title": "7. Your Rights",
+      "content": "You have the right to access, correct, delete, and object to the processing of the personal data you have provided to us. To exercise these rights, please contact us at info@altunzafer.com."
+    },
+    "contact": {
+      "title": "8. Contact Us",
+      "content": "If you have any questions about this Privacy Policy, please contact us at info@altunzafer.com."
+    }
+  },
   "notFound": {
     "title": "404 - Page Not Found",
     "heading": "The Page You Are Looking For Could Not Be Found",

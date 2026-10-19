@@ -125,6 +125,69 @@
     "rights": "Tüm hakları saklıdır.",
     "developer": "Geliştirici:"
   },
+  "about": {
+    "title": "Hakkımda",
+    "description": "Oyuncu, yönetmen ve oyunculuk eğitmeni Zafer Altun'un sanatsal yolculuğu, uluslararası projeleri ve eğitim çalışmaları hakkında detaylı bilgi.",
+    "intro": "1980 yılında Bursa'da doğan Zafer Altun, sahne ve kamera önündeki çalışmalarını yönetmenlik, yapımcılık ve oyunculuk eğitmenliği ile birleştiren çok yönlü bir sanatçıdır. Selçuk Üniversitesi Devlet Konservatuvarı Tiyatro Oyunculuk Bölümü'nden 2005 yılında mezun olduktan sonra kariyerine Bursa Devlet Tiyatrosu'nda başlamıştır.",
+    "background": "Konservatuvar eğitiminin ardından devlet tiyatrosu deneyimi kazanan Altun, 'Çok Orijinal Bir Oyun' adlı performansı ile Direklerarası 9. Lions Kerem Yılmazer Yılın Genç Yetenek Ödülü'ne layık görülmüştür. Bu ödül, onun sahne performansındaki karakter derinliği ve teknik disiplini açısından önemli bir dönüm noktası olmuştur.",
+    "career": "Sinema ve televizyon alanındaki çalışmaları, uluslararası festivallerden ödüllerle dönen uzun metraj filmler ve Türkiye'nin en çok izlenen dizilerinden projeleri kapsamaktadır. 'Balık', 'Rüya', 'Kayıtsız' ve 'İşin Aslı' gibi yapımlarda yer alarak hem oyuncu hem de yaratıcı ekip üyesi olarak katkı sağlamıştır.",
+    "international": "Avrupa merkezli çalışmalarını İsviçre ve Hollanda öncelikli olmak üzere sürdüren Altun, kendi yapım şirketi Time Right Production ile uluslararası reklam serileri, belgesel film ve tiyatro projelerinin uygulayıcı yapımcılığını üstlenmektedir. Edel Stal Group 'Simtronik' belgesel filmi bu çalışmalardan biridir.",
+    "education": "Zürih ve Rotterdam'da düzenlediği oyunculuk atölyeleri ile tiyatro oyunculuğu, kamera önü oyunculuk, diksiyon, etkili konuşma ve audition teknikleri alanlarında eğitimler vermektedir. Aynı zamanda perküsyon, at biniciliği, kılıç kullanımı ve araba sürme gibi kişisel becerilerini de profesyonel projelerinde değerlendirmektedir.",
+    "approach": "İstanbul, İsviçre ve Hollanda arasında sürdürdüğü üretim pratiğinde, sanatsal deneyimi eğitimle birleştirerek hem sahne hem de ekran için aktörler yetiştirmeye devam etmektedir."
+  },
+  "contactPage": {
+    "title": "İletişim",
+    "description": "Zafer Altun ile iletişim ve iş birliği için telefon, e-posta, menajerlik ve sosyal medya kanalları.",
+    "intro": "İletişim ve iş birliği talepleriniz için aşağıdaki kanalları kullanabilirsiniz. Ticari projeler, cast ajansları ve medya kuruluşları için menajerlik iletişimi Fatoş Yılmaz Management üzerinden yürütülmektedir. Oyunculuk, yönetmenlik ve oyunculuk eğitimi ile ilgili doğrudan mesajlarınız için telefon ve e-posta adresini kullanabilirsiniz. Profesyonel teklifler, workshop, masterclass ve uluslararası prodüksiyon iş birlikleri için lütfen menajerlik kanalını tercih ediniz.",
+    "managementTitle": "Menajerlik",
+    "managementDescription": "Ticari teklifler, cast ve prodüksiyon süreçleri için resmi menajerlik iletişim hesabı:",
+    "directTitle": "Doğrudan İletişim",
+    "directDescription": "Doğrudan mesajlarınız ve acil iletişim talepleriniz için:",
+    "professionalTitle": "Prodüksiyon ve Eğitim",
+    "professionalDescription": "Zafer Altun, Time Right Production kurucusu olarak İstanbul, İsviçre ve Hollanda arasında uluslararası projeler yürütmektedir. Prodüksiyon, yönetmenlik ve oyunculuk atölyeleri ile ilgili kurumsal iş birlikleri için şirket web sitesini ziyaret edebilirsiniz.",
+    "socialTitle": "Sosyal Medya",
+    "socialDescription": "Güncel projeleri, sahneleri ve uluslararası çalışmaları takip etmek için resmi Instagram hesabı:",
+    "downloadCV": "CV İNDİR",
+    "locations": "İstanbul / İsviçre / Hollanda"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "metaTitle": "Gizlilik Politikası | Zafer Altun",
+    "metaDescription": "Zafer Altun resmi web sitesi gizlilik politikası.",
+    "lastUpdated": "Son Güncelleme",
+    "overview": {
+      "title": "1. Genel Bakış",
+      "content": "Zafer Altun ('Biz') olarak ziyaretçilerimizin gizliliğine saygı duyuyoruz. Bu Gizlilik Politikası, resmi web sitemiz altunzafer.com'u ziyaret ettiğinizde kişisel verilerinizin nasıl işlendiğini açıklamaktadır."
+    },
+    "collectedData": {
+      "title": "2. Toplanan Veriler",
+      "content": "Sitemizde üyelik sistemi veya form doldurma zorunluluğu bulunmamaktadır. Bize e-posta, telefon veya sosyal medya kanalları üzerinden ulaştığınızda ilettiğiniz ad, e-posta adresi, telefon numarası ve mesaj içeriği gibi bilgiler, yalnızca size geri dönüş sağlamak amacıyla kullanılmaktadır."
+    },
+    "usage": {
+      "title": "3. Verilerin Kullanım Amaçları",
+      "content": "İletişim bilgileriniz; sanatsal işbirlikleri, yapım projeleri, oyunculuk atölyeleri ve menajerlik taleplerinize yanıt vermek için kullanılır. Bilgileriniz pazarlama amacıyla kullanılmaz ve izniniz olmadan iletişim kurulmaz."
+    },
+    "cookies": {
+      "title": "4. Çerezler ve Analiz Araçları",
+      "content": "Web sitemiz üçüncü taraf çerez, izleme pikselleri veya analiz araçları kullanmamaktadır. Tarayıcı bilgileriniz veya ziyaret davranışlarınız doğrudan tarafımızca toplanmamaktadır. Site, görseller için Cloudflare R2 CDN hizmetini kullanmaktadır."
+    },
+    "retention": {
+      "title": "5. Saklama Süresi",
+      "content": "İletişim yoluyla paylaştığınız veriler, talebinizin tamamlanması sonrasında makul bir süre boyunca saklanabilir. Verilerinizin silinmesini istediğinizde info@altunzafer.com adresinden talepte bulunabilirsiniz."
+    },
+    "thirdParties": {
+      "title": "6. Üçüncü Taraflarla Paylaşım",
+      "content": "Kişisel verileriniz üçüncü taraflarla satılmaz, kiralanmaz veya ticari amaçla paylaşılmaz. Yalnızca yasal bir zorunluluk veya yetkili merci talebi doğrultusunda paylaşım yapılabilir."
+    },
+    "rights": {
+      "title": "7. Haklarınız",
+      "content": "Bize ilettiğiniz kişisel verilerinize ilişkin erişim, düzeltme, silme ve işlemeye itiraz haklarınızı kullanabilirsiniz. Bu haklarınızı kullanmak için info@altunzafer.com adresinden bize ulaşabilirsiniz."
+    },
+    "contact": {
+      "title": "8. İletişim",
+      "content": "Gizlilik Politikası ile ilgili sorularınız için info@altunzafer.com adresinden bizimle iletişime geçebilirsiniz."
+    }
+  },
   "notFound": {
     "title": "404 - Sayfa Bulunamadı",
     "heading": "Aradığınız Sayfaya Ulaşılamadı",
